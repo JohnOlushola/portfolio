@@ -9,7 +9,12 @@ export default function Home() {
 
       <div className="landing-container">
         <div className="flex justify-between">
-          <p className="text-xl border-y border-black w-fit">JTO</p>
+          <div className="group border-y border-black w-fit inline-flex items-center">
+            <p className="text-xl group-hover:hidden">JTO</p>
+            <p className="text-xl text-opacity-50 hidden group-hover:block">
+              John Temiloluwa Olushola
+            </p>
+          </div>
 
           <p className="underline">work in progress!</p>
         </div>
