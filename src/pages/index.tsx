@@ -8,8 +8,10 @@ export default function Home() {
       <PageHead title="JTOLUSHOLA" description="John Temiloluwa Olushola" />
 
       <div className="landing-container">
-        <div>
+        <div className="flex justify-between">
           <p className="text-xl border-y border-black w-fit">JTO</p>
+
+          <p className="underline">work in progress!</p>
         </div>
 
         <Image
