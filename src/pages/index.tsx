@@ -14,11 +14,18 @@ export default function Home() {
           <p className="underline">work in progress!</p>
         </div>
 
-        <Image
-          src={LandingImage}
-          className="object-cover h-[200px]"
-          alt="The cavemen at the SDC Show in Clapham Junction"
-        />
+        <div className="relative group">
+          <Image
+            src={LandingImage}
+            className="object-cover h-[200px]"
+            alt="The Cavemen at the SDC Show in Clapham Junction"
+          />
+          <div className="caption invisible group-hover:visible">
+            <p className="text-xs">
+              The Cavemen at the SDC Show &nbsp;&mdash;&nbsp; Oct 9, 2022
+            </p>
+          </div>
+        </div>
 
         <div className="flex justify-between border-y border-black py-2.5">
           <h2 className="text-xl md:text-4xl">engineering</h2>
