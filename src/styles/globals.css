@@ -28,11 +28,5 @@ body {
   height: var(--landing-container-height);
   flex-direction: column;
   justify-content: space-between;
-}
-
-/* turn off mobile */
-@media (max-width: 640px) {
-  body {
-    display: none !important;
-  }
+  overflow: hidden;
 }
