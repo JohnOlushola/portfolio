@@ -7,7 +7,7 @@ export default function Home() {
     <>
       <PageHead title="JTOLUSHOLA" description="John Temiloluwa Olushola" />
 
-      <div className="flex h-screen flex-col justify-between gap-y-2.5">
+      <div className="landing-container">
         <div>
           <p className="text-xl border-y border-black w-fit">JTO</p>
         </div>
