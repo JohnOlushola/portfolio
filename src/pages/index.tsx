@@ -34,8 +34,8 @@ export default function Home() {
 
         <div className="flex justify-between border-y border-black py-2.5">
           <h2 className="text-xl md:text-4xl">engineering</h2>
-          <h2 className="text-xl md:text-4xl">photography</h2>
           <h2 className="text-xl md:text-4xl">me</h2>
+          <h2 className="text-xl md:text-4xl">photography</h2>
         </div>
 
         <h1 className="text-6xl sm:text-[100px] md:text-[140px] xl:text-[220px] text-justify uppercase border-y border-black tracking-wide">
