@@ -24,7 +24,7 @@ export default function Home() {
           <h2 className="text-4xl">me</h2>
         </div>
 
-        <h1 className="text-[220px] uppercase border-y border-black">
+        <h1 className="text-[220px] uppercase border-y border-black tracking-wide">
           JTOLUSHOLA
         </h1>
       </div>
