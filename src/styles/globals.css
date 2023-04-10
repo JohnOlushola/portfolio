@@ -6,7 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-hex: #FFFCF0;
   --body-column-margin: 20px;
-  --landing-container-margin: 40px;
+  --landing-container-margin: 90px;
   --landing-container-height: calc(100vh - var(--landing-container-margin));
 }
 
