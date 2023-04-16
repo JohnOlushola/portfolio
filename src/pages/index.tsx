@@ -2,6 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import LandingImage from "../../public/images/landing-image.png";
 import PageHead from "../components/PageHead";
+import FeaturedContents from "../components/FeaturedContents";
+
+const featuredContents = [
+  {
+    title: "The Cavemen",
+    description: "The Cavemen at the SDC Show &mdash; Oct 9, 2022",
+    image: LandingImage,
+    alt: "The Cavemen at the SDC Show in Clapham Junction",
+  },
+];
 
 export default function Home() {
   return (
@@ -9,18 +19,7 @@ export default function Home() {
       <PageHead title="JTOLUSHOLA" description="John Temiloluwa Olushola" />
 
       <div className="landing-container">
-        <div className="relative group">
-          <Image
-            src={LandingImage}
-            className="object-cover h-[200px]"
-            alt="The Cavemen at the SDC Show in Clapham Junction"
-          />
-          <div className="caption invisible group-hover:visible">
-            <p className="text-xs">
-              The Cavemen at the SDC Show &nbsp;&mdash;&nbsp; Oct 9, 2022
-            </p>
-          </div>
-        </div>
+        <FeaturedContents contents={featuredContents} />
 
         <div className="flex justify-between border-y border-black py-2.5">
           <h2 className="text-xl md:text-4xl">engineering</h2>
