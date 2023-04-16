@@ -11,7 +11,7 @@ const FeaturedContents: React.FC<FeaturedContentsProps> = ({ contents }) => {
     <div className="flex flex-col overflow-y-scroll h-[200px] gap-4 snap-mandatory snap-y scroll-smooth">
       {contents.map((content, index) => (
         <FeaturedContentItem
-          key={index}
+          key={`featured-content-${index}`}
           title={content.title}
           description={content.description}
           image={content.image}
