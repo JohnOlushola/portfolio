@@ -17,6 +17,14 @@
     --background-hex: #000;
     --border-hex: #FFF;
   }
+
+  img {
+    filter: invert(1);
+  }
+
+  img:hover {
+    filter: invert(0);
+  }
 }
 
 body {
