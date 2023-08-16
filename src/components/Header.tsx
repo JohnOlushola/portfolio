@@ -6,9 +6,9 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ page }) => {
   return (
-    <div className="flex justify-between mb-4">
+    <div className="flex justify-between mb-4 dark:text-white">
       <Link href="/">
-        <div className="group border-y border-black w-fit inline-flex items-center">
+        <div className="group border-y border-black dark:border-white w-fit inline-flex items-center">
           <p className="text-xl group-hover:hidden">
             JTO
             {page && <span>&nbsp;&mdash;&nbsp; {page}</span>}
