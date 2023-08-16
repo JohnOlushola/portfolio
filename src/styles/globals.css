@@ -5,6 +5,7 @@
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-hex: #FFFCF0;
+  --border-hex: #000;
   --body-column-margin: 20px;
   --landing-container-margin: 90px;
   --landing-container-height: calc(100vh - var(--landing-container-margin));
@@ -12,7 +13,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
+    --foreground-rgb: 255, 255, 255;
     --background-hex: #000;
+    --border-hex: #FFF;
   }
 }
 
@@ -21,6 +24,11 @@ body {
   background: var(--background-hex);
   max-width: 95%;
   margin: var(--body-column-margin) auto;
+}
+
+/* Resets */
+* {
+  border-color: var(--border-hex) !important;
 }
 
 .landing-container {
