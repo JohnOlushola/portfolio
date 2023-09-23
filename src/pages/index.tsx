@@ -6,7 +6,7 @@ export default function Home() {
     <>
       <PageHead title="JTOLUSHOLA" description="John Temiloluwa Olushola" />
 
-      <div className="landing-container">
+      <div className="landing-container dark:text-white dark:border-white">
         <NavBar />
 
         <div className="h-auto mt-auto border-y border-black dark:border-white text-justify">
