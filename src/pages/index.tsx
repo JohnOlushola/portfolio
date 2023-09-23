@@ -1,16 +1,13 @@
 import PageHead from "../components/PageHead";
+import NavBar from "../components/NavBar";
 
 export default function Home() {
   return (
     <>
       <PageHead title="JTOLUSHOLA" description="John Temiloluwa Olushola" />
 
-      <div className="landing-container">
-        <div className="flex justify-between border-y py-2.5">
-          <h2 className="text-xl md:text-4xl">engineering</h2>
-          <h2 className="text-xl md:text-4xl">me</h2>
-          <h2 className="text-xl md:text-4xl">photography</h2>
-        </div>
+      <div className="landing-container dark:text-white dark:border-white">
+        <NavBar />
 
         <div className="h-auto mt-auto border-y text-justify">
           <svg
