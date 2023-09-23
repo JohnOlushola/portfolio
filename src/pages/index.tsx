@@ -9,7 +9,7 @@ export default function Home() {
       <div className="landing-container dark:text-white dark:border-white">
         <NavBar />
 
-        <div className="h-auto mt-auto border-y border-black dark:border-white text-justify">
+        <div className="h-auto mt-auto border-y text-justify">
           <svg
             viewBox="0 0 100 18"
             xmlns="http://www.w3.org/2000/svg"
