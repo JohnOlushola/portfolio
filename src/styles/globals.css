@@ -7,8 +7,8 @@
   --background-hex: #FFFCF0;
   --border-hex: #000;
   --body-column-margin: 20px;
-  --landing-container-margin: 90px;
-  --landing-container-height: calc(100vh - var(--landing-container-margin));
+  --landing-container-margin: 32px;
+  --landing-container-height: calc(100vh - (var(--landing-container-margin) + (var(--body-column-margin) *2 )));
 }
 
 @media (prefers-color-scheme: dark) {

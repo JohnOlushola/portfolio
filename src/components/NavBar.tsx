@@ -1,11 +1,37 @@
+import Link from "next/link";
 import React from "react";
+
+const navItems = [
+  {
+    name: "about",
+    link: "/",
+  },
+  {
+    name: "projects",
+    link: "/",
+  },
+  {
+    name: "photography",
+    link: "/",
+  },
+] as const;
 
 export default function NavBar() {
   return (
-    <div className="flex justify-between border-y border-black dark:border-white py-2.5">
-      <h2 className="text-xl md:text-3xl">engineering</h2>
-      <h2 className="text-xl md:text-3xl">me</h2>
-      <h2 className="text-xl md:text-3xl">photography</h2>
+    <div className="flex justify-between border-black dark:border-white">
+      <Link href="/" className="text-md md:text-xl">
+        Olushola Temiloluwa
+      </Link>
+      <div />
+      <ul className="md:flex justify-between gap-10">
+        {navItems.map((item, index) => (
+          <li key={`nav_item_${index}`}>
+            <Link href={item.link} className="text-md md:text-xl">
+              {item.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
