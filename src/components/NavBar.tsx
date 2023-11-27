@@ -7,11 +7,11 @@ const navItems = [
     link: "/",
   },
   {
-    name: "projects",
+    name: "writing",
     link: "/",
   },
   {
-    name: "photography",
+    name: "projects",
     link: "/",
   },
 ] as const;
