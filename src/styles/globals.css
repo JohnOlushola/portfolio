@@ -31,6 +31,10 @@ body {
   border-color: var(--border-hex) !important;
 }
 
+a:hover, a:focus {
+  text-decoration: underline;
+}
+
 .landing-container {
   display: flex;
   height: var(--landing-container-height);
