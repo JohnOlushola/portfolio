@@ -35,6 +35,10 @@ a:hover, a:focus {
   text-decoration: underline;
 }
 
+li:not(:last-child) { 
+   margin-bottom: 3.25rem;  
+}
+
 .landing-container {
   display: flex;
   height: var(--landing-container-height);
