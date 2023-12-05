@@ -6,7 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-hex: #FFFCF0;
   --border-hex: #000;
-  --body-column-margin: 20px;
+  --body-column-margin: 8px;
   --landing-container-margin: 90px;
   --landing-container-height: calc(100vh - var(--landing-container-margin));
 }
@@ -14,7 +14,7 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-hex: #000;
+    --background-hex: #1f1f1f;
     --border-hex: #FFF;
   }
 }
@@ -22,13 +22,7 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: var(--background-hex);
-  max-width: 95%;
-  margin: var(--body-column-margin) auto;
-}
-
-/* Resets */
-* {
-  border-color: var(--border-hex) !important;
+  padding: 8px;
 }
 
 .landing-container {
@@ -46,4 +40,15 @@ body {
   background: var(--background-hex);
   padding-left: 5px;
   padding-right: 5px;
+}
+
+.resource-caption::after {
+  content: "";
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), 50%, rgba(0, 0, 0, 0));
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  bottom: -64px;
+  transition: opacity 200ms ease 0s;
+  pointer-events: none;
 }
