@@ -11,8 +11,15 @@ export interface Resource {
   title?: string;
   date?: string;
   type?: keyof typeof ResourceType;
+  media?: "video" | "image";
+  alt?: string;
   link?: {
     url: string;
     target?: HTMLAttributeAnchorTarget;
   };
 }
+
+export interface PictureResource extends Resource {
+  media: "image";
+  alt: string;
+} 
