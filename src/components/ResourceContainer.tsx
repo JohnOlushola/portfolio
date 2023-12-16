@@ -20,8 +20,8 @@ export default function ResourceContainer({
       {type && <LinkButton text={ResourceType[type]} />}
     </a>
   ) : (
-    <div className="rounded-xl overflow-hidden">
-      {children}
+    <div className="rounded-xl overflow-hidden relative">
+      <div className="resource-caption">{children}</div>
     </div>
   );
 }
