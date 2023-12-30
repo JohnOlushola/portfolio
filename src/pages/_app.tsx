@@ -1,7 +1,6 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import localFont from "next/font/local";
-import Header from "../components/Header";
 
 // Font files can be colocated inside of `pages`
 const customFont = localFont({
@@ -11,7 +10,6 @@ const customFont = localFont({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <main className={customFont.className}>
-      <Header />
       <Component {...pageProps} />
     </main>
   );
