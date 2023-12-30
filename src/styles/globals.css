@@ -6,7 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-hex: #FFFCF0;
   --border-hex: #000;
-  --body-column-margin: 20px;
+  --body-margin: 60px;
   --landing-container-margin: 90px;
   --landing-container-height: calc(100vh - var(--landing-container-margin));
 }
@@ -14,16 +14,15 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-hex: #000;
-    --border-hex: #FFF;
+    --background-hex: #212121;
+    --border-hex: #fff;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: var(--background-hex);
-  max-width: 95%;
-  margin: var(--body-column-margin) auto;
+  margin: var(--body-margin);
 }
 
 /* Resets */
@@ -46,4 +45,34 @@ body {
   background: var(--background-hex);
   padding-left: 5px;
   padding-right: 5px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  grid-template-rows: repeat(var(--rows), 1fr);
+  border: 1px solid var(--border-hex);
+  border-right: none;
+  border-bottom: none;
+  position: relative;
+}
+
+.grid .grid-cell {
+  height: calc(100vh / var(--columns))
+}
+
+.grid-guides {
+  display: contents;
+}
+
+.grid-guide {
+  inset: 0px;
+  position: absolute;
+  grid-column-start: var(--x);
+  grid-column-end: span 1;
+  grid-row-start: var(--y);
+  grid-row-end: span 1;
+  border: 1px solid var(--border-hex);
+  border-left: none;
+  border-top: none;
 }
