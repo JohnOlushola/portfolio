@@ -4,9 +4,9 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-hex: #FFFCF0;
-  --border-hex: #000;
-  --body-margin: 0px;
+  --background-hex: #FFFFFF;
+  --border-hex: #00000079;
+  --body-margin: 20px;
   --landing-container-margin: 90px;
   --landing-container-height: calc(100vh - var(--landing-container-margin));
 }
@@ -15,7 +15,7 @@
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-hex: #212121;
-    --border-hex: #a0a0a083;
+    --border-hex: #a0a0a039;
   }
 }
 
