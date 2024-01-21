@@ -6,7 +6,7 @@
   --foreground-rgb: 0, 0, 0;
   --background-hex: #FFFCF0;
   --border-hex: #000;
-  --body-margin: 60px;
+  --body-margin: 0px;
   --landing-container-margin: 90px;
   --landing-container-height: calc(100vh - var(--landing-container-margin));
 }
@@ -15,7 +15,7 @@
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-hex: #212121;
-    --border-hex: #fff;
+    --border-hex: #a0a0a083;
   }
 }
 
@@ -51,7 +51,7 @@ body {
   display: grid;
   grid-template-columns: repeat(var(--columns), 1fr);
   grid-template-rows: repeat(var(--rows), 1fr);
-  border: 1px solid var(--border-hex);
+  border: 0.0125rem solid var(--border-hex);
   border-right: none;
   border-bottom: none;
   position: relative;
@@ -72,7 +72,7 @@ body {
   grid-column-end: span 1;
   grid-row-start: var(--y);
   grid-row-end: span 1;
-  border: 1px solid var(--border-hex);
+  border: 0.0125rem solid var(--border-hex);
   border-left: none;
   border-top: none;
 }
