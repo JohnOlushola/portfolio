@@ -58,7 +58,8 @@ body {
 }
 
 .grid .grid-cell {
-  height: calc(100vh / var(--columns))
+  /* the height should be equal to the width */
+  height: calc(100vw / var(--columns));
 }
 
 .grid-guides {
