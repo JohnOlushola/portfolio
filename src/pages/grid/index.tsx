@@ -6,18 +6,22 @@ export default function GridPage() {
   return (
     <Grid rows={4} columns={4}>
       <GridCell row="auto" column={1}>
-        What
+        <div className="p-2.5 flex flex-col justify-between h-full">
+          <div>
+            <h1 className="">Olushola Temiloluwa John</h1>
+            <p className="opacity-60">Software Engineer</p>
+          </div>
+          <div>
+            <p className="opacity-60">
+              I work as a frontend engineer. I like to build things for
+              designers and developers, and think deeply about the user
+              interface, how it looks, feels, behaves. Also interested in
+              Artificial Intelligence.
+            </p>
+          </div>
+        </div>
       </GridCell>
-      <GridCell row="auto" column={4}>
-        will
-      </GridCell>
-      <GridCell row={2} column={3}>
-        you
-      </GridCell>
-      <GridCell row={3} column={4}>
-        ship
-      </GridCell>
-      <GridCell row={4} column="auto">
+      <GridCell row={4} column={4}>
         ?
       </GridCell>
     </Grid>
