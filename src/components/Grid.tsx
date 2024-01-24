@@ -1,10 +1,9 @@
-import { ReactElement } from "react";
-import { GridCellProps } from "./GridCell";
+import { ReactNode } from "react";
 
 interface GridProps {
   rows: number;
   columns: number;
-  children: ReactElement<GridCellProps>[];
+  children: ReactNode;
 }
 
 export function Grid({ rows, columns, children }: GridProps) {
