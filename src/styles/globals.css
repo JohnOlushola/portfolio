@@ -82,7 +82,7 @@ body {
   @apply p-2.5 overflow-hidden h-full relative;
 }
 
-.resource-caption::after {
+.resource::after {
   content: "";
   background: linear-gradient(to top, rgba(0, 0, 0, 0.9), 50%, rgba(0, 0, 0, 0));
   position: absolute;

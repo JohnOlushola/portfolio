@@ -8,7 +8,7 @@ export interface GridCellProps {
 
 export function GridCell({ row, column, children }: GridCellProps) {
   return (
-    <div className="grid-cell" style={{ gridRow: row, gridColumn: column }}>
+    <div className="grid-cell m-2" style={{ gridRow: row, gridColumn: column }}>
       {children}
     </div>
   );
