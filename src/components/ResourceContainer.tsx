@@ -1,5 +1,4 @@
-import LinkButton from "./LinkButton";
-import { Resource, ResourceType } from "../types/resource";
+import { Resource } from "../types/resource";
 
 interface ResourceContainerProps extends Pick<Resource, "type" | "link"> {
   children: React.ReactNode;
@@ -14,14 +13,13 @@ export default function ResourceContainer({
     <a
       href={link.url}
       target={link.target}
-      className="overflow-hidden relative resource-caption flex h-full"
+      className="overflow-hidden relative flex h-full w-full"
     >
-      {children}
-      {type && <LinkButton text={ResourceType[type]} />}
+      <div className="resource">{children}</div>
     </a>
   ) : (
-    <div className="overflow-hidden relative flex h-full">
-      <div className="resource-caption">{children}</div>
+    <div className="overflow-hidden relative flex h-full w-full">
+      <div className="resource">{children}</div>
     </div>
   );
 }
