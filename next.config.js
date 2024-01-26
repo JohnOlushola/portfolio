@@ -1,3 +1,5 @@
+const isProd = process.env.NODE_ENV === 'production'
+
 /** @type {import('next').NextConfig} */
 const withNextra = require('nextra')({
   theme: './theme.tsx'
@@ -15,5 +17,6 @@ module.exports = withNextra({
       },
     ],
   },
+  assetPrefix: isProd ? 'https://cdn.jtolushola.com' : undefined,
 })
  

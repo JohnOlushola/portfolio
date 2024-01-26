@@ -65,8 +65,14 @@ const projects: Resource[] = [
     media: "text",
   },
   {
-    src: "https://cdn.rauno.me/seek.mp4#t=0.01",
+    title: "TJWHO Storefront",
+    date: "2022 - 2023",
+    src: "/videos/tjwho-short.mp4#t=0.01",
     media: "video",
+    link: {
+      url: "https://tjwho.co",
+      external: true,
+    },
   },
   {
     src: "https://cdn.rauno.me/mercury.mp4#t=0.01",
