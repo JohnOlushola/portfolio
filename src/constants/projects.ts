@@ -28,25 +28,41 @@ const projects: Resource[] = [
     },
   },
   {
-    type: "Post",
-    title: "hello, world",
-    date: "December 2023",
-    src: "https://cdn.rauno.me/ios-radial-menu.mp4#t=0.01",
-    media: "video",
+    title: "Algorithmic Bias Mitigation",
+    date: "2022",
+    link: {
+      url: "https://github.com/JohnOlushola/bias-mitigation",
+      external: true,
+    },
+    description:
+      "Mitigating algorithmic bias using regularisation and reweighing with bi-objective (accuracy and fairness) measure",
+    src: "",
+    media: "text",
   },
   {
-    title: "SwiftUI Bezel Dock",
-    date: "December 2023",
-    src: "https://cdn.rauno.me/bezels2.mp4#t=0.01",
-    media: "video",
+    title: "Climate Change: Adaptation with Directed Chaos",
+    date: "2022",
+    link: {
+      url: "https://github.com/JohnOlushola/adaptive_climate_pathways",
+      external: true,
+    },
+    description:
+      'Leveraging the widely recognized logistic map, the climate system is directed through growth, decay, stable, or chaotic regimes to generate unique pathways, hence the term "Directed Chaos."',
+    src: "",
+    media: "text",
   },
   {
-    src: "https://cdn.rauno.me/wheel-input-3.mp4#t=0.01",
-    media: "video",
-  },
-  {
-    src: "https://cdn.rauno.me/uig.mp4#t=0.01",
-    media: "video",
+    title: "Spending Classifier",
+    date: "2022",
+    link: {
+      url: "https://github.com/JohnOlushola/political_spending_uk",
+      external: true,
+    },
+    // TODO: Review description
+    description:
+      "Built a classifier that takes invoices of political parties of the UK and classifies them into categories. The classifier is built using a CNN and trained on a dataset of 5,000+ invoices.",
+    src: "",
+    media: "text",
   },
   {
     src: "https://cdn.rauno.me/seek.mp4#t=0.01",
