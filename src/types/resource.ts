@@ -16,6 +16,7 @@ export interface Resource {
   link?: {
     url: string;
     target?: HTMLAttributeAnchorTarget;
+    external?: boolean;
   };
 }
 

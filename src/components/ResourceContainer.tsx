@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Resource } from "../types/resource";
 
 interface ResourceContainerProps extends Pick<Resource, "type" | "link"> {
@@ -9,14 +10,16 @@ export default function ResourceContainer({
   link,
   children,
 }: ResourceContainerProps) {
+  const LinkComponent = link?.external ? "a" : Link;
+
   return link ? (
-    <a
+    <LinkComponent
       href={link.url}
       target={link.target}
       className="overflow-hidden relative flex h-full w-full"
     >
       <div className="resource">{children}</div>
-    </a>
+    </LinkComponent>
   ) : (
     <div className="overflow-hidden relative flex h-full w-full">
       <div className="resource">{children}</div>
