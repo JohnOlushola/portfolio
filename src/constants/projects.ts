@@ -70,7 +70,7 @@ const projects: Resource[] = [
     src: "/videos/tjwho-short.mp4#t=0.01",
     media: "video",
     link: {
-      url: "https://tjwho.co",
+      url: "https://www.tjwho.co",
       external: true,
     },
   },
