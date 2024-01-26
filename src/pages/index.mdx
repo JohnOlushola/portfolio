@@ -9,7 +9,7 @@ import VideoResource from "../components/VideoResource";
 import PictureResource from "../components/PictureResource";
 import { projects, columns, rows } from "../constants/projects";
 
-<div className="flex flex-col h-full min-h-screen">
+<div className="flex flex-col">
   <Grid rows={rows} columns={columns}>
     <GridCell row="auto" column={1}>
       <div className="p-2.5 flex flex-col justify-between h-full">
@@ -37,7 +37,5 @@ import { projects, columns, rows } from "../constants/projects";
         )}
       </GridCell>
     ))}
-
   </Grid>
-
 </div>

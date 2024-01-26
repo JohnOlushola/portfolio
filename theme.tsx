@@ -5,7 +5,7 @@ export default function Layout({ children, pageOpts }: NextraThemeLayoutProps) {
   const { title, frontMatter } = pageOpts;
 
   return (
-    <main>
+    <div className="flex flex-col h-full min-h-screen">
       <Head>
         <title>{title}</title>
         <meta name="og:image" content={frontMatter.image} />
@@ -22,6 +22,6 @@ export default function Layout({ children, pageOpts }: NextraThemeLayoutProps) {
           </text>
         </svg>
       </div>
-    </main>
+    </div>
   );
 }
