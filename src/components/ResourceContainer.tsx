@@ -15,7 +15,7 @@ export default function ResourceContainer({
   return link ? (
     <LinkComponent
       href={link.url}
-      target={link.target}
+      target={link.external ? "_blank" : "_self"}
       className="overflow-hidden relative flex h-full w-full"
     >
       <div className="resource">{children}</div>

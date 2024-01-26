@@ -1,4 +1,7 @@
-const projects = [
+import { ImageLoaderProps } from "next/image";
+import { Resource } from "../types/resource";
+
+const projects: Resource[] = [
   {
     type: "Prototype",
     title: "Animated Signature",
@@ -8,6 +11,21 @@ const projects = [
     },
     src: "https://cdn.rauno.me/graph-slider-2.mp4#t=0.01",
     media: "video",
+  },
+  {
+    title: "New Year's Resolutions? No",
+    date: "Mar 2, 2020",
+    link: {
+      url: "https://medium.com/@jtolushola/new-years-resolutions-no-d0de5e115371",
+      external: true,
+    },
+    description:
+      "I don't quite agree with the idea of New Year's Resolutions. It hardly ever works, not for me at least.",
+    src: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*USMLKZubYe-HbcxSdPNbtQ.jpeg",
+    media: "image",
+    imageLoader: ({ src }: ImageLoaderProps) => {
+      return src;
+    },
   },
   {
     type: "Post",

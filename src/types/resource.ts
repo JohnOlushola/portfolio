@@ -1,3 +1,4 @@
+import { ImageLoader } from "next/image";
 import { HTMLAttributeAnchorTarget } from "react";
 
 export enum ResourceType {
@@ -10,14 +11,15 @@ export interface Resource {
   src: string;
   title?: string;
   date?: string;
+  description?: string;
   type?: keyof typeof ResourceType;
-  media?: "video" | "image";
+  media?: "video" | "image" | "text";
   alt?: string;
   link?: {
     url: string;
-    target?: HTMLAttributeAnchorTarget;
     external?: boolean;
   };
+  imageLoader?: ImageLoader;
 }
 
 export interface PictureResource extends Resource {
