@@ -4,6 +4,16 @@ const withNextra = require('nextra')({
 })
  
 module.exports = withNextra({
-  reactStrictMode: true
+  reactStrictMode: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'miro.medium.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
 })
  
