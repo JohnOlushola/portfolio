@@ -11,17 +11,18 @@ export default function ResourceContainer({
   children,
 }: ResourceContainerProps) {
   const LinkComponent = link?.external ? "a" : Link;
+  const className = "overflow-hidden relative flex h-full w-full hover:ring-2 hover:ring-[#7AE582] focus:ring-2 focus:ring-[#7AE582]";
 
   return link ? (
     <LinkComponent
       href={link.url}
       target={link.external ? "_blank" : "_self"}
-      className="overflow-hidden relative flex h-full w-full"
+      className={className}
     >
       <div className="resource">{children}</div>
     </LinkComponent>
   ) : (
-    <div className="overflow-hidden relative flex h-full w-full">
+    <div className={className}>
       <div className="resource">{children}</div>
     </div>
   );
