@@ -38,18 +38,18 @@ const projects: Resource[] = [
       external: true,
     },
   },
-  {
-    title: "Climate Change: Adaptation with Directed Chaos",
-    date: 2022,
-    link: {
-      url: "https://github.com/JohnOlushola/adaptive_climate_pathways",
-      external: true,
-    },
-    description:
-      '"Controlled" logistic map to create climate pathways for adaptation',
-    src: "",
-    media: "text",
-  },
+  // {
+  //   title: "Climate Change: Adaptation with Directed Chaos",
+  //   date: 2022,
+  //   link: {
+  //     url: "https://github.com/JohnOlushola/adaptive_climate_pathways",
+  //     external: true,
+  //   },
+  //   description:
+  //     '"Controlled" logistic map to create climate pathways for adaptation',
+  //   src: "",
+  //   media: "text",
+  // },
   // {
   //   title: "Spending Classifier",
   //   date: 2022,
