@@ -1,6 +1,6 @@
 interface CaptionProps {
   title?: string;
-  date?: string;
+  date?: number;
 }
 
 export default function Caption({ title, date }: CaptionProps) {

@@ -10,7 +10,7 @@ export enum ResourceType {
 export interface Resource {
   src: string;
   title?: string;
-  date?: string;
+  date?: number;
   description?: string;
   type?: keyof typeof ResourceType;
   media?: "video" | "image" | "text";
