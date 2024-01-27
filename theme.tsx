@@ -26,26 +26,30 @@ export default function Layout({ children, pageOpts }: NextraThemeLayoutProps) {
 
         <hr className="my-1" />
 
-        <ul className="inline-flex gap-x-2 w-full justify-center items-center align-middle border border-b">
-          <li>
-            <a
-              href=" https://twitter.com/jtolushola"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
-          </li>
-          <li>
-            <a
-              href="mailto:johntemiloluwa.o@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Email
-            </a>
-          </li>
-        </ul>
+        <div className="py-2">
+          <ul className="list-disc inline-flex gap-4 w-full justify-center items-center align-middle">
+            <li>
+              <a
+                href="https://github.com/JohnOlushola"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-opacity-60"
+              >
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:johntemiloluwa.o@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-opacity-60"
+              >
+                Email
+              </a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );
