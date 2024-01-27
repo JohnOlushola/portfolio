@@ -74,6 +74,30 @@ const projects: Resource[] = [
       external: true,
     },
   },
+  {
+    title: "Debugging is an Art",
+    date: 2019,
+    link: {
+      url: "https://jtolushola.medium.com/debugging-is-an-art-530b0323f9e5",
+      external: true,
+    },
+    description:
+      "Quite an opinionated piece on debugging, but might be worth a read. Written by my younger self.",
+    src: "",
+    media: "text",
+  },
+  {
+    title: "Starting Your Journey as a Developer",
+    date: 2019,
+    link: {
+      url: "https://jtolushola.medium.com/debugging-is-an-art-530b0323f9e5",
+      external: true,
+    },
+    description:
+      "There’s always a beginning to a journey and this one is not different. So how about a first hand story of a great one?",
+    src: "",
+    media: "text",
+  },
 ].sort((a, b) => b.date - a.date) as Resource[];
 
 const columns = 4;
