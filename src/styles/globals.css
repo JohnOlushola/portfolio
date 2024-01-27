@@ -49,8 +49,8 @@ body {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(var(--columns), 1fr);
-  grid-template-rows: repeat(var(--rows), 1fr);
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(1, 1fr);
   border: 0.0125rem solid var(--border-hex);
   border-right: none;
   border-bottom: none;
@@ -59,7 +59,7 @@ body {
 
 .grid .grid-cell {
   /* the height should be equal to the width */
-  height: calc(100vw / var(--columns));
+  height: 100vw;
 }
 
 .grid-guides {
@@ -92,3 +92,40 @@ body {
   transition: opacity 200ms ease 0s;
   pointer-events: none;
 }
+
+@media screen(sm) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .grid .grid-cell {
+    /* the height should be equal to the width */
+    height: calc(100vw / 2);
+  }
+}
+
+@media screen(md) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .grid .grid-cell {
+    /* the height should be equal to the width */
+    height: calc(100vw / 3);
+  }
+}
+
+@media screen(lg) {
+  .grid {
+    grid-template-columns: repeat(var(--columns), 1fr);
+    grid-template-rows: repeat(var(--rows), 1fr);
+  }
+
+  .grid .grid-cell {
+    /* the height should be equal to the width */
+    height: calc(100vw / var(--columns));
+  }
+}
+

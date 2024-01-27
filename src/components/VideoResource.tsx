@@ -19,7 +19,7 @@ export default function VideoResource({
         playsInline
         loop
         muted
-        className="h-full w-full object-cover"
+        className="h-full w-full object-center object-cover"
       />
       <Caption title={title} date={date} />
     </ResourceContainer>
