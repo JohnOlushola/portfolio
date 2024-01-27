@@ -10,9 +10,9 @@ const projects: Resource[] = [
       external: true,
     },
     description:
-      "I don't quite agree with the idea of New Year's Resolutions. It hardly ever works, not for me at least.",
+      "Every new year, we find ourselves writing down a list of goals for the new year, our determination is usually a 100% and we picture of ourselves achieving those goals, we even share it with our friends and family but here’s the interesting part.",
     src: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*USMLKZubYe-HbcxSdPNbtQ.jpeg",
-    media: "image",
+    media: "text",
     imageLoader: ({ src }: ImageLoaderProps) => {
       return src;
     },
