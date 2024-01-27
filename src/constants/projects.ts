@@ -10,7 +10,7 @@ const projects: Resource[] = [
       external: true,
     },
     description:
-      "Every new year, we find ourselves writing down a list of goals for the new year, our determination is usually a 100% and we picture of ourselves achieving those goals, we even share it with our friends and family but here’s the interesting part.",
+      "New year, new me? Nah ...",
     src: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*USMLKZubYe-HbcxSdPNbtQ.jpeg",
     media: "text",
     imageLoader: ({ src }: ImageLoaderProps) => {
@@ -25,7 +25,7 @@ const projects: Resource[] = [
       external: true,
     },
     description:
-      "Mitigating algorithmic bias using regularisation and reweighing with bi-objective (accuracy and fairness) measure",
+      "Using regularisation and reweighing with bi-objective measure",
     src: "",
     media: "text",
   },
@@ -47,7 +47,7 @@ const projects: Resource[] = [
       external: true,
     },
     description:
-      'Leveraging the widely recognized logistic map, the climate system is directed through growth, decay, stable, or chaotic regimes to generate unique pathways, hence the term "Directed Chaos."',
+      '"Controlled" logistic map to create climate pathways for adaptation',
     src: "",
     media: "text",
   },
@@ -59,8 +59,7 @@ const projects: Resource[] = [
       external: true,
     },
     // TODO: Review description
-    description:
-      "Built a classifier that takes invoices of political parties of the UK and classifies them into categories. The classifier is built using a CNN and trained on a dataset of 5,000+ invoices.",
+    description: "Applying machine learning to corruption analysis",
     src: "",
     media: "text",
   },
@@ -81,8 +80,7 @@ const projects: Resource[] = [
       url: "https://jtolushola.medium.com/debugging-is-an-art-530b0323f9e5",
       external: true,
     },
-    description:
-      "Quite an opinionated piece on debugging, but might be worth a read. Written by my younger self.",
+    description: "Opinionated take on debugging, written by my younger self",
     src: "",
     media: "text",
   },
@@ -93,8 +91,7 @@ const projects: Resource[] = [
       url: "https://jtolushola.medium.com/debugging-is-an-art-530b0323f9e5",
       external: true,
     },
-    description:
-      "There’s always a beginning to a journey and this one is not different. So how about a first hand story of a great one?",
+    description: "The beginning, enjoy!",
     src: "",
     media: "text",
   },

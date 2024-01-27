@@ -16,11 +16,11 @@ export default function VideoResource({
 }: TestResourceProps) {
   return (
     <ResourceContainer link={link} type={type}>
-      <div className="h-full flex flex-col justify-center w-3/4 mx-auto">
-        <p className="text-lg">{title}</p>
-        <p className="opacity-60">{description}</p>
+      <div className="h-full w-full flex flex-col justify-center items-center p-4 md:p-6 lg:p-12">
+        <p className="lg:text-lg w-full">{title}</p>
+        <p className="opacity-60 w-full">{description}</p>
       </div>
-      <Caption title={title} date={date} />
+      <Caption date={date} />
     </ResourceContainer>
   );
 }
