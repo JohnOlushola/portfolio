@@ -9,8 +9,7 @@ const projects: Resource[] = [
       url: "https://medium.com/@jtolushola/new-years-resolutions-no-d0de5e115371",
       external: true,
     },
-    description:
-      "New year, new me? Nah ...",
+    description: "New year, new me? Nah ...",
     src: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*USMLKZubYe-HbcxSdPNbtQ.jpeg",
     media: "text",
     imageLoader: ({ src }: ImageLoaderProps) => {
@@ -94,6 +93,17 @@ const projects: Resource[] = [
     description: "The beginning, enjoy!",
     src: "",
     media: "text",
+  },
+  {
+    title: "Bookstore",
+    date: 2020,
+    link: {
+      url: "https://johnolushola.github.io/bookstore/",
+      external: true,
+    },
+    description: "The beginning, enjoy!",
+    src: "/images/bookstore.png",
+    media: "image",
   },
 ].sort((a, b) => b.date - a.date) as Resource[];
 
