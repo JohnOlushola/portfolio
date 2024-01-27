@@ -10,17 +10,42 @@ export default function Layout({ children, pageOpts }: NextraThemeLayoutProps) {
         <title>{title}</title>
         <meta name="og:image" content={frontMatter.image} />
       </Head>
-      <div style={{ border: "1px solid" }}>{children}</div>
-      <div className="h-auto mt-auto border-y text-justify">
-        <svg
-          viewBox="0 0 100 18"
-          xmlns="http://www.w3.org/2000/svg"
-          className="dark:fill-white"
-        >
-          <text x="2" y="14">
-            JTOLUSHOLA
-          </text>
-        </svg>
+      <div>{children}</div>
+      <div className="mt-auto">
+        <div>
+          <svg
+            viewBox="0 0 100 18"
+            xmlns="http://www.w3.org/2000/svg"
+            className="dark:fill-white"
+          >
+            <text x="2" y="14">
+              JTOLUSHOLA
+            </text>
+          </svg>
+        </div>
+
+        <hr className="my-1" />
+
+        <ul className="inline-flex gap-x-2 w-full justify-center items-center align-middle border border-b">
+          <li>
+            <a
+              href=" https://twitter.com/jtolushola"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a
+              href="mailto:johntemiloluwa.o@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Email
+            </a>
+          </li>
+        </ul>
       </div>
     </div>
   );
