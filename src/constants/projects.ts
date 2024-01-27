@@ -67,7 +67,7 @@ const projects: Resource[] = [
   {
     title: "TJWHO Storefront",
     date: "2022 - 2023",
-    src: "/videos/tjwho-short.mp4#t=0.01",
+    src: "/videos/tjwho.mp4",
     media: "video",
     link: {
       url: "https://www.tjwho.co",
