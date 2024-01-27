@@ -50,18 +50,18 @@ const projects: Resource[] = [
     src: "",
     media: "text",
   },
-  {
-    title: "Spending Classifier",
-    date: 2022,
-    link: {
-      url: "https://github.com/JohnOlushola/political_spending_uk",
-      external: true,
-    },
-    // TODO: Review description
-    description: "Applying machine learning to corruption analysis",
-    src: "",
-    media: "text",
-  },
+  // {
+  //   title: "Spending Classifier",
+  //   date: 2022,
+  //   link: {
+  //     url: "https://github.com/JohnOlushola/political_spending_uk",
+  //     external: true,
+  //   },
+  //   // TODO: Review description
+  //   description: "Applying machine learning to corruption analysis",
+  //   src: "",
+  //   media: "text",
+  // },
   {
     title: "Canvas Drawing - Apple Airpods Pro",
     date: 2021,
@@ -104,6 +104,17 @@ const projects: Resource[] = [
     description: "The beginning, enjoy!",
     src: "/images/bookstore.png",
     media: "image",
+  },
+  {
+    title: "Animated Signature",
+    date: 2022,
+    link: {
+      url: "https://codesandbox.io/p/sandbox/animated-signature-wpfc87?file=%2Findex.html%3A24%2C8",
+      external: true,
+    },
+    description: "The beginning, enjoy!",
+    src: "/videos/animated-signature.mp4",
+    media: "video",
   },
 ].sort((a, b) => b.date - a.date) as Resource[];
 
