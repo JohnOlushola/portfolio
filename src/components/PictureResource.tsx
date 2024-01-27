@@ -23,7 +23,7 @@ export default function PictureResource({
         alt={alt}
         width={500}
         height={500}
-        className="h-full w-full object-cover"
+        className="h-full w-full object-contain object-center"
         loader={imageLoader}
       />
       <Caption title={title} date={date} />

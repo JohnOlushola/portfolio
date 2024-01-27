@@ -67,8 +67,8 @@ const projects: Resource[] = [
   {
     title: "Canvas Drawing - Apple Airpods Pro",
     date: 2021,
-    src: "/videos/airpods-pro.mp4",
-    media: "video",
+    src: "/images/airpods-pro.png",
+    media: "image",
     link: {
       url: "https://airpods-pro.jtolushola.com/",
       external: true,
