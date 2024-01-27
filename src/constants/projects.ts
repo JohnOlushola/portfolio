@@ -3,18 +3,8 @@ import { Resource } from "../types/resource";
 
 const projects: Resource[] = [
   {
-    type: "Prototype",
-    title: "Animated Signature",
-    date: "May 2023",
-    link: {
-      url: "/projects/animated-signature",
-    },
-    src: "https://cdn.rauno.me/graph-slider-2.mp4#t=0.01",
-    media: "video",
-  },
-  {
     title: "New Year's Resolutions? No",
-    date: "Mar 2, 2020",
+    date: 2020,
     link: {
       url: "https://medium.com/@jtolushola/new-years-resolutions-no-d0de5e115371",
       external: true,
@@ -29,7 +19,7 @@ const projects: Resource[] = [
   },
   {
     title: "Algorithmic Bias Mitigation",
-    date: "2022",
+    date: 2022,
     link: {
       url: "https://github.com/JohnOlushola/bias-mitigation",
       external: true,
@@ -40,8 +30,18 @@ const projects: Resource[] = [
     media: "text",
   },
   {
+    title: "TJWHO Storefront",
+    date: 2023,
+    src: "/videos/tjwho.mp4",
+    media: "video",
+    link: {
+      url: "https://www.tjwho.co",
+      external: true,
+    },
+  },
+  {
     title: "Climate Change: Adaptation with Directed Chaos",
-    date: "2022",
+    date: 2022,
     link: {
       url: "https://github.com/JohnOlushola/adaptive_climate_pathways",
       external: true,
@@ -53,7 +53,7 @@ const projects: Resource[] = [
   },
   {
     title: "Spending Classifier",
-    date: "2022",
+    date: 2022,
     link: {
       url: "https://github.com/JohnOlushola/political_spending_uk",
       external: true,
@@ -65,20 +65,16 @@ const projects: Resource[] = [
     media: "text",
   },
   {
-    title: "TJWHO Storefront",
-    date: "2022 - 2023",
-    src: "/videos/tjwho.mp4",
+    title: "Canvas Drawing - Apple Airpods Pro",
+    date: 2021,
+    src: "/videos/airpods-pro.mp4",
     media: "video",
     link: {
-      url: "https://www.tjwho.co",
+      url: "https://airpods-pro.jtolushola.com/",
       external: true,
     },
   },
-  {
-    src: "https://cdn.rauno.me/mercury.mp4#t=0.01",
-    media: "video",
-  },
-];
+].sort((a, b) => b.date - a.date) as Resource[];
 
 const columns = 4;
 const rows = Math.ceil((projects.length + 1) / columns);
