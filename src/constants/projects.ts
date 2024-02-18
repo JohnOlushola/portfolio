@@ -9,7 +9,7 @@ const projects: Resource[] = [
       url: "https://medium.com/@jtolushola/new-years-resolutions-no-d0de5e115371",
       external: true,
     },
-    description: "New year, new me? Nah ...",
+    description: "New year, new me? Nah",
     src: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*USMLKZubYe-HbcxSdPNbtQ.jpeg",
     media: "text",
     imageLoader: ({ src }: ImageLoaderProps) => {
