@@ -105,7 +105,7 @@ body {
   }
 }
 
-@media screen(md) {
+@media screen(lg) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: auto;
@@ -117,7 +117,7 @@ body {
   }
 }
 
-@media screen(lg) {
+@media screen(xl) {
   .grid {
     grid-template-columns: repeat(var(--columns), 1fr);
     grid-template-rows: repeat(var(--rows), 1fr);
