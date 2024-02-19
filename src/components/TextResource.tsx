@@ -7,7 +7,6 @@ interface TestResourceProps extends Resource {
 }
 
 export default function VideoResource({
-  src,
   title,
   date,
   link,
@@ -16,11 +15,11 @@ export default function VideoResource({
 }: TestResourceProps) {
   return (
     <ResourceContainer link={link} type={type}>
-      <div className="h-full w-full flex flex-col justify-center items-center p-4 md:p-6 lg:p-12">
-        <p className="lg:text-lg w-full">{title}</p>
-        <p className="opacity-60 w-full">{description}</p>
+      <div className="px-4 py-2.5 flex flex-col justify-end h-full">
+        <h2>{title}</h2>
+        <p className="opacity-60">{description}</p>
       </div>
-      <Caption date={date} />
+      <Caption title="" date={date} />
     </ResourceContainer>
   );
 }
