@@ -10,11 +10,11 @@ const projects: Resource[] = [
       external: true,
     },
     description: "New year, new me? Nah",
-    src: "https://miro.medium.com/v2/resize:fit:1400/format:webp/1*USMLKZubYe-HbcxSdPNbtQ.jpeg",
-    media: "text",
-    imageLoader: ({ src }: ImageLoaderProps) => {
-      return src;
-    },
+    src: "/images/logos.webp",
+    media: "image",
+    // imageLoader: ({ src }: ImageLoaderProps) => {
+    //   return src;
+    // },
   },
   {
     title: "Algorithmic Bias Mitigation",
@@ -25,8 +25,8 @@ const projects: Resource[] = [
     },
     description:
       "Using regularisation and reweighing with bi-objective measure",
-    src: "",
-    media: "text",
+    src: "/images/optic.webp",
+    media: "image",
   },
   {
     title: "TJWHO Storefront",
@@ -80,8 +80,8 @@ const projects: Resource[] = [
       external: true,
     },
     description: "Opinionated take on debugging, written by my younger self",
-    src: "",
-    media: "text",
+    src: "/videos/laurent.mp4",
+    media: "video",
   },
   {
     title: "Starting Your Journey as a Developer",
@@ -91,8 +91,8 @@ const projects: Resource[] = [
       external: true,
     },
     description: "The beginning, enjoy!",
-    src: "",
-    media: "text",
+    src: "/images/color.webp",
+    media: "image",
   },
   {
     title: "Bookstore",

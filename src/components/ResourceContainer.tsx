@@ -12,7 +12,7 @@ export default function ResourceContainer({
 }: ResourceContainerProps) {
   const LinkComponent = link?.external ? "a" : Link;
   const className =
-    "overflow-hidden relative flex h-full w-full hover:ring-2 hover:ring-green-500 focus:ring-2 focus:ring-gray-500";
+    "overflow-hidden relative flex h-full w-full hover:ring-2 hover:ring-green-500 focus-visible:ring-green-500 focus:ring-2 focus:ring-gray-500";
 
   return link ? (
     <LinkComponent
