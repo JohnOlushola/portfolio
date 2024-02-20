@@ -2,7 +2,6 @@
 title: Olushola Temiloluwa John
 ---
 
-import React from "react";
 import { Grid } from "../components/Grid";
 import { GridCell } from "../components/GridCell";
 import VideoResource from "../components/VideoResource";
@@ -11,8 +10,8 @@ import TextResource from "../components/TextResource";
 import { projects, columns, rows } from "../constants/projects";
 
 <div className="flex flex-col">
-  <Grid rows={rows} columns={columns}>
-    <GridCell row="auto" column={1}>
+  <Grid>
+    {/* <GridCell row="auto" column={1}>
       <div className="p-2.5 flex flex-col justify-between h-full">
         <div>
           <h1 className="">Olushola Temiloluwa John</h1>
@@ -27,7 +26,7 @@ import { projects, columns, rows } from "../constants/projects";
           </p>
         </div>
       </div>
-    </GridCell>
+    </GridCell> */}
 
     {projects.map((resource, index) => (
       <GridCell key={index} row={"auto"} column={"auto"}>

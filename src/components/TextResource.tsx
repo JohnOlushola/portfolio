@@ -19,7 +19,7 @@ export default function VideoResource({
         <h2>{title}</h2>
         <p className="opacity-60">{description}</p>
       </div>
-      <Caption title="" date={date} />
+      <Caption date={date} />
     </ResourceContainer>
   );
 }
