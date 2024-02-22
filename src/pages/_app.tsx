@@ -14,7 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <div
       className={`flex flex-col h-full min-h-screen ${customFont.className}`}
     >
-      <nav className="flex justify-between items-center border-b py-2">
+      <nav className="flex justify-between items-center border-b py-2.5">
         <Link href="/" className="text-opacity-60">
           Olushola Temiloluwa
         </Link>
@@ -47,7 +47,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
         <hr className="my-1" />
 
-        <div className="py-2">
+        <div className="py-2.5">
           <ul className="inline-flex gap-4 w-full justify-center items-center align-middle">
             <li>
               <Link
