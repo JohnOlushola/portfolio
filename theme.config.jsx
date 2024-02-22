@@ -1,12 +1,17 @@
 /* eslint-disable import/no-anonymous-default-export */
 export default {
-  head: (
+  footer: false,
+  head: ({ title, meta }) => (
     <>
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta property="og:title" content="Olushola Temiloluwa" />
-      <meta property="og:description" content="Portfolio" />
+      {meta.description && (
+        <meta name="description" content={meta.description} />
+      )}
+      {meta.tag && <meta name="keywords" content={meta.tag} />}
+      {meta.author && <meta name="author" content={meta.author} />}
     </>
   ),
-  navigation: true,
-  footer: false,
+  readMore: 'Read More →',
+  postFooter: null,
+  darkMode: false,
+  navs: null
 }
