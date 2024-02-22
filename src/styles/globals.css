@@ -22,7 +22,8 @@
 body {
   color: rgb(var(--foreground-rgb));
   background: var(--background-hex);
-  margin: var(--body-margin);
+  margin-left: var(--body-margin);
+  margin-right: var(--body-margin);
 }
 
 /* Resets */
