@@ -50,24 +50,34 @@ export default function App({ Component, pageProps }: AppProps) {
         <div className="py-2.5">
           <ul className="inline-flex gap-4 w-full justify-center items-center align-middle">
             <li>
-              <Link
+              <a
                 href="https://github.com/JohnOlushola"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-opacity-60"
               >
                 GitHub
-              </Link>
+              </a>
             </li>
             <li>
-              <Link
+              <a
                 href="mailto:johntemiloluwa.o@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-opacity-60"
               >
                 Email
-              </Link>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/jtolushola/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-opacity-60"
+              >
+                LinkedIn
+              </a>
             </li>
           </ul>
         </div>
