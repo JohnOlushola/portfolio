@@ -16,18 +16,19 @@ const projects: Resource[] = [
   //   //   return src;
   //   // },
   // },
-  {
-    title: "Algorithmic Bias Mitigation",
-    date: 2022,
-    link: {
-      url: "https://github.com/JohnOlushola/bias-mitigation",
-      external: true,
-    },
-    description:
-      "Using regularisation and reweighing with bi-objective measure",
-    src: "/images/optic.webp",
-    media: "image",
-  },
+  // {
+  //   title:
+  //     "Using regularisation and reweighing to mitigate bias in machine learning models",
+  //   date: 2022,
+  //   link: {
+  //     url: "https://github.com/JohnOlushola/bias-mitigation",
+  //     external: true,
+  //   },
+  //   description:
+  //     "Regularisation and reweighing to mitigate bias in machine learning models",
+  //   src: "/images/equation-1.jpeg",
+  //   media: "image",
+  // },
   {
     title: "TJWHO Storefront",
     date: 2023,
