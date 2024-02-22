@@ -1,7 +1,8 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import localFont from "next/font/local";
-import Header from "../components/Header";
+import { VercelToolbar } from "@vercel/toolbar/next";
+import Link from "next/link";
 
 // Font files can be colocated inside of `pages`
 const customFont = localFont({
@@ -10,9 +11,77 @@ const customFont = localFont({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <main className={customFont.className}>
-      <Header />
+    <div
+      className={`flex flex-col h-full min-h-screen ${customFont.className}`}
+    >
+      <nav className="flex justify-between items-center border-b py-2.5">
+        <Link href="/" className="text-opacity-60">
+          Olushola Temiloluwa
+        </Link>
+
+        <ul className="flex gap-4">
+          <li>
+            <Link href="/about" className="text-opacity-60">
+              About
+            </Link>
+          </li>
+        </ul>
+      </nav>
+
       <Component {...pageProps} />
-    </main>
+
+      <VercelToolbar />
+
+      <footer className="mt-auto border-t">
+        <div>
+          <svg
+            viewBox="0 0 100 18"
+            xmlns="http://www.w3.org/2000/svg"
+            className="dark:fill-white"
+          >
+            <text x="2" y="14">
+              JTOLUSHOLA
+            </text>
+          </svg>
+        </div>
+
+        <hr className="my-1" />
+
+        <div className="py-2.5">
+          <ul className="inline-flex gap-4 w-full justify-center items-center align-middle">
+            <li>
+              <a
+                href="https://github.com/JohnOlushola"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-opacity-60"
+              >
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:johntemiloluwa.o@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-opacity-60"
+              >
+                Email
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.linkedin.com/in/jtolushola/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-opacity-60"
+              >
+                LinkedIn
+              </a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </div>
   );
 }

@@ -1,26 +1,30 @@
-import PageHead from "../components/PageHead";
-import NavBar from "../components/NavBar";
+import { Grid } from "../components/Grid";
+import { GridCell } from "../components/GridCell";
+import VideoResource from "../components/VideoResource";
+import PictureResource from "../components/PictureResource";
+import TextResource from "../components/TextResource";
+import { projects } from "../constants/projects";
 
-export default function Home() {
+export const Home = () => {
   return (
-    <>
-      <PageHead title="JTOLUSHOLA" description="John Temiloluwa Olushola" />
-
-      <div className="landing-container dark:text-white dark:border-white">
-        <NavBar />
-
-        <div className="h-auto mt-auto border-y text-justify">
-          <svg
-            viewBox="0 0 100 18"
-            xmlns="http://www.w3.org/2000/svg"
-            className="dark:fill-white"
-          >
-            <text x="2" y="14">
-              JTOLUSHOLA
-            </text>
-          </svg>
-        </div>
-      </div>
-    </>
+    <div className="flex flex-col">
+      <Grid>
+        {projects.map((resource, index) => (
+          <GridCell key={index} row={"auto"} column={"auto"}>
+            {resource.media === "video" ? (
+              <VideoResource {...resource} />
+            ) : resource.media === "image" ? (
+              <PictureResource {...resource} alt="" />
+            ) : resource.media === "text" ? (
+              <TextResource {...resource} description="" />
+            ) : (
+              <div></div>
+            )}
+          </GridCell>
+        ))}
+      </Grid>
+    </div>
   );
-}
+};
+
+export default Home;

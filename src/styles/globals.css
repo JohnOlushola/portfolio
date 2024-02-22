@@ -4,9 +4,9 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-hex: #FFFCF0;
-  --border-hex: #000;
-  --body-column-margin: 20px;
+  --background-hex: #FFFFFF;
+  --border-hex: #00000079;
+  --body-margin: 20px;
   --landing-container-margin: 90px;
   --landing-container-height: calc(100vh - var(--landing-container-margin));
 }
@@ -14,16 +14,16 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-hex: #000;
-    --border-hex: #FFF;
+    --background-hex: #212121;
+    --border-hex: #a0a0a039;
   }
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: var(--background-hex);
-  max-width: 95%;
-  margin: var(--body-column-margin) auto;
+  margin-left: var(--body-margin);
+  margin-right: var(--body-margin);
 }
 
 /* Resets */
@@ -47,3 +47,86 @@ body {
   padding-left: 5px;
   padding-right: 5px;
 }
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  border: 0.0125rem solid var(--border-hex);
+  border-right: none;
+  border-bottom: none;
+  position: relative;
+}
+
+.grid .grid-cell {
+  /* the height should be equal to the width */
+  height: 100vw;
+}
+
+.grid-guides {
+  display: contents;
+}
+
+.grid-guide {
+  inset: 0px;
+  position: absolute;
+  grid-column-start: var(--x);
+  grid-column-end: span 1;
+  grid-row-start: var(--y);
+  grid-row-end: span 1;
+  border: 0.0125rem solid var(--border-hex);
+  border-left: none;
+  border-top: none;
+}
+
+.container {
+  @apply p-2.5 overflow-hidden h-full relative;
+}
+
+.resource::after {
+  content: "";
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), 50%, rgba(0, 0, 0, 0));
+  position: absolute;
+  width: 100%;
+  height: 200px;
+  bottom: -64px;
+  transition: opacity 200ms ease 0s;
+  pointer-events: none;
+}
+
+@media screen(sm) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .grid .grid-cell {
+    /* the height should be equal to the width */
+    height: calc(100vw / 2);
+  }
+}
+
+@media screen(lg) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+  }
+
+  .grid .grid-cell {
+    /* the height should be equal to the width */
+    height: calc(100vw / 3);
+  }
+}
+
+@media screen(xl) {
+  .grid {
+    grid-template-columns: repeat(var(--columns), 1fr);
+    grid-template-rows: repeat(var(--rows), 1fr);
+  }
+
+  .grid .grid-cell {
+    /* the height should be equal to the width */
+    height: calc(100vw / var(--columns));
+  }
+}
+
