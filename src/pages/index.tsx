@@ -4,26 +4,34 @@ import VideoResource from "../components/VideoResource";
 import PictureResource from "../components/PictureResource";
 import TextResource from "../components/TextResource";
 import { projects } from "../constants/projects";
+import Head from "next/head";
 
 export const Home = () => {
   return (
-    <div className="flex flex-col">
-      <Grid>
-        {projects.map((resource, index) => (
-          <GridCell key={index} row={"auto"} column={"auto"}>
-            {resource.media === "video" ? (
-              <VideoResource {...resource} />
-            ) : resource.media === "image" ? (
-              <PictureResource {...resource} alt="" />
-            ) : resource.media === "text" ? (
-              <TextResource {...resource} description="" />
-            ) : (
-              <div></div>
-            )}
-          </GridCell>
-        ))}
-      </Grid>
-    </div>
+    <>
+      <Head>
+        <title>Olushola Temiloluwa</title>
+        <meta name="description" content="Olushola Temiloluwa's portfolio" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <div className="flex flex-col">
+        <Grid>
+          {projects.map((resource, index) => (
+            <GridCell key={index} row={"auto"} column={"auto"}>
+              {resource.media === "video" ? (
+                <VideoResource {...resource} />
+              ) : resource.media === "image" ? (
+                <PictureResource {...resource} alt="" />
+              ) : resource.media === "text" ? (
+                <TextResource {...resource} description="" />
+              ) : (
+                <div></div>
+              )}
+            </GridCell>
+          ))}
+        </Grid>
+      </div>
+    </>
   );
 };
 
