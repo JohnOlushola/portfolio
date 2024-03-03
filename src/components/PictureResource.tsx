@@ -13,7 +13,6 @@ export default function PictureResource({
   title,
   date,
   link,
-  imageLoader,
 }: PictureResourceProps) {
   return (
     <ResourceContainer link={link}>
@@ -24,7 +23,6 @@ export default function PictureResource({
           width={500}
           height={500}
           className="h-full w-full object-contain object-center"
-          loader={imageLoader}
         />
         <Caption title={title} date={date} />
       </div>

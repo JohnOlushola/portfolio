@@ -1,5 +1,3 @@
-import { ImageLoader } from "next/image";
-
 export interface Resource {
   src: string;
   title?: string;
@@ -11,7 +9,6 @@ export interface Resource {
     url: string;
     external?: boolean;
   };
-  imageLoader?: ImageLoader;
 }
 
 export interface PictureResource extends Resource {
