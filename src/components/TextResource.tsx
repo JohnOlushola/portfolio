@@ -1,12 +1,11 @@
 import ResourceContainer from "./ResourceContainer";
-import Caption from "./Caption";
 import { Resource } from "../types/resource";
 
 interface TestResourceProps extends Resource {
   description: string;
 }
 
-export default function VideoResource({
+export default function TextResource({
   title,
   date,
   link,
@@ -19,7 +18,6 @@ export default function VideoResource({
         <h2>{title}</h2>
         <p className="opacity-60">{description}</p>
       </div>
-      <Caption date={date} />
     </ResourceContainer>
   );
 }

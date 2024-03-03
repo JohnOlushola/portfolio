@@ -18,15 +18,17 @@ export default function PictureResource({
 }: PictureResourceProps) {
   return (
     <ResourceContainer link={link} type={type}>
-      <Image
-        src={src}
-        alt={alt}
-        width={500}
-        height={500}
-        className="h-full w-full object-contain object-center"
-        loader={imageLoader}
-      />
-      <Caption title={title} date={date} />
+      <div className="resource">
+        <Image
+          src={src}
+          alt={alt}
+          width={500}
+          height={500}
+          className="h-full w-full object-contain object-center"
+          loader={imageLoader}
+        />
+        <Caption title={title} date={date} />
+      </div>
     </ResourceContainer>
   );
 }

@@ -20,11 +20,9 @@ export default function ResourceContainer({
       target={link.external ? "_blank" : "_self"}
       className={className}
     >
-      <div className="resource">{children}</div>
+      {children}
     </LinkComponent>
   ) : (
-    <div className={className}>
-      <div className="resource">{children}</div>
-    </div>
+    <div className={className}>{children}</div>
   );
 }
