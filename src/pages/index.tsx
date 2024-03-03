@@ -5,6 +5,7 @@ import PictureResource from "../components/PictureResource";
 import TextResource from "../components/TextResource";
 import Head from "next/head";
 import { Resource } from "../types/resource";
+import PageHead from "../components/PageHead";
 
 const projects: Resource[] = [
   {
@@ -66,11 +67,13 @@ const projects: Resource[] = [
 export const Home = () => {
   return (
     <>
-      <Head>
-        <title>Olushola Temiloluwa</title>
-        <meta name="description" content="Olushola Temiloluwa's portfolio" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <PageHead
+        title="Olushola Temiloluwa"
+        description="My interests lie right at the intersection of design and engineering. As
+        a result I am passionate about creating and building things that are
+        both functional and beautiful."
+        image="/images/avatar.jpeg"
+      />
       <div className="flex flex-col">
         <Grid columns={3} rows={Math.ceil(projects.length / 3)}>
           {projects.map((resource, index) => (
