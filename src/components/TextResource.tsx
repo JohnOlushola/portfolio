@@ -2,21 +2,24 @@ import ResourceContainer from "./ResourceContainer";
 import { Resource } from "../types/resource";
 
 interface TestResourceProps extends Resource {
-  description: string;
+  description: React.ReactNode | string;
 }
 
 export default function TextResource({
   title,
-  date,
   link,
-  type,
   description,
 }: TestResourceProps) {
   return (
-    <ResourceContainer link={link} type={type}>
+    <ResourceContainer link={link}>
       <div className="px-4 py-2.5 flex flex-col justify-end h-full">
-        <h2>{title}</h2>
-        <p className="opacity-60">{description}</p>
+        <h2 className="mb-2">{title}</h2>
+
+        {typeof description === "string" ? (
+          <p className="text-sm">{description}</p>
+        ) : (
+          description
+        )}
       </div>
     </ResourceContainer>
   );

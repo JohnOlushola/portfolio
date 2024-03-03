@@ -13,11 +13,10 @@ export default function PictureResource({
   title,
   date,
   link,
-  type,
   imageLoader,
 }: PictureResourceProps) {
   return (
-    <ResourceContainer link={link} type={type}>
+    <ResourceContainer link={link}>
       <div className="resource">
         <Image
           src={src}

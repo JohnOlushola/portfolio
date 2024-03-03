@@ -9,10 +9,9 @@ export default function VideoResource({
   title,
   date,
   link,
-  type,
 }: VideoResourceProps) {
   return (
-    <ResourceContainer link={link} type={type}>
+    <ResourceContainer link={link}>
       <div className="resource">
         <video
           src={src}
