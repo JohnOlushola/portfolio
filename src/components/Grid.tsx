@@ -1,23 +1,12 @@
-import { ReactNode, useEffect, useState } from "react";
-import { projects } from "../constants/projects";
-
-type Breakpoint = "sm" | "md" | "lg" | "xl";
-
-const columnsValue: Record<Breakpoint, number> = {
-  sm: 1,
-  md: 2,
-  lg: 3,
-  xl: 4,
-};
+import { ReactNode } from "react";
 
 interface GridProps {
   children: ReactNode;
+  columns: number;
+  rows: number;
 }
 
-export function Grid({ children }: GridProps) {
-  const columns = 3;
-  const rows = Math.ceil((projects.length + 1) / columns);
-
+export function Grid({ children, columns, rows }: GridProps) {
   return (
     // @ts-ignore
     <div className="grid" style={{ "--rows": rows, "--columns": columns }}>
