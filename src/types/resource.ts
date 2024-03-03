@@ -1,18 +1,10 @@
 import { ImageLoader } from "next/image";
-import { HTMLAttributeAnchorTarget } from "react";
-
-export enum ResourceType {
-  Prototype = "View Prototype",
-  Website = "View Website",
-  Post = "Read Post",
-}
 
 export interface Resource {
   src: string;
   title?: string;
   date?: number;
-  description?: string;
-  type?: keyof typeof ResourceType;
+  description?: React.ReactNode | string;
   media?: "video" | "image" | "text";
   alt?: string;
   link?: {

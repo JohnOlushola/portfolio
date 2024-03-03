@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { Resource } from "../types/resource";
 
-interface ResourceContainerProps
-  extends Pick<Resource, "type" | "link" | "media"> {
+interface ResourceContainerProps extends Pick<Resource, "link" | "media"> {
   children: React.ReactNode;
 }
 
