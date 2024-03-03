@@ -1,5 +1,4 @@
 import Link from "next/link";
-import CommentButton from "./CommentButton";
 
 export function Header() {
   return (
