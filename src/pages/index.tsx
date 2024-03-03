@@ -65,7 +65,7 @@ const projects: Resource[] = [
     src: "/images/bookstore.png",
     media: "image",
   },
-] as const;
+];
 
 export const Home = () => {
   return (
