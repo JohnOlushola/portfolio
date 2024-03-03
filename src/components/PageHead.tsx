@@ -7,7 +7,13 @@ export const PageHead: React.FC<{
   image?: string;
   url?: string;
   twitter?: string;
-}> = ({ title, description, image, url, twitter }) => {
+}> = ({
+  title,
+  description,
+  image,
+  url = "https://www.jtolushola.com/",
+  twitter,
+}) => {
   return (
     <Head>
       <meta charSet="utf-8" />

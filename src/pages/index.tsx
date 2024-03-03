@@ -3,16 +3,12 @@ import { GridCell } from "../components/GridCell";
 import VideoResource from "../components/VideoResource";
 import PictureResource from "../components/PictureResource";
 import TextResource from "../components/TextResource";
-import Head from "next/head";
 import { Resource } from "../types/resource";
+import PageHead from "../components/PageHead";
 
 const projects: Resource[] = [
   {
     title: "Hi, I am Temi",
-    link: {
-      url: "/about",
-      external: false,
-    },
     description: (
       <p className="opacity-60">
         My interests lie right at the intersection of design and engineering. As
@@ -45,7 +41,7 @@ const projects: Resource[] = [
     media: "video",
   },
   {
-    title: "Canvas Drawing - Apple Airpods Pro",
+    title: "Animating images on scroll with Canvas",
     date: 2021,
     src: "/images/airpods-pro.png",
     media: "image",
@@ -55,14 +51,14 @@ const projects: Resource[] = [
     },
   },
   {
-    title: "Bookstore",
+    title: "Built with HTML, CSS and 81.9 KB JS",
     date: 2020,
     link: {
-      url: "https://johnolushola.github.io/bookstore/",
+      url: "https://github.com/JohnOlushola/bookstore",
       external: true,
     },
     description: "The beginning, enjoy!",
-    src: "/images/bookstore.png",
+    src: "/images/bookstore-1.png",
     media: "image",
   },
 ];
@@ -70,11 +66,13 @@ const projects: Resource[] = [
 export const Home = () => {
   return (
     <>
-      <Head>
-        <title>Olushola Temiloluwa</title>
-        <meta name="description" content="Olushola Temiloluwa's portfolio" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <PageHead
+        title="Olushola Temiloluwa"
+        description="My interests lie right at the intersection of design and engineering. As
+        a result I am passionate about creating and building things that are
+        both functional and beautiful."
+        image="/images/avatar.jpeg"
+      />
       <div className="flex flex-col">
         <Grid columns={3} rows={Math.ceil(projects.length / 3)}>
           {projects.map((resource, index) => (
