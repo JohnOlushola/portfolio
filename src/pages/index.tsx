@@ -9,10 +9,6 @@ import { Resource } from "../types/resource";
 const projects: Resource[] = [
   {
     title: "Hi, I am Temi",
-    link: {
-      url: "/about",
-      external: false,
-    },
     description: (
       <p className="opacity-60">
         My interests lie right at the intersection of design and engineering. As
