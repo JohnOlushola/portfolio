@@ -12,7 +12,7 @@ export default function TextResource({
 }: TestResourceProps) {
   return (
     <ResourceContainer link={link}>
-      <div className="px-4 py-2.5 flex flex-col justify-end h-full">
+      <div className="px-2 py-2 flex flex-col justify-end h-full">
         <h2 className="mb-2">{title}</h2>
 
         {typeof description === "string" ? (
