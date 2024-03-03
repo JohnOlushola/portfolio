@@ -23,7 +23,10 @@ export const Home = () => {
               ) : resource.media === "image" ? (
                 <PictureResource {...resource} alt="" />
               ) : resource.media === "text" ? (
-                <TextResource {...resource} description="" />
+                <TextResource
+                  {...resource}
+                  description={resource.description || ""}
+                />
               ) : (
                 <div></div>
               )}
