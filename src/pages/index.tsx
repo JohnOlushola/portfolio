@@ -58,7 +58,7 @@ const projects: Resource[] = [
       external: true,
     },
     description: "The beginning, enjoy!",
-    src: "/images/bookstore-1.png",
+    src: "/images/bookstore.png",
     media: "image",
   },
 ];
