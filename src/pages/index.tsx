@@ -3,7 +3,6 @@ import { GridCell } from "../components/GridCell";
 import VideoResource from "../components/VideoResource";
 import PictureResource from "../components/PictureResource";
 import TextResource from "../components/TextResource";
-import Head from "next/head";
 import { Resource } from "../types/resource";
 import PageHead from "../components/PageHead";
 
