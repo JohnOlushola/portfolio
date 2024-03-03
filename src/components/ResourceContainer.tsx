@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { Resource } from "../types/resource";
 
-interface ResourceContainerProps
-  extends Pick<Resource, "type" | "link" | "media"> {
+interface ResourceContainerProps extends Pick<Resource, "link" | "media"> {
   children: React.ReactNode;
 }
 
@@ -20,11 +19,9 @@ export default function ResourceContainer({
       target={link.external ? "_blank" : "_self"}
       className={className}
     >
-      <div className="resource">{children}</div>
+      {children}
     </LinkComponent>
   ) : (
-    <div className={className}>
-      <div className="resource">{children}</div>
-    </div>
+    <div className={className}>{children}</div>
   );
 }

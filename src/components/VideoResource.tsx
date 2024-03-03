@@ -9,19 +9,20 @@ export default function VideoResource({
   title,
   date,
   link,
-  type,
 }: VideoResourceProps) {
   return (
-    <ResourceContainer link={link} type={type}>
-      <video
-        src={src}
-        autoPlay
-        playsInline
-        loop
-        muted
-        className="h-full w-full object-center object-cover"
-      />
-      <Caption title={title} date={date} />
+    <ResourceContainer link={link}>
+      <div className="resource">
+        <video
+          src={src}
+          autoPlay
+          playsInline
+          loop
+          muted
+          className="h-full w-full object-center object-cover"
+        />
+        <Caption title={title} date={date} />
+      </div>
     </ResourceContainer>
   );
 }
