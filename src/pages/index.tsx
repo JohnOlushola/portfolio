@@ -8,18 +8,15 @@ import { Resource } from "../types/resource";
 
 const projects: Resource[] = [
   {
-    title: "Hi!",
+    title: "Hi, I am Temi",
     link: {
       url: "/about",
       external: false,
     },
     description: (
-      <p>
-        I&apos;m a software engineer based in London. My interests lie right at
-        the intersection of design and engineering.
-        <br />
-        <br />
-        As a result I am passionate about creating and building things that are
+      <p className="opacity-60">
+        My interests lie right at the intersection of design and engineering. As
+        a result I am passionate about creating and building things that are
         both functional and beautiful.
       </p>
     ),
