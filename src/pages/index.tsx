@@ -45,7 +45,7 @@ const projects: Resource[] = [
     media: "video",
   },
   {
-    title: "Canvas Drawing - Apple Airpods Pro",
+    title: "Animating images on scroll with Canvas",
     date: 2021,
     src: "/images/airpods-pro.png",
     media: "image",
@@ -62,7 +62,7 @@ const projects: Resource[] = [
       external: true,
     },
     description: "The beginning, enjoy!",
-    src: "/images/bookstore.png",
+    src: "/images/bookstore-1.png",
     media: "image",
   },
 ];
