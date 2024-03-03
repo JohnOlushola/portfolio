@@ -55,10 +55,10 @@ const projects: Resource[] = [
     },
   },
   {
-    title: "Bookstore",
+    title: "Built with HTML, CSS and 81.9 KB JS",
     date: 2020,
     link: {
-      url: "https://johnolushola.github.io/bookstore/",
+      url: "https://github.com/JohnOlushola/bookstore",
       external: true,
     },
     description: "The beginning, enjoy!",
