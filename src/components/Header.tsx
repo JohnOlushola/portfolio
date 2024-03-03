@@ -1,4 +1,5 @@
 import Link from "next/link";
+import CommentButton from "./CommentButton";
 
 export function Header() {
   return (
@@ -7,14 +8,6 @@ export function Header() {
         <Link href="/" className="text-opacity-60">
           Olushola Temiloluwa
         </Link>
-
-        <ul className="flex gap-4">
-          <li>
-            <Link href="/about" className="text-opacity-60">
-              About
-            </Link>
-          </li>
-        </ul>
       </nav>
     </header>
   );
