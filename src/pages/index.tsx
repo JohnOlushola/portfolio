@@ -7,7 +7,7 @@ export default function Home() {
       <PageHead />
 
       <div className="flex flex-col w-full h-screen justify-center items-center align-middle">
-        <div className="w-96">
+        <div className="px-10 md:w-96 md:px-0">
           <h2 className="mb-1">Hi, I am Temiloluwa Olushola.</h2>
           <p className="opacity-60 mb-3">
             My interests lie right at the intersection of design and
