@@ -19,7 +19,7 @@ export default function SideNav() {
           <li>
             <Link href="/">
               <Tooltip
-                content="About"
+                content="Holla"
                 trigger={
                   <Avatar
                     className={cn(
