@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Nav />
       <div className="ml-[60px]">
         <Header />
-        <main>
+        <main className="min-h-screen">
           <Component {...pageProps} />
         </main>
         <VercelToolbar />

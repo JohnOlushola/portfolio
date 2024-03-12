@@ -8,18 +8,6 @@ import PageHead from "../components/PageHead";
 
 const projects: Resource[] = [
   {
-    title: "Hi, I am Temi",
-    description: (
-      <p className="opacity-60">
-        My interests lie right at the intersection of design and engineering. As
-        a result I am passionate about creating and building things that are
-        both functional and beautiful.
-      </p>
-    ),
-    src: "",
-    media: "text",
-  },
-  {
     title: "TJWHO Storefront",
     date: 2023,
     src: "/videos/tjwho.mp4",
@@ -67,10 +55,8 @@ export const Home = () => {
   return (
     <>
       <PageHead
-        title="Olushola Temiloluwa"
-        description="My interests lie right at the intersection of design and engineering. As
-        a result I am passionate about creating and building things that are
-        both functional and beautiful."
+        title="Craft"
+        description="Interfaces, animations, and side projects."
         image="/images/avatar.jpeg"
       />
       <div className="flex flex-col">
