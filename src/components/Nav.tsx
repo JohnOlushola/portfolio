@@ -6,8 +6,12 @@ import {
   LinkedInLogoIcon,
 } from "@radix-ui/react-icons";
 import Tooltip from "./ui/tooltip";
+import { useRouter } from "next/router";
+import { cn } from "@/lib/utils";
 
 export default function SideNav() {
+  const { pathname } = useRouter();
+
   return (
     <div className="fixed left-0 top-0 border-r h-screen w-[60px]">
       <div className="flex flex-col h-full justify-center align-middle items-center">
@@ -17,7 +21,12 @@ export default function SideNav() {
               <Tooltip
                 content="About"
                 trigger={
-                  <Avatar className="h-5 w-5">
+                  <Avatar
+                    className={cn(
+                      pathname === "/" ? "grayscale-0" : "grayscale",
+                      "h-5 w-5"
+                    )}
+                  >
                     <AvatarImage src="/images/avatar.jpeg" alt="jtolushola" />
                     <AvatarFallback>TO</AvatarFallback>
                   </Avatar>
@@ -26,8 +35,13 @@ export default function SideNav() {
             </Link>
           </li>
           <li>
-            <Link href="/">
-              <FrameIcon className="h-5 w-5" />
+            <Link href="/craft">
+              <FrameIcon
+                className={cn(
+                  pathname.includes("/craft") ? "opacity-100" : "opacity-60",
+                  "h-5 w-5"
+                )}
+              />
             </Link>
           </li>
           <li>
@@ -35,9 +49,8 @@ export default function SideNav() {
               href="https://github.com/JohnOlushola"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-opacity-60"
             >
-              <GitHubLogoIcon className="h-5 w-5" />
+              <GitHubLogoIcon className="h-5 w-5 opacity-60" />
             </a>
           </li>
           <li>
@@ -45,9 +58,8 @@ export default function SideNav() {
               href="https://www.linkedin.com/in/jtolushola/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-opacity-60"
             >
-              <LinkedInLogoIcon className="h-5 w-5" />
+              <LinkedInLogoIcon className="h-5 w-5 opacity-60" />
             </a>
           </li>
         </ul>
