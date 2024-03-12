@@ -9,8 +9,8 @@ export const PageHead: React.FC<{
   twitter?: string;
 }> = ({
   title,
-  description,
-  image,
+  description = "Software Engineer",
+  image = "/images/avatar.jpeg",
   url = "https://www.jtolushola.com/",
   twitter,
 }) => {
@@ -72,7 +72,7 @@ export const PageHead: React.FC<{
 
       <meta property="og:title" content={title} />
       <meta name="twitter:title" content={title} />
-      <title>{title}</title>
+      <title>{title ? title : "Olushola Temiloluwa"}</title>
     </Head>
   );
 };

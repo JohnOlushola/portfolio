@@ -1,100 +1,32 @@
-import { Grid } from "../components/Grid";
-import { GridCell } from "../components/GridCell";
-import VideoResource from "../components/VideoResource";
-import PictureResource from "../components/PictureResource";
-import TextResource from "../components/TextResource";
-import { Resource } from "../types/resource";
-import PageHead from "../components/PageHead";
+import PageHead from "@/components/PageHead";
+import Link from "next/link";
 
-const projects: Resource[] = [
-  {
-    title: "Hi, I am Temi",
-    description: (
-      <p className="opacity-60">
-        My interests lie right at the intersection of design and engineering. As
-        a result I am passionate about creating and building things that are
-        both functional and beautiful.
-      </p>
-    ),
-    src: "",
-    media: "text",
-  },
-  {
-    title: "TJWHO Storefront",
-    date: 2023,
-    src: "/videos/tjwho.mp4",
-    media: "video",
-    link: {
-      url: "https://www.tjwho.co",
-      external: true,
-    },
-  },
-  {
-    title: "Animated Signature",
-    date: 2022,
-    link: {
-      url: "https://codesandbox.io/p/sandbox/animated-signature-wpfc87?file=%2Findex.html%3A24%2C8",
-      external: true,
-    },
-    description: "The beginning, enjoy!",
-    src: "/videos/animated-signature.mp4",
-    media: "video",
-  },
-  {
-    title: "Animating images on scroll with Canvas",
-    date: 2021,
-    src: "/images/airpods-pro.png",
-    media: "image",
-    link: {
-      url: "https://airpods-pro.jtolushola.com/",
-      external: true,
-    },
-  },
-  {
-    title: "Built with HTML, CSS and 81.9 KB JS",
-    date: 2020,
-    link: {
-      url: "https://github.com/JohnOlushola/bookstore",
-      external: true,
-    },
-    description: "The beginning, enjoy!",
-    src: "/images/bookstore.png",
-    media: "image",
-  },
-];
-
-export const Home = () => {
+export default function Home() {
   return (
     <>
-      <PageHead
-        title="Olushola Temiloluwa"
-        description="My interests lie right at the intersection of design and engineering. As
-        a result I am passionate about creating and building things that are
-        both functional and beautiful."
-        image="/images/avatar.jpeg"
-      />
-      <div className="flex flex-col">
-        <Grid columns={3} rows={Math.ceil(projects.length / 3)}>
-          {projects.map((resource, index) => (
-            <GridCell key={index} row={"auto"} column={"auto"}>
-              {resource.media === "video" ? (
-                <VideoResource {...resource} />
-              ) : resource.media === "image" ? (
-                <PictureResource {...resource} alt={resource.alt || ""} />
-              ) : resource.media === "text" ? (
-                <TextResource
-                  {...resource}
-                  description={resource.description || ""}
-                />
-              ) : (
-                <></>
-              )}
-            </GridCell>
-          ))}
-        </Grid>
+      <PageHead />
+
+      <div className="flex flex-col w-full h-screen justify-center items-center align-middle">
+        <div className="w-96">
+          <h2 className="mb-1">Hi, I am Temiloluwa Olushola.</h2>
+          <p className="opacity-60 mb-3">
+            My interests lie right at the intersection of design and
+            engineering. As a result I am passionate about creating and building
+            things that are both functional and beautiful.
+          </p>
+
+          <ul className="list-disc">
+            <li>
+              <Link
+                href="/craft"
+                className="leading-6 text-opacity-60 hover:underline hover:text-opacity-100"
+              >
+                <span className="italic">Craft</span>
+              </Link>
+            </li>
+          </ul>
+        </div>
       </div>
     </>
   );
-};
-
-export default Home;
+}
