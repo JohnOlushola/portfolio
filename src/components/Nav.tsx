@@ -1,11 +1,11 @@
 import Link from "next/link";
-import { Avatar, AvatarFallback, AvatarImage } from "./ui/Avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar";
 import {
   FrameIcon,
   GitHubLogoIcon,
   LinkedInLogoIcon,
 } from "@radix-ui/react-icons";
-import Tooltip from "./ui/tooltip";
+import Tooltip from "@/components/ui/Tooltip";
 import { useRouter } from "next/router";
 import { cn } from "@/lib/utils";
 
