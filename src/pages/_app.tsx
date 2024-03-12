@@ -5,6 +5,7 @@ import localFont from "next/font/local";
 import { VercelToolbar } from "@vercel/toolbar/next";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Nav from "../components/Nav";
 
 // Font files can be colocated inside of `pages`
 const customFont = localFont({
@@ -16,10 +17,15 @@ export default function App({ Component, pageProps }: AppProps) {
     <div
       className={`flex flex-col h-full min-h-screen ${customFont.className}`}
     >
-      <Header />
-      <Component {...pageProps} />
-      <VercelToolbar />
-      <Footer />
+      <Nav />
+      <div className="ml-[60px]">
+        <Header />
+        <main>
+          <Component {...pageProps} />
+        </main>
+        <VercelToolbar />
+        <Footer />
+      </div>
     </div>
   );
 }
