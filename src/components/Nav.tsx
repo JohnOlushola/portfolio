@@ -36,11 +36,18 @@ export default function SideNav() {
           </li>
           <li>
             <Link href="/craft">
-              <FrameIcon
-                className={cn(
-                  pathname.includes("/craft") ? "opacity-100" : "opacity-60",
-                  "h-5 w-5"
-                )}
+              <Tooltip
+                content="Craft"
+                trigger={
+                  <FrameIcon
+                    className={cn(
+                      pathname.includes("/craft")
+                        ? "opacity-100"
+                        : "opacity-60",
+                      "h-5 w-5"
+                    )}
+                  />
+                }
               />
             </Link>
           </li>
