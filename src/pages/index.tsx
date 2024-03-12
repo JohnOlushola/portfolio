@@ -74,7 +74,7 @@ export const Home = () => {
         image="/images/avatar.jpeg"
       />
       <div className="flex flex-col">
-        <Grid columns={3} rows={Math.ceil(projects.length / 3)}>
+        <Grid columns={4} rows={Math.ceil(projects.length / 4)}>
           {projects.map((resource, index) => (
             <GridCell key={index} row={"auto"} column={"auto"}>
               {resource.media === "video" ? (
