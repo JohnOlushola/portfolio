@@ -73,6 +73,8 @@ export const PageHead: React.FC<{
       <meta property="og:title" content={title} />
       <meta name="twitter:title" content={title} />
       <title>{title ? title : "Olushola Temiloluwa"}</title>
+
+      <meta name="theme-color" content="#ff5533" />
     </Head>
   );
 };
