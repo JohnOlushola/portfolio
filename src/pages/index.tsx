@@ -1,5 +1,87 @@
 import PageHead from "@/components/PageHead";
 
+const projects = [
+  {
+    content: (
+      <>
+        A Shopify storefront for{" "}
+        <a href="https://www.tjwho.co/" target="_blank">
+          tjwho.co.
+        </a>{" "}
+        Featured on <a href="https://read.cv/explore">read.cv</a>
+      </>
+    ),
+  },
+  {
+    content: (
+      <>
+        I attempted recreating the{" "}
+        <a href="https://airpods-pro.jtolushola.com/" target="_blank">
+          Apple's Airpods Pro.
+        </a>{" "}
+        landing page for fun.
+      </>
+    ),
+  },
+  {
+    content: (
+      <>
+        Took a stab at ML model{" "}
+        <a
+          href="https://github.com/JohnOlushola/bias-mitigation"
+          target="_blank"
+        >
+          bias mitigation using regularisation and reweighing
+        </a>{" "}
+        with a bi-objective measure.
+      </>
+    ),
+  },
+  {
+    content: (
+      <>
+        A climate system that can adapt to itself? Using Directed Chaos
+        (Logistic Map).{" "}
+        <a
+          href="https://github.com/JohnOlushola/adaptive_climate_pathways/blob/master/climate_system.ipynb"
+          target="_blank"
+        >
+          Read notebook
+        </a>{" "}
+      </>
+    ),
+  },
+];
+
+const writing = [
+  {
+    content: (
+      <>
+        <a
+          href="https://medium.com/@jtolushola/debugging-is-an-art-530b0323f9e5"
+          target="_blank"
+        >
+          Debugging is an Art
+        </a>{" "}
+        &#8212; 4 min read
+      </>
+    ),
+  },
+  {
+    content: (
+      <>
+        <a
+          href="https://medium.com/@jtolushola/debugging-is-an-art-530b0323f9e5"
+          target="_blank"
+        >
+          New Year Resolutions? No
+        </a>{" "}
+        &#8212; 4 min read
+      </>
+    ),
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -29,90 +111,30 @@ export default function Home() {
                 I'm always tinkering, here are some that made it out.
               </p>
 
-              <ul className="my-5 list-disc list-inside space-y-4">
-                <li className="h-full">
-                  A Shopify storefront for{" "}
-                  {/* Display preview video on hover */}
-                  <a href="https://www.tjwho.co/" target="_blank">
-                    tjwho.co.
-                  </a>{" "}
-                  Featured on <a href="https://read.cv/explore">read.cv</a>
-                </li>
-                <li className="h-full ">
-                  I attempted recreating the{" "}
-                  <a href="https://airpods-pro.jtolushola.com/" target="_blank">
-                    Apple's Airpods Pro.
-                  </a>{" "}
-                  landing page for fun.
-                </li>
-                <li className="h-full">
-                  Participated in an{" "}
-                  <a
-                    href="https://github.com/JohnOlushola/political_spending_uk"
-                    target="_blank"
-                  >
-                    AI Hackathon
-                  </a>{" "}
-                  with a team of 3 hosted by{" "}
-                  <a
-                    href="https://profiles.sussex.ac.uk/p116624-julie-weeds"
-                    target="_blank"
-                  >
-                    Prof. Julie Weeds.
-                  </a>{" "}
-                  We built a tool to extract and classify data using{" "}
-                  <a href="https://huggingface.co/facebook/bart-large-mnli">
-                    facebook/bart-large-mnli.
-                  </a>{" "}
-                  Coming 2nd place.
-                </li>
-                <li className="h-full">
-                  Took a stab using{" "}
-                  <a
-                    href="https://github.com/JohnOlushola/bias-mitigation"
-                    target="_blank"
-                  >
-                    regularisation and reweighing with bi-objective measure
-                  </a>{" "}
-                  to reduce bias in a ML model. Read{" "}
-                  <a href="/report/bias-mitigation" download="bias-mitigation">
-                    report
-                  </a>
-                  .
-                </li>
+              {/* Display preview video/image on hover */}
+              <ul className="my-5 list-disc list-inside space-y-3">
+                {projects.map((project, index) => (
+                  <li key={`project_${index}`}>{project.content}</li>
+                ))}
               </ul>
             </div>
+
             <div>
               <h2 className="text-lg text-white">Writing &#8212;</h2>
               <p className=" tracking-wide text-sm">
                 Could be engineering related, philosophical or just ideas.
               </p>
 
-              <ul className="my-5 list-disc list-inside space-y-4">
-                <li className="h-full text-">
-                  <a
-                    href="https://medium.com/@jtolushola/debugging-is-an-art-530b0323f9e5"
-                    target="_blank"
-                  >
-                    Debugging is an Art
-                  </a>
-                  &#8212; 4 min read
-                </li>
-                <li className="h-full text-">
-                  <a
-                    href="https://medium.com/@jtolushola/debugging-is-an-art-530b0323f9e5"
-                    target="_blank"
-                  >
-                    New Year Resolutions? No
-                  </a>
-                  &#8212; 4 min read
-                </li>
+              <ul className="my-5 list-disc list-inside space-y-3">
+                {writing.map((write, index) => (
+                  <li key={`writing_${index}`}>{write.content}</li>
+                ))}
               </ul>
             </div>
           </div>
         </div>
 
-        <div className="md:col-span-3 w-full md:h-full flex items-start justify-start">
+        <div className="md:col-span-3 w-full md:h-full flex items-center justify-center">
           <div>
             {/* Can change on click. Use the feature photographs, or projects */}
             <video
