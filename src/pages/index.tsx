@@ -46,7 +46,7 @@ const projects = [
           href="https://github.com/JohnOlushola/adaptive_climate_pathways/blob/master/climate_system.ipynb"
           target="_blank"
         >
-          Read notebook
+          Read notebook.
         </a>{" "}
       </>
     ),
@@ -89,7 +89,7 @@ export default function Home() {
 
       <div className="min-h-screen md:grid grid-cols-8 gap-3 md:gap-6 lg:gap-10 w-full h-full py-5 tracking-wide">
         <div className="col-span-5">
-          <h2 className="mb-1 text-xl dark:text-white">Hi, I am Temiloluwa.</h2>
+          <h2>Hi, I am Temiloluwa.</h2>
           <div className="tracking-wide space-y-5 mb-10">
             <p>
               I’m a 24 y/o software engineer based in London, England. I'm a
@@ -106,8 +106,8 @@ export default function Home() {
 
           <div className="md:grid grid-cols-2 gap-6 w-11/12">
             <div className="col-span-1">
-              <h2 className="text-lg dark:text-white">Projects &#8212;</h2>
-              <p className=" tracking-wide text-sm">
+              <h3>Projects &#8212;</h3>
+              <p className="caption">
                 I'm always tinkering, here are some that made it out.
               </p>
 
@@ -120,8 +120,8 @@ export default function Home() {
             </div>
 
             <div>
-              <h2 className="text-lg dark:text-white">Writing &#8212;</h2>
-              <p className=" tracking-wide text-sm">
+              <h3>Writing &#8212;</h3>
+              <p className=" caption">
                 Could be engineering related, philosophical or just ideas.
               </p>
 
