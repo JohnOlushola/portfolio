@@ -93,7 +93,7 @@ export default function Home() {
           <div className="tracking-wide space-y-5 mb-10">
             <p>
               I’m a 24 y/o software engineer based in London, England. I love
-              body-building, music, taking picture with my iPhone and the sound of a V8 engine.
+              body-building, music, taking pictures with my iPhone and the sound of a V8 engine.
             </p>
 
             <p>
