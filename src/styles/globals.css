@@ -82,7 +82,7 @@
   }
 
   a {
-    @apply text-white opacity-60;
+    @apply text-black opacity-60;
     text-decoration: underline;
   }
 
@@ -115,6 +115,10 @@
   h5,
   h6 {
     @apply text-white;
+  }
+
+  a {
+    @apply text-black;
   }
 
   .svg-banner {
