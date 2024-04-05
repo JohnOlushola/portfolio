@@ -14,13 +14,11 @@ const customFont = localFont({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div
-      className={`flex flex-col h-full min-h-screen ${customFont.className}`}
-    >
+    <div className={customFont.className}>
       <Nav />
-      <div className="ml-[60px]">
+      <div className="ml-16 mr-5">
         <Header />
-        <main className="min-h-screen">
+        <main>
           <Component {...pageProps} />
         </main>
         <VercelToolbar />

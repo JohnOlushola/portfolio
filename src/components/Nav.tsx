@@ -13,9 +13,9 @@ export default function SideNav() {
   const { pathname } = useRouter();
 
   return (
-    <div className="fixed left-0 top-0 border-r h-screen w-[60px]">
+    <div className="fixed left-0 top-0 border-r h-screen w-12">
       <div className="flex flex-col h-full justify-center align-middle items-center">
-        <ul className="space-y-7 mx-auto w-auto">
+        <ul className="space-y-5 mx-auto w-auto">
           <li>
             <Link href="/">
               <Tooltip
@@ -34,30 +34,28 @@ export default function SideNav() {
               />
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/craft">
               <Tooltip
                 content="Craft"
                 trigger={
                   <FrameIcon
                     className={cn(
-                      pathname.includes("/craft")
-                        ? "opacity-100"
-                        : "opacity-60",
+                      pathname.includes("/craft") ? "opacity-100" : "",
                       "h-5 w-5"
                     )}
                   />
                 }
               />
             </Link>
-          </li>
+          </li> */}
           <li>
             <a
               href="https://github.com/JohnOlushola"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <GitHubLogoIcon className="h-5 w-5 opacity-60" />
+              <GitHubLogoIcon className="h-5 w-5 " />
             </a>
           </li>
           <li>
@@ -66,7 +64,7 @@ export default function SideNav() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <LinkedInLogoIcon className="h-5 w-5 opacity-60" />
+              <LinkedInLogoIcon className="h-5 w-5 " />
             </a>
           </li>
         </ul>
