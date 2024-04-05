@@ -118,7 +118,7 @@
   }
 
   a {
-    @apply text-black;
+    @apply text-white;
   }
 
   .svg-banner {
