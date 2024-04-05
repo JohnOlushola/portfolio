@@ -9,198 +9,116 @@
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
- 
+
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
- 
+
     --primary: 222.2 47.4% 11.2%;
     --primary-foreground: 210 40% 98%;
- 
+
     --secondary: 210 40% 96.1%;
     --secondary-foreground: 222.2 47.4% 11.2%;
- 
+
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
- 
+
     --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
- 
+
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
     --border: 214.3 31.8% 91.4%;
     --input: 214.3 31.8% 91.4%;
     --ring: 222.2 84% 4.9%;
- 
+
     --radius: 0.5rem;
+
+    /* Custom */
+    --foreground-rgb: 0, 0, 0;
+    --background-hex: #ffffff;
+    --border-hex: #d9d9d9;
   }
- 
+
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
- 
+
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
- 
+
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
- 
+
     --primary: 210 40% 98%;
     --primary-foreground: 222.2 47.4% 11.2%;
- 
+
     --secondary: 217.2 32.6% 17.5%;
     --secondary-foreground: 210 40% 98%;
- 
+
     --muted: 217.2 32.6% 17.5%;
     --muted-foreground: 215 20.2% 65.1%;
- 
+
     --accent: 217.2 32.6% 17.5%;
     --accent-foreground: 210 40% 98%;
- 
+
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
- 
+
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
   }
 }
- 
+
 @layer base {
   * {
-    @apply border-border;
+    border-color: var(--border-hex) !important;
   }
+
   body {
-    @apply bg-background text-foreground;
+    color: rgb(var(--foreground-rgb));
+    background: var(--background-hex);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: #ff5332;
+    opacity: 1;
+  }
+
+  h2 {
+    @apply text-xl mb-1;
   }
 }
 
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-hex: #FFFFFF;
-  --border-hex: #00000079;
-  --body-margin: 20px;
-  --landing-container-margin: 90px;
-  --landing-container-height: calc(100vh - var(--landing-container-margin));
+@layer components {
+  .caption {
+    @apply tracking-wide text-sm;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
+    --foreground-rgb: 187, 187, 187;
     --background-hex: #212121;
     --border-hex: #a0a0a039;
   }
-}
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: var(--background-hex);
-  margin-left: var(--body-margin);
-  margin-right: var(--body-margin);
-}
-
-/* Resets */
-* {
-  border-color: var(--border-hex) !important;
-}
-
-.landing-container {
-  display: flex;
-  height: var(--landing-container-height);
-  flex-direction: column;
-  justify-content: space-between;
-  overflow: hidden;
-}
-
-.caption {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  background: var(--background-hex);
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-template-rows: repeat(1, 1fr);
-  border: 0.0125rem solid var(--border-hex);
-  border-right: none;
-  border-bottom: none;
-  position: relative;
-}
-
-.grid .grid-cell {
-  /* the height should be equal to the width */
-  height: 100vw;
-}
-
-.grid-guides {
-  display: contents;
-}
-
-.grid-guide {
-  inset: 0px;
-  position: absolute;
-  grid-column-start: var(--x);
-  grid-column-end: span 1;
-  grid-row-start: var(--y);
-  grid-row-end: span 1;
-  border: 0.0125rem solid var(--border-hex);
-  border-left: none;
-  border-top: none;
-}
-
-.container {
-  @apply p-2.5 overflow-hidden h-full relative;
-}
-
-.resource::after {
-  content: "";
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), 50%, rgba(0, 0, 0, 0));
-  position: absolute;
-  width: 100%;
-  height: 200px;
-  bottom: -64px;
-  transition: opacity 200ms ease 0s;
-  pointer-events: none;
-}
-
-@media screen(sm) {
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-white;
   }
 
-  .grid .grid-cell {
-    /* the height should be equal to the width */
-    height: calc(100vw / 2);
+  .svg-banner {
+    @apply fill-white;
   }
 }
-
-@media screen(lg) {
-  .grid {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-  }
-
-  .grid .grid-cell {
-    /* the height should be equal to the width */
-    height: calc(100vw / 3);
-  }
-}
-
-@media screen(xl) {
-  .grid {
-    grid-template-columns: repeat(var(--columns), 1fr);
-    grid-template-rows: repeat(var(--rows), 1fr);
-  }
-
-  .grid .grid-cell {
-    /* the height should be equal to the width */
-    height: calc(100vw / var(--columns));
-  }
-}
-
