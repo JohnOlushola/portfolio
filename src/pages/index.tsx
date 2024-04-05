@@ -17,7 +17,7 @@ const projects = [
       <>
         I attempted recreating the{" "}
         <a href="https://airpods-pro.jtolushola.com/" target="_blank">
-          Apple's Airpods Pro.
+          Apple Airpods Pro
         </a>{" "}
         landing page for fun.
       </>
@@ -92,9 +92,8 @@ export default function Home() {
           <h2>Hi, I am Temiloluwa.</h2>
           <div className="tracking-wide space-y-5 mb-10">
             <p>
-              I’m a 24 y/o software engineer based in London, England. I'm a
-              body-builder, music lover, and amateur iPhone photographer. I also
-              love the sound of a V8 engine.
+              I’m a 24 y/o software engineer based in London, England. I love
+              body-building, music, taking picture with my iPhone and the sound of a V8 engine.
             </p>
 
             <p>
@@ -108,7 +107,7 @@ export default function Home() {
             <div className="col-span-1">
               <h3>Projects &#8212;</h3>
               <p className="caption">
-                I'm always tinkering, here are some that made it out.
+                I am always tinkering, here are some that made it out.
               </p>
 
               {/* Display preview video/image on hover */}
