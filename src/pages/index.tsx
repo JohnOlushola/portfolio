@@ -4,36 +4,46 @@ const projects = [
   {
     content: (
       <>
-        A Shopify storefront for{" "}
+        A storefront for a Lagos based luxury fashion brand{" "}
         <a href="https://www.tjwho.co/" target="_blank">
           tjwho.co.
         </a>{" "}
-        Featured on <a href="https://read.cv/explore">read.cv</a>
+        Primary focus was on the create an experience the highlights the brand
+        taste and luxury. Featured on{" "}
+        <a href="https://read.cv/explore">read.cv</a>
       </>
     ),
   },
   {
     content: (
       <>
-        I attempted recreating the{" "}
+        I attempted recreating the Apple Airpods Pro landing page for fun. Using
+        Canvas to draw a series of images to recreate the scroll interaction.{" "}
         <a href="https://airpods-pro.jtolushola.com/" target="_blank">
-          Apple Airpods Pro
+          View Prototype.
         </a>{" "}
-        landing page for fun.
       </>
     ),
   },
   {
     content: (
       <>
-        Took a stab at ML model{" "}
         <a
           href="https://github.com/JohnOlushola/bias-mitigation"
           target="_blank"
         >
-          bias mitigation using regularisation and reweighing
+          Mitigating bias
         </a>{" "}
-        with a bi-objective measure.
+        while optimising for accuracy and precision in machine learning models.
+        Inspired by the Learning Fair Representation{" "}
+        <a
+          href="https://proceedings.mlr.press/v28/zemel13"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          paper
+        </a>{" "}
+        was able to maintain both objectives while reducing bias.
       </>
     ),
   },
@@ -41,12 +51,12 @@ const projects = [
     content: (
       <>
         A climate system that can adapt to itself? Using Directed Chaos
-        (Logistic Map).{" "}
+        (Logistic Map). Producing unrealistic pathways to stay below 1.5 °C{" "}
         <a
           href="https://github.com/JohnOlushola/adaptive_climate_pathways/blob/master/climate_system.ipynb"
           target="_blank"
         >
-          Read notebook.
+          Explore notebook.
         </a>{" "}
       </>
     ),
@@ -63,7 +73,7 @@ const writing = [
         >
           Debugging is an Art
         </a>{" "}
-        &#8212; 4 min read
+        &#8212; 4 min read.
       </>
     ),
   },
@@ -76,7 +86,7 @@ const writing = [
         >
           New Year Resolutions? No
         </a>{" "}
-        &#8212; 4 min read
+        &#8212; 4 min read.
       </>
     ),
   },
@@ -87,23 +97,21 @@ export default function Home() {
     <>
       <PageHead />
 
-      <div className="min-h-screen md:grid grid-cols-8 gap-3 md:gap-6 lg:gap-10 w-full h-full py-5 tracking-wide">
-        <div className="col-span-5">
-          <h2>Hi, I am Temiloluwa.</h2>
-          <div className="tracking-wide space-y-5 mb-10">
-            <p>
-              I’m a 24 y/o software engineer based in London, England. I love
-              body-building, music, taking pictures with my iPhone and the sound of a V8 engine.
-            </p>
+      <div className="mb-10 lg:mb-20">
+        <h2 className="max-w-sm mb-2.5 tracking-wide">
+          Olushola Temiloluwa. Software Engineer, focusing on design,
+          engineering & AI.
+        </h2>
+        <p className="max-w-3xl">
+          My interests lie right at the intersection of design, engineering and
+          AI. As a result I am passionate about crafting functional, intelligent
+          and beautiful things. On the side, I create for fun.
+        </p>
+      </div>
 
-            <p>
-              My interests lie right at the intersection of design, engineering
-              and AI. As a result I am passionate about creating and building
-              things that are both functional and beautiful.
-            </p>
-          </div>
-
-          <div className="md:grid grid-cols-2 gap-6 w-11/12">
+      <div className="grid lg:grid-cols-8 gap-6 md:gap-6 w-full h-full">
+        <div className="lg:col-span-6">
+          <div className="md:grid grid-cols-2 gap-12">
             <div className="col-span-1">
               <h3>Projects &#8212;</h3>
               <p className="caption">
@@ -111,7 +119,7 @@ export default function Home() {
               </p>
 
               {/* Display preview video/image on hover */}
-              <ul className="my-5 list-disc list-inside space-y-3">
+              <ul className="my-5 list-disc space-y-3">
                 {projects.map((project, index) => (
                   <li key={`project_${index}`}>{project.content}</li>
                 ))}
@@ -124,7 +132,7 @@ export default function Home() {
                 Could be engineering related, philosophical or just ideas.
               </p>
 
-              <ul className="my-5 list-disc list-inside space-y-3">
+              <ul className="my-5 list-disc space-y-3">
                 {writing.map((write, index) => (
                   <li key={`writing_${index}`}>{write.content}</li>
                 ))}
@@ -133,7 +141,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="md:col-span-3 w-full md:h-full flex items-center justify-center">
+        <div className="lg:col-span-2 order-first lg:order-last w-full h-full flex items-center justify-center">
           <div>
             {/* Can change on click. Use the feature photographs, or projects */}
             <video
@@ -142,7 +150,7 @@ export default function Home() {
               playsInline
               loop
               muted
-              className="h-auto w-full object-contain mb-2"
+              className="h-auto w-full object-cover lg:object-contain mb-2"
             />
             <p className="text-xs">TJWHO Storefront</p>
           </div>
