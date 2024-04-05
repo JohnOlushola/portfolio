@@ -85,13 +85,9 @@
   --landing-container-height: calc(100vh - var(--landing-container-margin));
 }
 
-
-
 body {
   color: rgb(var(--foreground-rgb));
   background: var(--background-hex);
-  margin-left: var(--body-margin);
-  margin-right: var(--body-margin);
 }
 
 /* Resets */

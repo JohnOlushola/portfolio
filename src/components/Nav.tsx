@@ -13,9 +13,9 @@ export default function SideNav() {
   const { pathname } = useRouter();
 
   return (
-    <div className="fixed left-0 top-0 border-r h-screen w-[60px]">
+    <div className="fixed left-0 top-0 border-r h-screen w-12">
       <div className="flex flex-col h-full justify-center align-middle items-center">
-        <ul className="space-y-7 mx-auto w-auto">
+        <ul className="space-y-5 mx-auto w-auto">
           <li>
             <Link href="/">
               <Tooltip
