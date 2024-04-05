@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="mt-5 border-t svg-banner">
+    <footer className="mt-10 lg:mt-12 border-t svg-banner">
       <svg
         viewBox="0 0 100 18"
         xmlns="http://www.w3.org/2000/svg"
