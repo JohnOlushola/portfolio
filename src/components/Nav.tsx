@@ -34,30 +34,28 @@ export default function SideNav() {
               />
             </Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/craft">
               <Tooltip
                 content="Craft"
                 trigger={
                   <FrameIcon
                     className={cn(
-                      pathname.includes("/craft")
-                        ? "opacity-100"
-                        : "opacity-60",
+                      pathname.includes("/craft") ? "opacity-100" : "",
                       "h-5 w-5"
                     )}
                   />
                 }
               />
             </Link>
-          </li>
+          </li> */}
           <li>
             <a
               href="https://github.com/JohnOlushola"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <GitHubLogoIcon className="h-5 w-5 opacity-60" />
+              <GitHubLogoIcon className="h-5 w-5 " />
             </a>
           </li>
           <li>
@@ -66,7 +64,7 @@ export default function SideNav() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <LinkedInLogoIcon className="h-5 w-5 opacity-60" />
+              <LinkedInLogoIcon className="h-5 w-5 " />
             </a>
           </li>
         </ul>
