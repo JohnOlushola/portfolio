@@ -3,12 +3,12 @@ import User from "./ui/User";
 export function Header() {
   return (
     <header>
-      <nav className="border-b py-4 mb-10 lg:mb-12">
+      <nav className="border-b py-3 mb-10 lg:mb-12">
         <User
-          image="/images/avatar.jpeg"
+          url="/"
           fallback="JT"
           username="jtolushola"
-          url="/"
+          image="/images/avatar.jpeg"
         />
       </nav>
     </header>
