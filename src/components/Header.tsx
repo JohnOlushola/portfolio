@@ -1,8 +1,15 @@
+import User from "./ui/User";
+
 export function Header() {
   return (
     <header>
-      <nav className="flex justify-between items-center border-b py-4 mb-10 lg:mb-12">
-        <p className="italic">jtolushola &#8212;</p>
+      <nav className="border-b py-3 mb-10 lg:mb-12">
+        <User
+          url="/"
+          fallback="JT"
+          username="jtolushola"
+          image="/images/avatar.jpeg"
+        />
       </nav>
     </header>
   );
