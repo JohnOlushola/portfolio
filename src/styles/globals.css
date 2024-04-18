@@ -101,11 +101,19 @@
   }
 }
 
+*::selection {
+  @apply !bg-black/5 text-accent;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 187, 187, 187;
     --background-hex: #212121;
     --border-hex: #a0a0a039;
+  }
+
+  *::selection {
+    @apply !bg-white/5 text-accent;
   }
 
   h1,
