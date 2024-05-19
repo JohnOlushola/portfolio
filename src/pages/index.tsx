@@ -1,4 +1,5 @@
 import PageHead from "@/components/PageHead";
+import Link from "next/link";
 
 const projects = [
   {
@@ -91,12 +92,7 @@ const writing = [
     ),
   },
   {
-    content: (
-      <>
-        <a href="/posts/resources">Creating the resources page</a> &#8212; 2 min
-        read.
-      </>
-    ),
+    content: <Link href="/posts">All posts</Link>,
   },
 ];
 
