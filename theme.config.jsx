@@ -10,8 +10,36 @@ export default {
       {meta.author && <meta name="author" content={meta.author} />}
     </>
   ),
-  readMore: 'Read More →',
+  components: {
+    h1: ({ children }) => (
+      <h1
+        style={{
+          fontWeight: 'normal'
+        }}
+      >
+        {children}
+      </h1>
+    ),
+    h2: ({ children }) => (
+      <h2
+        style={{
+          fontWeight: 'normal'
+        }}
+      >
+        {children}
+      </h2>
+    ),
+    h3: ({ children }) => (
+      <h3
+        style={{
+          fontWeight: 'normal'
+        }}
+      >
+        {children}
+      </h3>
+    ),
+  },
+  readMore: 'Read',
   postFooter: null,
   darkMode: false,
-  navs: null
 }
