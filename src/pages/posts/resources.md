@@ -5,7 +5,7 @@ description: Creating a page to share a collection of resources.
 author: You
 ---
 
-Today, while scrolling through [read.cv](https://read.cv) I came across a tool called [raindrop](https://raindrop.io/) and it's hands down one of the best product I've found in a while. Raindrop was exactly the tool I needed but didn't know existed.
+Today, while scrolling through [read.cv](https://read.cv) I came across a tool called [Raindrop](https://raindrop.io/) and it's hands down one of the best product I've found in a while. Raindrop was exactly the tool I needed but didn't know existed.
 
 Sometime last year I started keeping links to pages, sites, blogs, ... I found interesting on Notion, shared it with my team with the intention of creating a "knowledge base" for the team. It was nice having a place I collected gems. Overtime, I felt others might find this useful and wanted to share with anyone/everyone. I knew if I found something similar online I would be so excited. The next question is how do I share in a non-intrusive, non-overwhelming way. .
 
