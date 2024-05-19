@@ -93,7 +93,7 @@ const writing = [
   {
     content: (
       <>
-        <a href="/writing/resources">Creating the resources page</a> &#8212; 3 min
+        <a href="/posts/resources">Creating the resources page</a> &#8212; 2 min
         read.
       </>
     ),
