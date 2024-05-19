@@ -123,6 +123,7 @@
   h5,
   h6 {
     @apply text-white;
+    font-weight: normal !important
   }
 
   a {
