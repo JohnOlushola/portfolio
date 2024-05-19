@@ -23,7 +23,7 @@ You can probably tell the downsides, complexity or "hacky" nature of these optio
 3. Cleaned up and imported into Raindrop. ([Guideline](https://help.raindrop.io/import#supported-formats))
 4. Tweaked the collection a little to match my style
 5. Shared the collection as public
-6. Embeded on site
+6. Embedded on site
 
 ![Resources Page](/images/resources-page.png)
 [Go to resources](/resources)
