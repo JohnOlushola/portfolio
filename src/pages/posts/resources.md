@@ -2,7 +2,6 @@
 title: Creating the /resources page
 date: 2024/5/20
 description: Creating a page to share a collection of resources.
-author: You
 ---
 
 Today, while scrolling through [read.cv](https://read.cv) I came across a tool called [Raindrop](https://raindrop.io/) and it's hands down one of the best product I've found in a while. Raindrop was exactly the tool I needed but didn't know existed.
