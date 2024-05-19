@@ -90,6 +90,14 @@ const writing = [
       </>
     ),
   },
+  {
+    content: (
+      <>
+        <a href="/writing/resources">Creating the resources page</a> &#8212; 3 min
+        read.
+      </>
+    ),
+  },
 ];
 
 export default function Home() {
