@@ -82,7 +82,7 @@ const writing = [
     content: (
       <>
         <a
-          href="https://medium.com/@jtolushola/debugging-is-an-art-530b0323f9e5"
+          href="https://medium.com/@jtolushola/new-years-resolutions-no-d0de5e115371"
           target="_blank"
         >
           New Year Resolutions? No
