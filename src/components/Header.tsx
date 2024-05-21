@@ -12,7 +12,8 @@ export function Header() {
           image="/images/avatar.jpeg"
         />
 
-        <div className="inline-flex gap-6">
+        <div className="inline-flex gap-6 md:gap-10">
+          <Link href="/posts">posts</Link>
           <Link href="/resources">resources</Link>
         </div>
       </nav>
