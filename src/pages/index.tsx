@@ -101,7 +101,7 @@ export default function Home() {
     <>
       <PageHead />
 
-      <div className="mb-10 lg:mb-24 max-w-3xl">
+      <div className="mb-10 lg:mb-32 max-w-3xl">
         <h1 className="mb-2.5 tracking-wide">
           Olushola Temiloluwa. Software Engineer, focusing on design,
           engineering & AI.
@@ -113,7 +113,7 @@ export default function Home() {
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-2 gap-6 md:gap-12 w-full h-full">
+      <div className="grid md:grid-cols-2 gap-6 md:gap-12 w-full xl:w-3/4 h-full">
         <div className="col-span-1">
           <h2>Projects &#8212;</h2>
           <ul className="my-5 list-disc space-y-3">
