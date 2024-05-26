@@ -19,7 +19,7 @@ const projects = [
     content: (
       <>
         I attempted recreating the Apple Airpods Pro landing page for fun. Using
-        Canvas to draw a series of images to recreate the scroll interaction.{" "}
+        HTML Canvas to draw a series of images when scrolling.{" "}
         <a href="https://airpods-pro.jtolushola.com/" target="_blank">
           View Prototype.
         </a>{" "}
@@ -101,63 +101,35 @@ export default function Home() {
     <>
       <PageHead />
 
-      <div className="mb-10 lg:mb-20">
-        <h2 className="max-w-sm mb-2.5 tracking-wide">
+      <div className="mb-10 lg:mb-24 max-w-3xl">
+        <h1 className="mb-2.5 tracking-wide">
           Olushola Temiloluwa. Software Engineer, focusing on design,
           engineering & AI.
-        </h2>
-        <p className="max-w-3xl">
+        </h1>
+        <p>
           My interests lie right at the intersection of design, engineering and
           AI. As a result I am passionate about crafting functional, intelligent
           and beautiful things. On the side, I create for fun.
         </p>
       </div>
 
-      <div className="grid lg:grid-cols-8 gap-6 md:gap-6 w-full h-full">
-        <div className="lg:col-span-6">
-          <div className="md:grid grid-cols-2 gap-12">
-            <div className="col-span-1">
-              <h3>Projects &#8212;</h3>
-              <p className="caption">
-                I am always tinkering, here are some that made it out.
-              </p>
-
-              {/* Display preview video/image on hover */}
-              <ul className="my-5 list-disc space-y-3">
-                {projects.map((project, index) => (
-                  <li key={`project_${index}`}>{project.content}</li>
-                ))}
-              </ul>
-            </div>
-
-            <div>
-              <h3>Writing &#8212;</h3>
-              <p className=" caption">
-                Could be engineering related, philosophical or just ideas.
-              </p>
-
-              <ul className="my-5 list-disc space-y-3">
-                {writing.map((write, index) => (
-                  <li key={`writing_${index}`}>{write.content}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
+      <div className="grid lg:grid-cols-2 gap-6 md:gap-12 w-full h-full">
+        <div className="col-span-1">
+          <h2>Projects &#8212;</h2>
+          <ul className="my-5 list-disc space-y-3">
+            {projects.map((project, index) => (
+              <li key={`project_${index}`}>{project.content}</li>
+            ))}
+          </ul>
         </div>
 
-        <div className="lg:col-span-2 order-first lg:order-last w-full h-full flex items-center justify-center">
-          <div>
-            {/* Can change on click. Use the feature photographs, or projects */}
-            <video
-              src="/videos/tjwho.mp4"
-              autoPlay
-              playsInline
-              loop
-              muted
-              className="h-auto w-full object-cover lg:object-contain mb-2"
-            />
-            <p className="text-xs">TJWHO Storefront</p>
-          </div>
+        <div>
+          <h2>Writing &#8212;</h2>
+          <ul className="my-5 list-disc space-y-3">
+            {writing.map((write, index) => (
+              <li key={`writing_${index}`}>{write.content}</li>
+            ))}
+          </ul>
         </div>
       </div>
     </>
