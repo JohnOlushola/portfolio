@@ -93,6 +93,8 @@ export default function Home() {
               </li>
             ))}
           </ul>
+
+          <Link href="/projects">View more</Link>
         </div>
       </div>
     </>
