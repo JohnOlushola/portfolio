@@ -1,69 +1,6 @@
 import PageHead from "@/components/PageHead";
 import Link from "next/link";
 
-const projects = [
-  {
-    content: (
-      <>
-        A storefront for a Lagos based luxury fashion brand{" "}
-        <a href="https://www.tjwho.co/" target="_blank">
-          tjwho.co.
-        </a>{" "}
-        Primary focus was on the create an experience the highlights the brand
-        taste and luxury. Featured on{" "}
-        <a href="https://read.cv/explore">read.cv</a>
-      </>
-    ),
-  },
-  {
-    content: (
-      <>
-        I attempted recreating the Apple Airpods Pro landing page for fun. Using
-        HTML Canvas to draw a series of images when scrolling.{" "}
-        <a href="https://airpods-pro.jtolushola.com/" target="_blank">
-          View Prototype.
-        </a>{" "}
-      </>
-    ),
-  },
-  {
-    content: (
-      <>
-        <a
-          href="https://github.com/JohnOlushola/bias-mitigation"
-          target="_blank"
-        >
-          Mitigating bias
-        </a>{" "}
-        while optimising for accuracy and precision in machine learning models.
-        Inspired by the Learning Fair Representation{" "}
-        <a
-          href="https://proceedings.mlr.press/v28/zemel13"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          paper
-        </a>{" "}
-        was able to maintain both objectives while reducing bias.
-      </>
-    ),
-  },
-  {
-    content: (
-      <>
-        A climate system that can adapt to itself? Using Directed Chaos
-        (Logistic Map). Producing unrealistic pathways to stay below 1.5 °C{" "}
-        <a
-          href="https://github.com/JohnOlushola/adaptive_climate_pathways/blob/master/climate_system.ipynb"
-          target="_blank"
-        >
-          Explore notebook.
-        </a>{" "}
-      </>
-    ),
-  },
-];
-
 const writing = [
   {
     content: (
@@ -96,6 +33,39 @@ const writing = [
   },
 ];
 
+interface Project {
+  name: string;
+  link: string;
+  description: string;
+}
+
+const projects: Project[] = [
+  {
+    name: "tjwho.co",
+    link: "https://www.tjwho.co/",
+    description:
+      "A storefront for a Lagos based luxury fashion brand. Primary focus was on the create an experience the highlights the brand taste and luxury.",
+  },
+  {
+    name: "Airpods Pro",
+    link: "https://airpods-pro.jtolushola.com/",
+    description:
+      "I attempted recreating the Apple Airpods Pro landing page for fun. Using HTML Canvas to draw a series of images when scrolling.",
+  },
+  {
+    name: "Mitigating bias",
+    link: "https://github.com/JohnOlushola/bias-mitigation",
+    description:
+      "Mitigating bias while optimising for accuracy and precision in machine learning models. Inspired by the Learning Fair Representation paper was able to maintain both objectives while reducing bias.",
+  },
+  {
+    name: "Adaptive Climate Systems",
+    link: "https://github.com/JohnOlushola/adaptive_climate_pathways/blob/master/climate_system.ipynb",
+    description:
+      "A climate system that can adapt to itself? Using Directed Chaos (Logistic Map). Producing unrealistic pathways to stay below 1.5 °C.",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -116,9 +86,14 @@ export default function Home() {
       <div className="grid md:grid-cols-2 gap-6 md:gap-12 w-full xl:w-3/4 h-full">
         <div className="col-span-1">
           <h2>Projects &#8212;</h2>
-          <ul className="my-5 list-disc space-y-3">
+          <ul className="my-5 space-y-3">
             {projects.map((project, index) => (
-              <li key={`project_${index}`}>{project.content}</li>
+              <li key={`project_${index}`}>
+                <a href={project.link} target="_blank">
+                  {project.name}
+                </a>
+                <p>{project.description} </p>
+              </li>
             ))}
           </ul>
         </div>
