@@ -1,45 +1,13 @@
 import PageHead from "@/components/PageHead";
 import Link from "next/link";
 
-const writing = [
-  {
-    content: (
-      <>
-        <a
-          href="https://medium.com/@jtolushola/debugging-is-an-art-530b0323f9e5"
-          target="_blank"
-        >
-          Debugging is an Art
-        </a>{" "}
-        &#8212; 4 min read.
-      </>
-    ),
-  },
-  {
-    content: (
-      <>
-        <a
-          href="https://medium.com/@jtolushola/new-years-resolutions-no-d0de5e115371"
-          target="_blank"
-        >
-          New Year Resolutions? No
-        </a>{" "}
-        &#8212; 4 min read.
-      </>
-    ),
-  },
-  {
-    content: <Link href="/posts">All posts</Link>,
-  },
-];
-
-interface Project {
+interface ContentItem {
   name: string;
   link: string;
   description: string;
 }
 
-const projects: Project[] = [
+const projects: ContentItem[] = [
   {
     name: "tjwho.co",
     link: "https://www.tjwho.co/",
@@ -63,6 +31,21 @@ const projects: Project[] = [
     link: "https://github.com/JohnOlushola/adaptive_climate_pathways/blob/master/climate_system.ipynb",
     description:
       "A climate system that can adapt to itself? Using Directed Chaos (Logistic Map). Producing unrealistic pathways to stay below 1.5 °C.",
+  },
+];
+
+const posts: ContentItem[] = [
+  {
+    name: "Debugging is an Art",
+    link: "https://medium.com/@jtolushola/debugging-is-an-art-530b0323f9e5",
+    description:
+      "There is an art to debugging. How do you get to the root of the problem quickly and efficiently? What's in your arsenal?",
+  },
+  {
+    name: "New Year Resolutions? No",
+    link: "https://medium.com/@jtolushola/new-years-resolutions-no-d0de5e115371",
+    description:
+      "New Year resolutions are overrated. What's the point of setting goals at the beginning of the year only to forget them by the end of the month?",
   },
 ];
 
@@ -99,10 +82,15 @@ export default function Home() {
         </div>
 
         <div>
-          <h2>Writing &#8212;</h2>
+          <h2>Posts &#8212;</h2>
           <ul className="my-5 list-disc space-y-3">
-            {writing.map((write, index) => (
-              <li key={`writing_${index}`}>{write.content}</li>
+            {posts.map((posts, index) => (
+              <li key={`project_${index}`}>
+                <a href={posts.link} target="_blank">
+                  {posts.name}
+                </a>
+                <p>{posts.description} </p>
+              </li>
             ))}
           </ul>
         </div>
