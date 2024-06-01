@@ -21,7 +21,7 @@ const projects: ContentItem[] = [
       "I attempted recreating the Apple Airpods Pro landing page for fun. Using HTML Canvas to draw a series of images when scrolling.",
   },
   {
-    name: "Mitigating bias",
+    name: "Mitigating bias in ML models",
     link: "https://github.com/JohnOlushola/bias-mitigation",
     description:
       "Mitigating bias while optimising for accuracy and precision in machine learning models. Inspired by the Learning Fair Representation paper was able to maintain both objectives while reducing bias.",
@@ -94,7 +94,7 @@ export default function Home() {
             ))}
           </ul>
 
-          <Link href="/projects">View more</Link>
+          <Link href="/posts">View more</Link>
         </div>
       </div>
     </>
