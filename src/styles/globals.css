@@ -138,8 +138,4 @@ body {
   a {
     @apply text-white;
   }
-
-  .svg-banner {
-    @apply fill-white;
-  }
 }
