@@ -3,7 +3,7 @@ import User from "./ui/User";
 
 export function Header() {
   return (
-    <header className="">
+    <header>
       <nav className="flex justify-between items-center border-b py-3 mb-10 lg:mb-12">
         <User
           url="/"
