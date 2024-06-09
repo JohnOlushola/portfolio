@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="mt-10 lg:mt-12 border-t flex justify-between items-center py-4">
+    <footer className="mt-auto border-t flex justify-between items-center py-4">
       <p className="text-sm">&copy; 2024 Olushola Temiloluwa.</p>
 
       <div className="flex items-center gap-10">

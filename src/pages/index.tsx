@@ -55,14 +55,9 @@ export default function Home() {
       <PageHead />
 
       <div className="mb-10 lg:mb-32 max-w-3xl">
-        <h1 className="mb-2.5 tracking-wide">
-          Olushola Temiloluwa. Software Engineer, focusing on design,
-          engineering & AI.
-        </h1>
+        <h1 className="mb-2.5 tracking-wide">Olushola Temiloluwa.</h1>
         <p>
-          My interests lie right at the intersection of design, engineering and
-          AI. As a result I am passionate about crafting functional, intelligent
-          and beautiful things. On the side, I create for fun.
+          A software engineer with a heart for design. I love lifting weight and music.
         </p>
       </div>
 
