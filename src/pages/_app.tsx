@@ -24,15 +24,13 @@ export default function Nextra({ Component, pageProps }: AppProps) {
           href="/feed.xml"
         />
       </Head>
-      <div className={customFont.className}>
-        <div className="container">
-          <Header />
-          <main>
-            <Component {...pageProps} />
-          </main>
-          <VercelToolbar />
-          <Footer />
-        </div>
+      <div className={`${customFont.className} container flex flex-col`}>
+        <Header />
+        <main>
+          <Component {...pageProps} />
+        </main>
+        <VercelToolbar />
+        <Footer />
       </div>
     </>
   );
