@@ -9,7 +9,7 @@ export const PageHead: React.FC<{
   twitter?: string;
 }> = ({
   title,
-  description = "Software Engineer",
+  description = "Engineering & Design",
   image = "/images/avatar.jpeg",
   url = "https://www.jtolushola.com/",
   twitter,
