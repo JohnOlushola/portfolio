@@ -9,6 +9,12 @@ interface ContentItem {
 
 const projects: ContentItem[] = [
   {
+    name: "Solar Asset Mapper - Landing",
+    link: "https://solar.transitionzero.org/",
+    description:
+      "Had the pleasure of designing and developing the landing page for the Solar Asset Mapper by Transition Zero. A global dataset and generation capacity estimation of solar assets across the globe.",
+  },
+  {
     name: "tjwho.co",
     link: "https://www.tjwho.co/",
     description:
@@ -57,7 +63,8 @@ export default function Home() {
       <div className="mb-10 lg:mb-32 max-w-3xl">
         <h1 className="mb-2.5 tracking-wide">Olushola Temiloluwa.</h1>
         <p>
-          A software engineer with a heart for design. I love lifting weight and music.
+          A software engineer with a heart for design. I love lifting weight and
+          music.
         </p>
       </div>
 
