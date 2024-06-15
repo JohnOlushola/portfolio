@@ -9,7 +9,7 @@ interface ContentItem {
 
 const projects: ContentItem[] = [
   {
-    name: "Solar Asset Mapper - Landing",
+    name: "Solar Asset Mapper",
     link: "https://solar.transitionzero.org/",
     description:
       "Had the pleasure of designing and developing the landing page for the Solar Asset Mapper by Transition Zero. A global dataset and generation capacity estimation of solar assets across the globe.",
