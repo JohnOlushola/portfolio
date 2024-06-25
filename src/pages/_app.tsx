@@ -26,7 +26,7 @@ export default function Nextra({ Component, pageProps }: AppProps) {
       </Head>
       <div className={`${customFont.className} container flex flex-col min-h-screen`}>
         <Header />
-        <main>
+        <main className="my-20">
           <Component {...pageProps} />
         </main>
         <VercelToolbar />

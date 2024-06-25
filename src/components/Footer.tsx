@@ -10,7 +10,7 @@ export default function Footer() {
           rel="noopener noreferrer"
           className="mr-4"
         >
-          more code
+          code
         </a>
         <a
           href="mailto:johntemiloluwa.o@gmail.com"
