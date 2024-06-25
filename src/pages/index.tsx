@@ -39,8 +39,8 @@ export default function Home() {
         </div>
 
         <p className="leading-10">
-          I&apos;m a software engineer interested in the intersection of AI, design
-          and engineering. Now at{" "}
+          I&apos;m a software engineer interested in the intersection of design, engineering
+          and AI. Now at{" "}
           <a
             href="https://www.transitionzero.org/"
             target="_blank"
