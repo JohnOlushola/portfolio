@@ -32,7 +32,7 @@ export default function Home() {
     <>
       <PageHead />
 
-      <div className="mb-20 max-w-4xl lg:max-w-3xl flex flex-col gap-8 text-2xl lg:text-2xl tracking-wide">
+      <div className="mb-20 max-w-3xl flex flex-col gap-8 text-2xl lg:text-2xl tracking-wide">
         <div>
           <h1>Temiloluwa Olushola</h1>
           <p className="opacity-60">Software Engineer in London</p>
