@@ -1,5 +1,5 @@
 ---
-title: Creating the /resources page
+title: ...a space to share resources
 date: 2024/5/20
 description: Creating a page to share a collection of resources.
 ---
