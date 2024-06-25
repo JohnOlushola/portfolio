@@ -1,57 +1,29 @@
 import PageHead from "@/components/PageHead";
-import Link from "next/link";
 
 interface ContentItem {
   name: string;
   link: string;
-  description: string;
 }
 
 const projects: ContentItem[] = [
   {
     name: "Solar Asset Mapper",
     link: "https://solar.transitionzero.org/",
-    description:
-      "Had the pleasure of designing and developing the landing page for the Solar Asset Mapper by Transition Zero. A global dataset and generation capacity estimation of solar assets across the globe.",
   },
   {
-    name: "tjwho.co",
+    name: "TJWHO Universe",
     link: "https://www.tjwho.co/",
-    description:
-      "A storefront for a Lagos based luxury fashion brand. Primary focus was on the create an experience the highlights the brand taste and luxury.",
   },
   {
     name: "Airpods Pro",
     link: "https://airpods-pro.jtolushola.com/",
-    description:
-      "I attempted recreating the Apple Airpods Pro landing page for fun. Using HTML Canvas to draw a series of images when scrolling.",
-  },
-  {
-    name: "Mitigating bias in ML models",
-    link: "https://github.com/JohnOlushola/bias-mitigation",
-    description:
-      "Mitigating bias while optimising for accuracy and precision in machine learning models. Inspired by the Learning Fair Representation paper was able to maintain both objectives while reducing bias.",
-  },
-  {
-    name: "Adaptive Climate Systems",
-    link: "https://github.com/JohnOlushola/adaptive_climate_pathways/blob/master/climate_system.ipynb",
-    description:
-      "A climate system that can adapt to itself? Using Directed Chaos (Logistic Map). Producing unrealistic pathways to stay below 1.5 °C.",
   },
 ];
 
 const posts: ContentItem[] = [
   {
-    name: "Debugging is an Art",
-    link: "https://medium.com/@jtolushola/debugging-is-an-art-530b0323f9e5",
-    description:
-      "There is an art to debugging. How do you get to the root of the problem quickly and efficiently? What's in your arsenal?",
-  },
-  {
-    name: "New Year Resolutions? No",
-    link: "https://medium.com/@jtolushola/new-years-resolutions-no-d0de5e115371",
-    description:
-      "New Year resolutions are overrated. What's the point of setting goals at the beginning of the year only to forget them by the end of the month?",
+    name: "...a space to share resources",
+    link: "/posts/resources",
   },
 ];
 
@@ -60,24 +32,46 @@ export default function Home() {
     <>
       <PageHead />
 
-      <div className="mb-10 lg:mb-32 max-w-3xl">
-        <h1 className="mb-2.5 tracking-wide">Olushola Temiloluwa.</h1>
-        <p>
-          A software engineer with a heart for design. I love lifting weight and
-          music.
+      <div className="mb-20 max-w-3xl flex flex-col gap-8 text-2xl lg:text-2xl tracking-wide">
+        <div>
+          <h1>Temiloluwa Olushola</h1>
+          <p className="opacity-60">Software Engineer in London</p>
+        </div>
+
+        <p className="leading-10">
+          I&apos;m a software engineer interested in the intersection of design, engineering
+          and AI. Now at{" "}
+          <a
+            href="https://www.transitionzero.org/"
+            target="_blank"
+            className="transition-all opacity-60"
+          >
+            TransitionZero
+          </a>
+          , I&apos;m crafting interfaces that simplifies the world of complex energy
+          systems modelling. I&apos;m also tinkering at{" "}
+          <a
+            href="https://tnkr.ai/"
+            target="_blank"
+            className="transition-all opacity-60"
+          >
+            tnkr.ai
+          </a>{" "}
+          with the crew.
         </p>
+
+        <p>On the side, I love cars, weight lifting and photography.</p>
       </div>
 
       <div className="grid md:grid-cols-2 gap-6 md:gap-12 w-full xl:w-3/4 h-full">
         <div className="col-span-1">
           <h2>Projects &#8212;</h2>
-          <ul className="my-5 space-y-3">
+          <ul className="my-2.5 space-y-3">
             {projects.map((project, index) => (
               <li key={`project_${index}`}>
-                <a href={project.link} target="_blank">
+                <a href={project.link} target="_blank" className="text-2xl">
                   {project.name}
                 </a>
-                <p>{project.description} </p>
               </li>
             ))}
           </ul>
@@ -85,18 +79,15 @@ export default function Home() {
 
         <div>
           <h2>Posts &#8212;</h2>
-          <ul className="my-5 list-disc space-y-3">
+          <ul className="my-2.5 space-y-3">
             {posts.map((posts, index) => (
               <li key={`project_${index}`}>
-                <a href={posts.link} target="_blank">
+                <a href={posts.link} target="_blank" className="text-2xl">
                   {posts.name}
                 </a>
-                <p>{posts.description} </p>
               </li>
             ))}
           </ul>
-
-          <Link href="/posts">View more</Link>
         </div>
       </div>
     </>
