@@ -39,28 +39,20 @@ export default function Home() {
         </div>
 
         <p className="leading-10">
-          I&apos;m a software engineer interested in the intersection of design, engineering
-          and AI. Now at{" "}
-          <a
-            href="https://www.transitionzero.org/"
-            target="_blank"
-            className="transition-all opacity-60"
-          >
+          I&apos;m a software engineer interested in the intersection of design,
+          engineering and AI. Now leading design at{" "}
+          <a href="https://www.transitionzero.org/" target="_blank">
             TransitionZero
           </a>
-          , I&apos;m crafting interfaces that simplifies the world of complex energy
-          systems modelling. I&apos;m also tinkering at{" "}
-          <a
-            href="https://tnkr.ai/"
-            target="_blank"
-            className="transition-all opacity-60"
-          >
+          , I&apos;m crafting interfaces that simplifies the world of complex
+          energy systems modelling. I&apos;m also tinkering at{" "}
+          <a href="https://tnkr.ai/" target="_blank">
             tnkr.ai
           </a>{" "}
           with the crew.
         </p>
 
-        <p>On the side, I love cars, weight lifting and photography.</p>
+        <p>On the side, I love cars, weight-lifting and photography.</p>
       </div>
 
       <div className="grid md:grid-cols-2 gap-6 md:gap-12 w-full xl:w-3/4 h-full">
