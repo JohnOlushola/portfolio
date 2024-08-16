@@ -20,10 +20,14 @@ const projects: ContentItem[] = [
   },
 ];
 
-const posts: ContentItem[] = [
+const notes: ContentItem[] = [
   {
     name: "...a space to share resources",
-    link: "/posts/resources",
+    link: "/notes/resources",
+  },
+  {
+    name: "On keeping things simple",
+    link: "/notes/on-keeping-things-simple",
   },
 ];
 
@@ -70,12 +74,12 @@ export default function Home() {
         </div>
 
         <div>
-          <h2>Posts &#8212;</h2>
+          <h2>Notes &#8212;</h2>
           <ul className="my-2.5 space-y-3">
-            {posts.map((posts, index) => (
+            {notes.map((notes, index) => (
               <li key={`project_${index}`}>
-                <a href={posts.link} target="_blank" className="text-2xl">
-                  {posts.name}
+                <a href={notes.link} target="_blank" className="text-2xl">
+                  {notes.name}
                 </a>
               </li>
             ))}
