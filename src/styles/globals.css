@@ -37,7 +37,7 @@
 
   @media (prefers-color-scheme: dark) {
     :root {
-      --background: 0 0% 9%;
+      --background: 0 0% 0%;
       --foreground: 0 0% 100%;
 
       --card: 0deg 0% 6.67%;
