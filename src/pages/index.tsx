@@ -33,16 +33,16 @@ const notes: ContentItem[] = [
 
 export default function Home() {
   return (
-    <>
+    <div className="text-xl lg:text-2xl tracking-wide lg:tracking-wide leading-normal lg:leading-normal font-medium">
       <PageHead />
 
-      <div className="mb-20 max-w-3xl flex flex-col gap-8 text-2xl lg:text-2xl tracking-wide">
+      <div className="mb-20 max-w-5xl lg:max-w-full flex flex-col gap-8">
         <div>
-          <h1>Temiloluwa Olushola</h1>
+          <h1 className="tracking-wide">Temiloluwa Olushola</h1>
           <p className="opacity-60">Software Engineer in London</p>
         </div>
 
-        <p className="leading-10">
+        <p>
           I&apos;m a software engineer interested in the intersection of design,
           engineering and AI. Now leading design at{" "}
           <a href="https://www.transitionzero.org/" target="_blank">
@@ -62,10 +62,10 @@ export default function Home() {
       <div className="grid md:grid-cols-2 gap-6 md:gap-12 w-full xl:w-3/4 h-full">
         <div className="col-span-1">
           <h2>Projects &#8212;</h2>
-          <ul className="my-2.5 space-y-3">
+          <ul className="my-2.5 space-y-1">
             {projects.map((project, index) => (
               <li key={`project_${index}`}>
-                <a href={project.link} target="_blank" className="text-2xl">
+                <a href={project.link} target="_blank">
                   {project.name}
                 </a>
               </li>
@@ -75,10 +75,10 @@ export default function Home() {
 
         <div>
           <h2>Notes &#8212;</h2>
-          <ul className="my-2.5 space-y-3">
+          <ul className="my-2.5 space-y-1">
             {notes.map((notes, index) => (
               <li key={`project_${index}`}>
-                <a href={notes.link} target="_blank" className="text-2xl">
+                <a href={notes.link} target="_blank">
                   {notes.name}
                 </a>
               </li>
@@ -86,6 +86,6 @@ export default function Home() {
           </ul>
         </div>
       </div>
-    </>
+    </div>
   );
 }
