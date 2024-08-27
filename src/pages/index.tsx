@@ -33,10 +33,10 @@ const notes: ContentItem[] = [
 
 export default function Home() {
   return (
-    <div className="text-xl tracking-wide leading-normal font-medium">
+    <div className="text-xl lg:text-2xl tracking-wide lg:tracking-wide leading-normal lg:leading-normal font-medium">
       <PageHead />
 
-      <div className="mb-20 max-w-5xl flex flex-col gap-8">
+      <div className="mb-20 max-w-5xl lg:max-w-full flex flex-col gap-8">
         <div>
           <h1 className="tracking-wide">Temiloluwa Olushola</h1>
           <p className="opacity-60">Software Engineer in London</p>
