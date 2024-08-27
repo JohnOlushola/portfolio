@@ -5,13 +5,13 @@
 @layer base {
   :root {
     --background: 0 0% 100%;
-    --foreground: 240 10% 3.9%;
+    --foreground: 0deg 0% 6.67%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card-foreground: 0deg 0% 6.67%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --popover-foreground: 0deg 0% 6.67%;
 
     --primary: 240 5.9% 10%;
     --primary-foreground: 0 0% 98%;
@@ -30,7 +30,7 @@
 
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
-    --ring: 240 10% 3.9%;
+    --ring: 0deg 0% 6.67%;
 
     --radius: 0.5rem;
   }
@@ -40,10 +40,10 @@
       --background: 0 0% 9%;
       --foreground: 0 0% 100%;
 
-      --card: 240 10% 3.9%;
+      --card: 0deg 0% 6.67%;
       --card-foreground: 0 0% 98%;
 
-      --popover: 240 10% 3.9%;
+      --popover: 0deg 0% 6.67%;
       --popover-foreground: 0 0% 98%;
 
       --primary: 0 0% 98%;
@@ -78,7 +78,7 @@
   }
 
   a {
-    @apply opacity-60 hover:opacity-100 hover:text-accent transition-all ease-in duration-100;
+    @apply underline decoration-border decoration-2 underline-offset-4 hover:text-accent transition-all ease-in duration-100;
   }
 }
 
@@ -89,4 +89,7 @@
 body {
   padding: 0;
   margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+  text-size-adjust: none;
 }
