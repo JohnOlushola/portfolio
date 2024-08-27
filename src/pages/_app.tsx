@@ -10,7 +10,10 @@ import Head from "next/head";
 
 // Font files can be colocated inside of `pages`
 const customFont = localFont({
-  src: "../../public/fonts/ClashGrotesk-Variable.ttf",
+  src: [
+    { path: "../../public/fonts/InterVariable.ttf", style: "normal" },
+    { path: "../../public/fonts/InterVariable-Italic.ttf", style: "italic" },
+  ],
 });
 
 export default function Nextra({ Component, pageProps }: AppProps) {
