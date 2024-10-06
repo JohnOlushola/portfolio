@@ -29,6 +29,10 @@ const notes: ContentItem[] = [
     name: "On keeping things simple",
     link: "/notes/on-keeping-things-simple",
   },
+  {
+    name: "The compounding effect of learning",
+    link: "/notes/compounding-effect-learning",
+  },
 ];
 
 export default function Home() {
