@@ -1,6 +1,6 @@
 ---
 title: The compounding effect of learning
-date: 2024/6/10
+date: 2024/10/6
 description: Why?
 ---
 
