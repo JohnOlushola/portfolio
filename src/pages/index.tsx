@@ -43,7 +43,7 @@ export default function Home() {
       <div className="mb-20 max-w-5xl lg:max-w-full flex flex-col gap-8">
         <div>
           <h1 className="tracking-wide">Temiloluwa Olushola</h1>
-          <p className="opacity-60">Software Engineer in London</p>
+          <p className="opacity-60">Software Engineer</p>
         </div>
 
         <p>
