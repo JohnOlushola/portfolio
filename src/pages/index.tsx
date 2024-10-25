@@ -53,11 +53,7 @@ export default function Home() {
             TransitionZero
           </a>
           , I&apos;m crafting interfaces that simplifies the world of complex
-          energy systems modelling. I&apos;m also tinkering at{" "}
-          <a href="https://tnkr.ai/" target="_blank">
-            tnkr.ai
-          </a>{" "}
-          with the crew.
+          energy systems modelling.
         </p>
 
         <p>On the side, I love cars, weight-lifting and photography.</p>
