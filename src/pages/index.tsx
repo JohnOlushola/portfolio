@@ -5,20 +5,24 @@ import Image from "next/image";
 interface ContentItem {
   name: string;
   link: string;
+  asset?: string;
 }
 
 const projects: ContentItem[] = [
   {
     name: "Solar Asset Mapper",
     link: "https://solar.transitionzero.org/",
+    asset: "/videos/tz-sam.mp4",
   },
   {
     name: "TJWHO Universe",
     link: "https://www.tjwho.co/",
+    asset: "/videos/tjwho-main.mp4",
   },
   {
     name: "Airpods Pro",
     link: "https://airpods-pro.jtolushola.com/",
+    asset: "/images/airpods-pro.png",
   },
 ];
 
@@ -36,6 +40,12 @@ const notes: ContentItem[] = [
     link: "/notes/compounding-effect-learning",
   },
 ];
+
+const getAssetType = (asset: string | undefined) => {
+  if (!asset) return null;
+  const extension = asset.split(".").pop()?.toLowerCase();
+  return extension === "mp4" ? "video" : "image";
+};
 
 export default function Home() {
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
@@ -87,18 +97,32 @@ export default function Home() {
                   {project.name}
                 </a>
 
-                {hoveredLink === project.name && (
-                  <Image
-                    src="/images/airpods-pro.png" // Replace with your asset path
-                    alt="Preview"
-                    width={300}
-                    height={300}
-                    className="w-auto h-auto absolute"
+                {project.asset && hoveredLink === project.name && (
+                  <div
+                    className="absolute w-96 h-auto rounded"
                     style={{
-                      top: cursorPosition.y - 260, // Slightly offset from cursor
+                      top: cursorPosition.y - 260,
                       left: cursorPosition.x - 125,
                     }}
-                  />
+                  >
+                    {getAssetType(project.asset) === "video" ? (
+                      <video
+                        src={project.asset}
+                        muted
+                        loop
+                        autoPlay
+                        controls={false}
+                        className="w-full h-full rounded"
+                      />
+                    ) : (
+                      <Image
+                        src={project.asset}
+                        alt="Preview"
+                        fill
+                        className="w-96 h-96 object-contain rounded"
+                      />
+                    )}
+                  </div>
                 )}
               </li>
             ))}
