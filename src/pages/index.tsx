@@ -1,4 +1,6 @@
 import PageHead from "@/components/PageHead";
+import { useState } from "react";
+import Image from "next/image";
 
 interface ContentItem {
   name: string;
@@ -36,6 +38,13 @@ const notes: ContentItem[] = [
 ];
 
 export default function Home() {
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (event: React.MouseEvent) => {
+    setCursorPosition({ x: event.clientX, y: event.clientY });
+  };
+
   return (
     <div className="text-xl lg:text-2xl tracking-wide lg:tracking-wide leading-normal lg:leading-normal font-medium">
       <PageHead />
@@ -64,10 +73,33 @@ export default function Home() {
           <h2>Projects &#8212;</h2>
           <ul className="my-2.5 space-y-1">
             {projects.map((project, index) => (
-              <li key={`project_${index}`}>
-                <a href={project.link} target="_blank">
+              <li
+                key={`project_${index}`}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={() => setHoveredLink(null)}
+              >
+                <a
+                  href={project.link}
+                  target="_blank"
+                  onMouseEnter={() => setHoveredLink(project.name)}
+                  onMouseLeave={() => setHoveredLink(null)}
+                >
                   {project.name}
                 </a>
+
+                {hoveredLink === project.name && (
+                  <Image
+                    src="/images/airpods-pro.png" // Replace with your asset path
+                    alt="Preview"
+                    width={300}
+                    height={300}
+                    className="w-auto h-auto absolute"
+                    style={{
+                      top: cursorPosition.y - 260, // Slightly offset from cursor
+                      left: cursorPosition.x - 125,
+                    }}
+                  />
+                )}
               </li>
             ))}
           </ul>
@@ -76,10 +108,10 @@ export default function Home() {
         <div>
           <h2>Notes &#8212;</h2>
           <ul className="my-2.5 space-y-1">
-            {notes.map((notes, index) => (
-              <li key={`project_${index}`}>
-                <a href={notes.link} target="_blank">
-                  {notes.name}
+            {notes.map((note, index) => (
+              <li key={`note_${index}`}>
+                <a href={note.link} target="_blank">
+                  {note.name}
                 </a>
               </li>
             ))}
