@@ -1,22 +1,28 @@
 import PageHead from "@/components/PageHead";
+import { useState } from "react";
+import Image from "next/image";
 
 interface ContentItem {
   name: string;
   link: string;
+  asset?: string;
 }
 
 const projects: ContentItem[] = [
   {
     name: "Solar Asset Mapper",
     link: "https://solar.transitionzero.org/",
+    asset: "/videos/tz-sam.mp4",
   },
   {
     name: "TJWHO Universe",
     link: "https://www.tjwho.co/",
+    asset: "/videos/tjwho-main.mp4",
   },
   {
     name: "Airpods Pro",
     link: "https://airpods-pro.jtolushola.com/",
+    asset: "/videos/airpods.mov",
   },
 ];
 
@@ -36,6 +42,13 @@ const notes: ContentItem[] = [
 ];
 
 export default function Home() {
+  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+
+  const handleMouseMove = (event: React.MouseEvent) => {
+    setCursorPosition({ x: event.clientX, y: event.clientY });
+  };
+
   return (
     <div className="text-xl lg:text-2xl tracking-wide lg:tracking-wide leading-normal lg:leading-normal font-medium">
       <PageHead />
@@ -64,10 +77,38 @@ export default function Home() {
           <h2>Projects &#8212;</h2>
           <ul className="my-2.5 space-y-1">
             {projects.map((project, index) => (
-              <li key={`project_${index}`}>
-                <a href={project.link} target="_blank">
+              <li
+                key={`project_${index}`}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={() => setHoveredLink(null)}
+              >
+                <a
+                  href={project.link}
+                  target="_blank"
+                  onMouseEnter={() => setHoveredLink(project.name)}
+                  onMouseLeave={() => setHoveredLink(null)}
+                >
                   {project.name}
                 </a>
+
+                {project.asset && hoveredLink === project.name && (
+                  <div
+                    className="hidden md:block absolute w-96 h-auto rounded"
+                    style={{
+                      top: cursorPosition.y - 260,
+                      left: cursorPosition.x - 125,
+                    }}
+                  >
+                    <video
+                      src={project.asset}
+                      muted
+                      loop
+                      autoPlay
+                      controls={false}
+                      className="w-full h-full rounded"
+                    />
+                  </div>
+                )}
               </li>
             ))}
           </ul>
@@ -76,10 +117,10 @@ export default function Home() {
         <div>
           <h2>Notes &#8212;</h2>
           <ul className="my-2.5 space-y-1">
-            {notes.map((notes, index) => (
-              <li key={`project_${index}`}>
-                <a href={notes.link} target="_blank">
-                  {notes.name}
+            {notes.map((note, index) => (
+              <li key={`note_${index}`}>
+                <a href={note.link} target="_blank">
+                  {note.name}
                 </a>
               </li>
             ))}
