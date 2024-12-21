@@ -22,7 +22,7 @@ const projects: ContentItem[] = [
   {
     name: "Airpods Pro",
     link: "https://airpods-pro.jtolushola.com/",
-    asset: "/images/airpods-pro.png",
+    asset: "/videos/airpods.mov",
   },
 ];
 
@@ -40,12 +40,6 @@ const notes: ContentItem[] = [
     link: "/notes/compounding-effect-learning",
   },
 ];
-
-const getAssetType = (asset: string | undefined) => {
-  if (!asset) return null;
-  const extension = asset.split(".").pop()?.toLowerCase();
-  return extension === "mp4" ? "video" : "image";
-};
 
 export default function Home() {
   const [hoveredLink, setHoveredLink] = useState<string | null>(null);
@@ -105,23 +99,14 @@ export default function Home() {
                       left: cursorPosition.x - 125,
                     }}
                   >
-                    {getAssetType(project.asset) === "video" ? (
-                      <video
-                        src={project.asset}
-                        muted
-                        loop
-                        autoPlay
-                        controls={false}
-                        className="w-full h-full rounded"
-                      />
-                    ) : (
-                      <Image
-                        src={project.asset}
-                        alt="Preview"
-                        fill
-                        className="w-96 h-96 object-contain rounded"
-                      />
-                    )}
+                    <video
+                      src={project.asset}
+                      muted
+                      loop
+                      autoPlay
+                      controls={false}
+                      className="w-full h-full rounded"
+                    />
                   </div>
                 )}
               </li>
