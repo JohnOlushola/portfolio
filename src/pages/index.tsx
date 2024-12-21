@@ -93,7 +93,7 @@ export default function Home() {
 
                 {project.asset && hoveredLink === project.name && (
                   <div
-                    className="absolute w-96 h-auto rounded"
+                    className="hidden md:block absolute w-96 h-auto rounded"
                     style={{
                       top: cursorPosition.y - 260,
                       left: cursorPosition.x - 125,
