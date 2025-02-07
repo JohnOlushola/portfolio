@@ -12,7 +12,8 @@ const projects: ContentItem[] = [
   {
     name: "Solar Asset Mapper",
     link: "https://solar.transitionzero.org/",
-    asset: "/videos/tz-sam.mp4",
+    asset:
+      "https://res.cloudinary.com/jtolushola/video/upload/f_auto:video,q_auto/v1/portfolio/high_obnhlw",
   },
   {
     name: "TJWHO Universe",
