@@ -1,17 +1,17 @@
 import React, { useState } from "react";
 
-interface PreviewedLinkProps {
-  url: string;
-  label: string;
+interface PreviewedLinkProps
+  extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
   asset: string;
 }
 
 export default function PreviewedLink({
   asset,
-  label,
-  url,
+  href,
+  children,
+  ...rest
 }: PreviewedLinkProps) {
-  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+  const [hoveredLink, setHoveredLink] = useState(false);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
   const handleMouseMove = (event: React.MouseEvent) => {
@@ -19,17 +19,17 @@ export default function PreviewedLink({
   };
 
   return (
-    <div
+    <span
       onMouseMove={handleMouseMove}
-      onMouseLeave={() => setHoveredLink(null)}
+      onMouseLeave={() => setHoveredLink(false)}
     >
       <a
-        href={url}
-        target="_blank"
-        onMouseEnter={() => setHoveredLink(label)}
-        onMouseLeave={() => setHoveredLink(null)}
+        href={href}
+        {...rest}
+        onMouseEnter={() => setHoveredLink(true)}
+        onMouseLeave={() => setHoveredLink(false)}
       >
-        {label}
+        {children}
       </a>
 
       {hoveredLink && (
@@ -50,6 +50,6 @@ export default function PreviewedLink({
           />
         </div>
       )}
-    </div>
+    </span>
   );
 }

@@ -1,7 +1,6 @@
 import PageHead from "@/components/PageHead";
-import { useState } from "react";
-import Image from "next/image";
 import PreviewedLink from "@/components/PreviewedLink";
+import Link from "next/link";
 
 interface ContentItem {
   name: string;
@@ -44,13 +43,6 @@ const notes: ContentItem[] = [
 ];
 
 export default function Home() {
-  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (event: React.MouseEvent) => {
-    setCursorPosition({ x: event.clientX, y: event.clientY });
-  };
-
   return (
     <div className="text-xl lg:text-2xl tracking-wide lg:tracking-wide leading-normal lg:leading-normal font-medium">
       <PageHead />
@@ -67,8 +59,14 @@ export default function Home() {
           <a href="https://www.transitionzero.org/" target="_blank">
             TransitionZero
           </a>
-          , I&apos;m crafting interfaces that simplifies the world of complex
-          energy systems modelling.
+          , I&apos;m crafting interfaces that simplifies the world of complex{" "}
+          <PreviewedLink
+            href="https://builder.transitionzero.org/"
+            asset="https://res.cloudinary.com/jtolushola/video/upload/f_auto:video,q_auto/v1/portfolio/wg9yezedcgq7uchpkwqx"
+            target="_blank"
+          >
+            energy systems modelling
+          </PreviewedLink>
         </p>
 
         <p>On the side, I love cars, weight-lifting and photography.</p>
@@ -82,9 +80,11 @@ export default function Home() {
               <li key={`project_${index}`}>
                 <PreviewedLink
                   asset={project.asset!}
-                  url={project.link}
-                  label={project.name}
-                />
+                  href={project.link}
+                  target="_blank"
+                >
+                  {project.name}
+                </PreviewedLink>
               </li>
             ))}
           </ul>
@@ -95,9 +95,9 @@ export default function Home() {
           <ul className="my-2.5 space-y-1">
             {notes.map((note, index) => (
               <li key={`note_${index}`}>
-                <a href={note.link} target="_blank">
+                <Link href={note.link} target="_blank">
                   {note.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
