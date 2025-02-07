@@ -78,7 +78,7 @@
   }
 
   a {
-    @apply underline decoration-border decoration-2 underline-offset-4 hover:text-accent transition-all ease-in duration-100;
+    @apply underline decoration-muted hover:decoration-accent decoration-2 underline-offset-8 hover:text-accent transition-all ease-out duration-100;
   }
 }
 
