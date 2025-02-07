@@ -1,6 +1,6 @@
 import PageHead from "@/components/PageHead";
-import { useState } from "react";
-import Image from "next/image";
+import PreviewedLink from "@/components/PreviewedLink";
+import Link from "next/link";
 
 interface ContentItem {
   name: string;
@@ -43,13 +43,6 @@ const notes: ContentItem[] = [
 ];
 
 export default function Home() {
-  const [hoveredLink, setHoveredLink] = useState<string | null>(null);
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (event: React.MouseEvent) => {
-    setCursorPosition({ x: event.clientX, y: event.clientY });
-  };
-
   return (
     <div className="text-xl lg:text-2xl tracking-wide lg:tracking-wide leading-normal lg:leading-normal font-medium">
       <PageHead />
@@ -66,8 +59,14 @@ export default function Home() {
           <a href="https://www.transitionzero.org/" target="_blank">
             TransitionZero
           </a>
-          , I&apos;m crafting interfaces that simplifies the world of complex
-          energy systems modelling.
+          , I&apos;m crafting interfaces that simplifies the world of complex{" "}
+          <PreviewedLink
+            href="https://builder.transitionzero.org/"
+            asset="https://res.cloudinary.com/jtolushola/video/upload/f_auto:video,q_auto/v1/portfolio/wg9yezedcgq7uchpkwqx"
+            target="_blank"
+          >
+            energy systems modelling
+          </PreviewedLink>
         </p>
 
         <p>On the side, I love cars, weight-lifting and photography.</p>
@@ -78,38 +77,14 @@ export default function Home() {
           <h2>Projects &#8212;</h2>
           <ul className="my-2.5 space-y-1">
             {projects.map((project, index) => (
-              <li
-                key={`project_${index}`}
-                onMouseMove={handleMouseMove}
-                onMouseLeave={() => setHoveredLink(null)}
-              >
-                <a
+              <li key={`project_${index}`}>
+                <PreviewedLink
+                  asset={project.asset!}
                   href={project.link}
                   target="_blank"
-                  onMouseEnter={() => setHoveredLink(project.name)}
-                  onMouseLeave={() => setHoveredLink(null)}
                 >
                   {project.name}
-                </a>
-
-                {project.asset && hoveredLink === project.name && (
-                  <div
-                    className="hidden md:block absolute w-96 h-auto rounded"
-                    style={{
-                      top: cursorPosition.y - 260,
-                      left: cursorPosition.x - 125,
-                    }}
-                  >
-                    <video
-                      src={project.asset}
-                      muted
-                      loop
-                      autoPlay
-                      controls={false}
-                      className="w-full h-full rounded"
-                    />
-                  </div>
-                )}
+                </PreviewedLink>
               </li>
             ))}
           </ul>
@@ -120,9 +95,9 @@ export default function Home() {
           <ul className="my-2.5 space-y-1">
             {notes.map((note, index) => (
               <li key={`note_${index}`}>
-                <a href={note.link} target="_blank">
+                <Link href={note.link} target="_blank">
                   {note.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
