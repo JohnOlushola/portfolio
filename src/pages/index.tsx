@@ -1,6 +1,7 @@
 import PageHead from "@/components/PageHead";
 import { useState } from "react";
 import Image from "next/image";
+import PreviewedLink from "@/components/PreviewedLink";
 
 interface ContentItem {
   name: string;
@@ -78,38 +79,12 @@ export default function Home() {
           <h2>Projects &#8212;</h2>
           <ul className="my-2.5 space-y-1">
             {projects.map((project, index) => (
-              <li
-                key={`project_${index}`}
-                onMouseMove={handleMouseMove}
-                onMouseLeave={() => setHoveredLink(null)}
-              >
-                <a
-                  href={project.link}
-                  target="_blank"
-                  onMouseEnter={() => setHoveredLink(project.name)}
-                  onMouseLeave={() => setHoveredLink(null)}
-                >
-                  {project.name}
-                </a>
-
-                {project.asset && hoveredLink === project.name && (
-                  <div
-                    className="hidden md:block absolute w-96 h-auto rounded"
-                    style={{
-                      top: cursorPosition.y - 260,
-                      left: cursorPosition.x - 125,
-                    }}
-                  >
-                    <video
-                      src={project.asset}
-                      muted
-                      loop
-                      autoPlay
-                      controls={false}
-                      className="w-full h-full rounded"
-                    />
-                  </div>
-                )}
+              <li key={`project_${index}`}>
+                <PreviewedLink
+                  asset={project.asset!}
+                  url={project.link}
+                  label={project.name}
+                />
               </li>
             ))}
           </ul>
