@@ -3,7 +3,8 @@ const withNextra = require('nextra')({
   theme: 'nextra-theme-blog',
   themeConfig: './theme.config.jsx',
   defaultShowCopyCode: true,
-  readingTime: true
+  readingTime: true,
+  latex: true
 })
  
 module.exports = withNextra({
