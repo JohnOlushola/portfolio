@@ -95,9 +95,7 @@ export default function Home() {
           <ul className="my-2.5 space-y-1">
             {notes.map((note, index) => (
               <li key={`note_${index}`}>
-                <Link href={note.link} target="_blank">
-                  {note.name}
-                </Link>
+                <Link href={note.link}>{note.name}</Link>
               </li>
             ))}
           </ul>
