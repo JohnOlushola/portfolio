@@ -29,6 +29,10 @@ const projects: ContentItem[] = [
 
 const notes: ContentItem[] = [
   {
+    name: "State machines - a simple introduction",
+    link: "/notes/state-machines",
+  },
+  {
     name: "...a space to share resources",
     link: "/notes/resources",
   },
