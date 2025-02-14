@@ -29,16 +29,16 @@ const projects: ContentItem[] = [
 
 const notes: ContentItem[] = [
   {
-    name: "...a space to share resources",
-    link: "/notes/resources",
+    name: "State machines - a simple introduction",
+    link: "/notes/state-machines",
   },
   {
     name: "On keeping things simple",
     link: "/notes/on-keeping-things-simple",
   },
   {
-    name: "The compounding effect of learning",
-    link: "/notes/compounding-effect-learning",
+    name: "...more",
+    link: "/notes",
   },
 ];
 
