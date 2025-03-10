@@ -29,12 +29,12 @@ const projects: ContentItem[] = [
 
 const notes: ContentItem[] = [
   {
-    name: "State machines - a simple introduction",
-    link: "/notes/state-machines",
+    name: "Typing a slug",
+    link: "/notes/typing-a-slug",
   },
   {
-    name: "On keeping things simple",
-    link: "/notes/on-keeping-things-simple",
+    name: "State machines - a simple introduction",
+    link: "/notes/state-machines",
   },
   {
     name: "...more",
