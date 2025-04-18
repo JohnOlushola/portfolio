@@ -61,7 +61,7 @@ export default function Home() {
   return (
     <>
       <PageHead />
-      <div className="font-mono text-center mt-20 justify-center flex flex-col items-center">
+      <div className="font-mono text-center mt-20 justify-center flex flex-col items-center relative">
         <h1 className="mb-8">
           Temiloluwa Olushola &mdash;{" "}
           <span className="opacity-60">design, engineering, AI;</span>{" "}
@@ -70,7 +70,7 @@ export default function Home() {
           </span>
         </h1>
 
-        <div className="flex mx-auto space-x-10 mb-20">
+        <div className="flex mx-auto space-x-10 sticky top-4 bg-background/40 px-10 pb-5 pt-3 backdrop-blur-md rounded-md  shadow-lg">
           {tabs.map((tab, index) => (
             <button
               key={tab}
@@ -85,25 +85,27 @@ export default function Home() {
         </div>
 
         {projects.map(({ name, asset, link, year }, index) => (
-          <div
-            key={index}
-            className="rounded-xl overflow-hidden space-y-4 mb-20"
-          >
-            <video
-              muted
-              loop
-              autoPlay
-              controls={false}
-              className="w-full lg:w-[70vw] rounded-xl overflow-hidden peer"
-              src={asset}
-            />
-            <div className="flex justify-between">
-              <Link href={link} className="text-left peer-hover:cursor-pointer">
-                {name}
-              </Link>
-              <p className="opacity-60">{year}</p>
-            </div>
-          </div>
+          <article key={index} className="space-y-4 mb-20">
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block"
+            >
+              <video
+                muted
+                loop
+                autoPlay
+                controls={false}
+                className="w-full lg:w-[70vw] mb-1 rounded-xl overflow-hidden peer border-2 hover:border-accent hover:p-1 transition-all"
+                src={asset}
+              />
+              <div className="flex justify-between">
+                <span className="text-left">{name}</span>
+                {/* <p className="opacity-60">{year}</p> */}
+              </div>
+            </a>
+          </article>
         ))}
       </div>
     </>
