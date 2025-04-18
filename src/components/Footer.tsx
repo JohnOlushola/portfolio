@@ -2,7 +2,7 @@ export default function Footer() {
   return (
     <footer className="mt-auto">
       <div className="container flex justify-between items-center py-4 text-sm">
-        <p className="">&copy; 2024 Olushola Temiloluwa.</p>
+        <p className="">&copy; {new Date().getFullYear()} Olushola Temiloluwa.</p>
 
         <div className="flex items-center gap-10">
           <a
