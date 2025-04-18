@@ -6,24 +6,34 @@ interface ContentItem {
   name: string;
   link: string;
   asset?: string;
+  year?: number;
 }
 
 const projects: ContentItem[] = [
+  {
+    name: "Scenario Builder",
+    link: "https://solar.transitionzero.org/",
+    asset: "/videos/scenario-builder.mp4",
+    year: 2025,
+  },
   {
     name: "Solar Asset Mapper",
     link: "https://solar.transitionzero.org/",
     asset:
       "https://res.cloudinary.com/jtolushola/video/upload/f_auto:video,q_auto/v1/portfolio/high_obnhlw",
+    year: 2024,
   },
   {
     name: "TJWHO Universe",
     link: "https://www.tjwho.co/",
     asset: "/videos/tjwho-main.mp4",
+    year: 2023,
   },
   {
     name: "Airpods Pro",
     link: "https://airpods-pro.jtolushola.com/",
     asset: "/videos/airpods.mov",
+    year: 2020,
   },
 ];
 
@@ -44,63 +54,45 @@ const notes: ContentItem[] = [
 
 export default function Home() {
   return (
-    <div className="text-xl lg:text-2xl tracking-wide lg:tracking-wide leading-normal lg:leading-normal font-medium">
+    <>
       <PageHead />
+      <div className="font-mono text-center mt-20 justify-center flex flex-col items-center">
+        <h1 className="mb-8">
+          Temiloluwa Olushola &mdash;{" "}
+          <span className="opacity-60">design, engineering, AI;</span>{" "}
+          <span>
+            <Link href="/">more</Link>
+          </span>
+        </h1>
 
-      <div className="mb-20 max-w-5xl lg:max-w-full flex flex-col gap-8">
-        <div>
-          <h1 className="tracking-wide">Temiloluwa Olushola</h1>
-          <p className="opacity-60">Software Engineer</p>
+        <div className="flex mx-auto space-x-10 mb-20">
+          <Link href="/">works</Link>
+          <Link href="/">notes</Link>
+          <Link href="/">resources</Link>
         </div>
 
-        <p>
-          I&apos;m a software engineer interested in the intersection of design,
-          engineering and AI. Now leading design at{" "}
-          <a href="https://www.transitionzero.org/" target="_blank">
-            TransitionZero
-          </a>
-          , I&apos;m crafting interfaces that simplifies the world of complex{" "}
-          <PreviewedLink
-            href="https://builder.transitionzero.org/"
-            asset="https://res.cloudinary.com/jtolushola/video/upload/f_auto:video,q_auto/v1/portfolio/wg9yezedcgq7uchpkwqx"
-            target="_blank"
+        {projects.map(({ name, asset, link, year }, index) => (
+          <div
+            key={index}
+            className="rounded-xl overflow-hidden space-y-4 mb-20"
           >
-            energy systems modelling
-          </PreviewedLink>
-        </p>
-
-        <p>On the side, I love cars, weight-lifting and photography.</p>
+            <video
+              muted
+              loop
+              autoPlay
+              controls={false}
+              className="w-full lg:w-[70vw] rounded-xl overflow-hidden peer"
+              src={asset}
+            />
+            <div className="flex justify-between">
+              <Link href={link} className="text-left peer-hover:cursor-pointer">
+                {name}
+              </Link>
+              <p className="opacity-60">{year}</p>
+            </div>
+          </div>
+        ))}
       </div>
-
-      <div className="grid md:grid-cols-2 gap-6 md:gap-12 w-full xl:w-3/4 h-full">
-        <div className="col-span-1">
-          <h2>Projects &#8212;</h2>
-          <ul className="my-2.5 space-y-1">
-            {projects.map((project, index) => (
-              <li key={`project_${index}`}>
-                <PreviewedLink
-                  asset={project.asset!}
-                  href={project.link}
-                  target="_blank"
-                >
-                  {project.name}
-                </PreviewedLink>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div>
-          <h2>Notes &#8212;</h2>
-          <ul className="my-2.5 space-y-1">
-            {notes.map((note, index) => (
-              <li key={`note_${index}`}>
-                <Link href={note.link}>{note.name}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </div>
+    </>
   );
 }

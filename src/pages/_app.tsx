@@ -30,12 +30,12 @@ export default function Nextra({ Component, pageProps }: AppProps) {
       </Head>
       <div className={`${customFont.className} flex flex-col min-h-screen`}>
         <Analytics />
-        <Header />
+        {/* <Header /> */}
         <main className="my-20 container">
           <Component {...pageProps} />
         </main>
         <VercelToolbar />
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </>
   );
