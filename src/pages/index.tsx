@@ -1,6 +1,8 @@
 import PageHead from "@/components/PageHead";
 import PreviewedLink from "@/components/PreviewedLink";
+import { cn } from "@/lib/utils";
 import Link from "next/link";
+import { useState } from "react";
 
 interface ContentItem {
   name: string;
@@ -53,6 +55,9 @@ const notes: ContentItem[] = [
 ];
 
 export default function Home() {
+  const [activeTab, setActiveTab] = useState("works");
+  const tabs = ["works", "notes", "resources"];
+
   return (
     <>
       <PageHead />
@@ -66,9 +71,17 @@ export default function Home() {
         </h1>
 
         <div className="flex mx-auto space-x-10 mb-20">
-          <Link href="/">works</Link>
-          <Link href="/">notes</Link>
-          <Link href="/">resources</Link>
+          {tabs.map((tab, index) => (
+            <button
+              key={tab}
+              className={cn("tab cursor-pointer", {
+                "decoration-accent text-accent": activeTab == tab,
+              })}
+              onClick={() => setActiveTab(tab)}
+            >
+              {tab}
+            </button>
+          ))}
         </div>
 
         {projects.map(({ name, asset, link, year }, index) => (
