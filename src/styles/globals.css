@@ -77,8 +77,8 @@
     @apply bg-background text-foreground;
   }
 
-  a,.tab {
-    @apply underline decoration-muted hover:decoration-accent decoration-2 underline-offset-8 hover:text-accent transition-all ease-out duration-100;
+  a,.tab,.jump {
+    @apply underline decoration-muted hover:decoration-accent decoration-2 underline-offset-8 hover:text-accent transition-all ease-in-out duration-100;
   }
 }
 
