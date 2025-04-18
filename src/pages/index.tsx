@@ -1,10 +1,12 @@
+import NavTabs from "@/components/NavTabs";
 import PageHead from "@/components/PageHead";
 import PreviewedLink from "@/components/PreviewedLink";
+import WorkItem from "@/components/WorkItem";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { useState } from "react";
 
-interface ContentItem {
+export interface ContentItem {
   name: string;
   link: string;
   asset?: string;
@@ -56,7 +58,6 @@ const notes: ContentItem[] = [
 
 export default function Home() {
   const [activeTab, setActiveTab] = useState("works");
-  const tabs = ["works", "notes", "resources"];
 
   return (
     <>
@@ -70,42 +71,10 @@ export default function Home() {
           </span>
         </h1>
 
-        <div className="flex mx-auto space-x-10 sticky top-4 bg-background/40 px-10 pb-5 pt-3 backdrop-blur-md rounded-md  shadow-lg">
-          {tabs.map((tab, index) => (
-            <button
-              key={tab}
-              className={cn("tab cursor-pointer", {
-                "decoration-accent text-accent": activeTab == tab,
-              })}
-              onClick={() => setActiveTab(tab)}
-            >
-              {tab}
-            </button>
-          ))}
-        </div>
+        <NavTabs activeTab={activeTab} onChange={setActiveTab} />
 
-        {projects.map(({ name, asset, link, year }, index) => (
-          <article key={index} className="space-y-4 mb-20">
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block"
-            >
-              <video
-                muted
-                loop
-                autoPlay
-                controls={false}
-                className="w-full lg:w-[70vw] mb-1 rounded-xl overflow-hidden peer border-2 hover:border-accent hover:p-1 transition-all"
-                src={asset}
-              />
-              <div className="flex justify-between">
-                <span className="text-left">{name}</span>
-                {/* <p className="opacity-60">{year}</p> */}
-              </div>
-            </a>
-          </article>
+        {projects.map(({ name, asset, link }, index) => (
+          <WorkItem key={index} name={name} asset={asset} link={link} />
         ))}
       </div>
     </>
