@@ -51,6 +51,14 @@ const notes: ContentItem[] = [
     link: "/notes/state-machines",
   },
   {
+    name: "On Keeping things simple",
+    link: "/notes/state-machines",
+  },
+  {
+    name: "A space to share resources",
+    link: "/notes/state-machines",
+  },
+  {
     name: "...more",
     link: "/notes",
   },
@@ -73,9 +81,26 @@ export default function Home() {
 
         <NavTabs activeTab={activeTab} onChange={setActiveTab} />
 
-        {projects.map(({ name, asset, link }, index) => (
-          <WorkItem key={index} name={name} asset={asset} link={link} />
-        ))}
+        {activeTab === "notes" ? (
+          <ol className="mt-20 space-y-2.5 list-decimal">
+            {notes.map(({ name, link }, index) => (
+              <li key={index}>
+                <Link href={link} className="flex">
+                  {name}
+                </Link>
+              </li>
+            ))}
+          </ol>
+        ) : activeTab === "works" ? (
+          projects.map(({ name, asset, link }, index) => (
+            <WorkItem key={index} name={name} asset={asset} link={link} />
+          ))
+        ) : (
+          <iframe
+            className="border-0 h-screen w-screen rounded-none mt-20"
+            src="https://raindrop.io/jtolushola/all-44362671/embed/sort=-created"
+          />
+        )}
       </div>
     </>
   );

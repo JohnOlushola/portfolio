@@ -10,7 +10,7 @@ export default function NavTabs({ activeTab, onChange }: NavTabsProps) {
   const tabs = ["works", "notes", "resources"];
 
   return (
-    <div className="flex mx-auto space-x-10 sticky top-4 bg-background/40 px-10 pb-5 pt-3 backdrop-blur-md rounded-md  shadow-lg">
+    <div className="flex space-x-10 sticky top-4 bg-background/40 px-10 pb-5 pt-3 backdrop-blur-md rounded-md  shadow-lg">
       {tabs.map((tab, index) => (
         <button
           key={tab}
