@@ -1,9 +1,9 @@
 import { ContentItem } from "@/pages";
 import React from "react";
 
-export default function WorkItem({ link, asset, name }: ContentItem) {
+export default function WorkItem({ link, asset, name, id }: ContentItem) {
   return (
-    <article>
+    <article id={id}>
       <a
         href={link}
         target="_blank"
