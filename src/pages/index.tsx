@@ -83,8 +83,8 @@ export default function Home() {
   return (
     <>
       <PageHead />
-      <div className="font-mono text-center mt-20 justify-center flex flex-col items-center relative scroll-smooth">
-        <details className="group mt-6 text-center max-w-prose mx-auto transition-all duration-300 mb-8 ease-in-out">
+      <div className="font-mono text-center mt-20 justify-center flex flex-col items-center scroll-smooth">
+        <details className="group mt-6 text-center max-w-prose mx-auto mb-8">
           <summary className="cursor-pointer hover:underline underline-offset-8 decoration-dashed decoration-muted-foreground ease-in-out">
             Temiloluwa Olushola &mdash;{" "}
             <span className="text-muted-foreground">
@@ -95,13 +95,12 @@ export default function Home() {
           <div className="mt-6 leading-relaxed space-y-6">
             <p>
               I’m currently a Senior Frontend Engineer at{" "}
-              <a
-                href="https://www.transitionzero.org/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <PreviewedLink
+                href="https://www.transitionzero.org"
+                asset="/images/TransitionZero.jpeg"
               >
                 TransitionZero
-              </a>
+              </PreviewedLink>
               , where I’m helping build a platform for energy systems modelling.
               I also contributed to the development of{" "}
               <PreviewedLink
@@ -115,8 +114,22 @@ export default function Home() {
             </p>
             <p>
               Outside of my work-related passions, I’m a gym rat, music lover,
-              car enthusiast, outdoorsy type—and most importantly, a child of
-              God. Lately, I’ve been learning to dance Bachata and it’s been a
+              car enthusiast,{" "}
+              <PreviewedLink
+                href="https://chatgpt.com/share/6803c721-e940-8003-a55c-a4c482dbb6e1"
+                asset="/images/wissahickon.jpg"
+              >
+                outdoorsy
+              </PreviewedLink>{" "}
+              type—and most importantly, a{" "}
+              <PreviewedLink
+                className="inline-block"
+                href="https://chatgpt.com/share/6803c721-e940-8003-a55c-a4c482dbb6e1"
+                asset="/images/TransitionZero.jpeg"
+              >
+                child of God
+              </PreviewedLink>
+              . Lately, I’ve been learning to dance Bachata and it’s been a
               blast. This site is my little home on the internet.
             </p>
             <p>

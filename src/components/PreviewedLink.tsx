@@ -14,6 +14,12 @@ export default function PreviewedLink({
   const [hoveredLink, setHoveredLink] = useState(false);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
+  const isVideo = (url: string) => {
+    // Check if the path includes known video patterns (e.g., Cloudinary format)
+    if (url.includes("/video/")) return true;
+    return /\.(mp4|webm|ogg|mov)$/i.test(url);
+  };
+
   const handleMouseMove = (event: React.MouseEvent) => {
     setCursorPosition({ x: event.clientX, y: event.clientY });
   };
@@ -26,6 +32,8 @@ export default function PreviewedLink({
       <a
         href={href}
         {...rest}
+        target="_blank"
+        rel="noopener noreferrer"
         onMouseEnter={() => setHoveredLink(true)}
         onMouseLeave={() => setHoveredLink(false)}
       >
@@ -40,14 +48,22 @@ export default function PreviewedLink({
             left: cursorPosition.x - 125,
           }}
         >
-          <video
-            src={asset}
-            muted
-            loop
-            autoPlay
-            controls={false}
-            className="w-full h-full rounded"
-          />
+          {isVideo(asset) ? (
+            <video
+              src={asset}
+              muted
+              loop
+              autoPlay
+              controls={false}
+              className="w-full h-full rounded"
+            />
+          ) : (
+            <img
+              src={asset}
+              alt={href}
+              className="w-full h-full object-contain rounded"
+            />
+          )}
         </div>
       )}
     </span>
