@@ -121,23 +121,16 @@ export default function Home() {
               >
                 outdoorsy
               </PreviewedLink>{" "}
-              type—and most importantly, a{" "}
-              <PreviewedLink
-                className="inline-block"
-                href="https://chatgpt.com/share/6803c721-e940-8003-a55c-a4c482dbb6e1"
-                asset="/images/TransitionZero.jpeg"
-              >
-                child of God
-              </PreviewedLink>
-              . Lately, I’ve been learning to dance Bachata and it’s been a
-              blast. This site is my little home on the internet.
+              type—and most importantly, a child of God. Lately, I’ve been
+              learning to dance Bachata and it’s been a blast. This site is my
+              little home on the internet.
             </p>
             <p>
               In <Link href="/notes">/notes</Link>, you’ll find half-baked
               thoughts, learning snippets, technical writing, and anything else
               I feel like dropping here. Check out{" "}
               <Link href="/resources">/resources</Link> for a curated list of
-              cool stuff—people, blogs, tools, ideas—that I’ve bookmarked. It’s
+              cool stuff—people, blogs, tools, ideas that I’ve bookmarked. It’s
               mainly for me, but hopefully helpful for you too. In{" "}
               <Link href="/works">/works</Link> , you’ll find a few selected
               projects I’ve worked on. Thanks for stopping by, feel free to
