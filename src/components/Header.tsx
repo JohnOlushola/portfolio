@@ -8,7 +8,7 @@ export function Header() {
   const [activeTab, setActiveTab] = useState("works");
 
   return (
-    <div className="mt-40 font-mono text-center justify-center flex flex-col items-center">
+    <div className="mt-40 font-mono text-center justify-center flex flex-col items-center container">
       <details className="group text-center max-w-prose mx-auto mb-8">
         <summary className="cursor-pointer hover:underline underline-offset-8 decoration-dashed decoration-muted-foreground ease-in-out outline-offset-4 focus-visible:outline-accent">
           Temiloluwa Olushola &mdash;{" "}
