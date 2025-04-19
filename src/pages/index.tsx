@@ -20,7 +20,8 @@ const projects: ContentItem[] = [
     id: "scenario-builder",
     name: "Scenario Builder",
     link: "https://solar.transitionzero.org/",
-    asset: "/videos/scenario-builder.mp4",
+    asset:
+      "https://res.cloudinary.com/jtolushola/video/upload/f_auto:video,q_auto/v1/portfolio/dtqq3ixnpzfjftdf90tq",
     year: 2025,
   },
   {
@@ -60,13 +61,18 @@ const notes: ContentItem[] = [
   },
   {
     id: "on-keeping-things-simple",
-    name: "On Keeping things simple",
+    name: "on-keeping-things-simple",
     link: "/notes/state-machines",
   },
   {
     id: "a-space-to-share-resources",
     name: "A space to share resources",
     link: "/notes/state-machines",
+  },
+  {
+    id: "compounding-effect-learning",
+    name: "The compounding effect of learning",
+    link: "/notes/compounding-effect-learning",
   },
   {
     id: "more",
@@ -101,8 +107,14 @@ export default function Home() {
               >
                 TransitionZero
               </PreviewedLink>
-              , where I’m helping build a platform for energy systems modelling.
-              I also contributed to the development of{" "}
+              , where I’m helping build a platform for{" "}
+              <PreviewedLink
+                href="https://builder.transitionzero.org/"
+                asset="https://res.cloudinary.com/jtolushola/video/upload/f_auto:video,q_auto/v1/portfolio/dtqq3ixnpzfjftdf90tq"
+              >
+                energy systems modelling
+              </PreviewedLink>
+              . I also contributed to the development of{" "}
               <PreviewedLink
                 href="https://solar.transitionzero.org/"
                 asset="https://res.cloudinary.com/jtolushola/video/upload/f_auto:video,q_auto/v1/portfolio/high_obnhlw"
