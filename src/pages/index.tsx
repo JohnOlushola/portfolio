@@ -115,14 +115,14 @@ export default function Home() {
           />
         )}
 
-        <div className="fixed inset-y-0 right-0 flex flex-col justify-center h-screen p-4 space-y-4 group">
+        <ul className="fixed inset-y-0 right-0 flex flex-col justify-center h-screen p-4 space-y-4 group">
           {projects.map(({ id }, index) => (
-            <div key={id}>
+            <ol key={id}>
               <Link
                 href={`/#${id}`}
                 className={cn(
                   {
-                    "decoration-accent text-accent": pathname.includes(
+                    "decoration-accent text-accent text-xs": pathname.includes(
                       `/#${id}`
                     ),
                   },
@@ -131,9 +131,9 @@ export default function Home() {
               >
                 {index}
               </Link>
-            </div>
+            </ol>
           ))}
-        </div>
+        </ul>
       </div>
     </>
   );
