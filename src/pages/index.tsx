@@ -84,13 +84,39 @@ export default function Home() {
     <>
       <PageHead />
       <div className="font-mono text-center mt-20 justify-center flex flex-col items-center relative scroll-smooth">
-        <h1 className="mb-8">
-          Temiloluwa Olushola &mdash;{" "}
-          <span className="opacity-60">design, engineering, AI;</span>{" "}
-          <span>
-            <Link href="/">more</Link>
-          </span>
-        </h1>
+        <details className="group mt-6 text-center max-w-prose mx-auto transition-all duration-300 mb-8 ease-in-out">
+          <summary className="cursor-pointer hover:underline underline-offset-8 decoration-dashed decoration-muted-foreground ease-in-out">
+            Temiloluwa Olushola &mdash;{" "}
+            <span className="text-muted-foreground">
+              design, engineering and; more
+            </span>
+          </summary>
+
+          <div className="mt-6 leading-relaxed space-y-6">
+            <p>
+              I’m currently a Senior Frontend Engineer at TransitionZero, where
+              I’m helping build a platform for energy systems modelling. I also
+              contributed to the development of Solar Asset Mapper, a
+              planetary-scale dataset of medium to large-scale solar power
+              plants.
+            </p>
+            <p>
+              Outside of work, I’m a gym rat, music lover, car enthusiast,
+              outdoorsy type—and most importantly, a child of God. Lately, I’ve
+              been learning to dance Bachata and it’s been a blast. This site is
+              my little home on the internet.
+            </p>
+            <p>
+              In /notes, you’ll find half-baked thoughts, learning snippets,
+              technical writing, and anything else I feel like dropping here.
+              Check out /resources for a curated list of cool stuff—people,
+              blogs, tools, ideas—that I’ve bookmarked. It’s mainly for me, but
+              hopefully helpful for you too. In /works, you’ll find a few
+              selected projects I’ve worked on. Thanks for stopping by—feel free
+              to reach out. Cheers!
+            </p>
+          </div>
+        </details>
 
         <NavTabs activeTab={activeTab} onChange={setActiveTab} />
 
