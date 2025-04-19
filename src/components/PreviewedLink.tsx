@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import React, { useState } from "react";
 
 interface PreviewedLinkProps
@@ -9,6 +10,7 @@ export default function PreviewedLink({
   asset,
   href,
   children,
+  className,
   ...rest
 }: PreviewedLinkProps) {
   const [hoveredLink, setHoveredLink] = useState(false);
@@ -34,6 +36,7 @@ export default function PreviewedLink({
         {...rest}
         target="_blank"
         rel="noopener noreferrer"
+        className={cn("underline-offset-4 text-muted-foreground", className)}
         onMouseEnter={() => setHoveredLink(true)}
         onMouseLeave={() => setHoveredLink(false)}
       >
