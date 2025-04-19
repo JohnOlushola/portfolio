@@ -28,10 +28,10 @@ export default function Nextra({ Component, pageProps }: AppProps) {
           href="/feed.xml"
         />
       </Head>
-      <div className={`${customFont.className} flex flex-col min-h-screen`}>
+      <div className={`${customFont.className} flex flex-col min-h-screen font-mono`}>
         <Analytics />
-        {/* <Header /> */}
-        <main className="my-20 container">
+        <Header />
+        <main className="container">
           <Component {...pageProps} />
         </main>
         <VercelToolbar />
