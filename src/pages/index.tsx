@@ -168,26 +168,6 @@ export default function Home() {
             src="https://raindrop.io/jtolushola/all-44362671/embed/sort=-created"
           />
         )}
-
-        <ul className="fixed inset-y-0 right-0 flex flex-col justify-center h-screen p-4 space-y-4 group">
-          {projects.map(({ id }, index) => (
-            <ol key={id}>
-              <Link
-                href={`/#${id}`}
-                className={cn(
-                  {
-                    "decoration-accent text-accent text-xs": pathname.includes(
-                      `/#${id}`
-                    ),
-                  },
-                  "opacity-40 group-hover:opacity-100 transition-opacity ease-in-out"
-                )}
-              >
-                {index}
-              </Link>
-            </ol>
-          ))}
-        </ul>
       </div>
     </>
   );
