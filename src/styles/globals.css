@@ -70,7 +70,7 @@
 
 @layer base {
   * {
-    @apply border-border;
+    @apply border-border font-mono;
   }
 
   body {
@@ -78,7 +78,7 @@
   }
 
   a,.tab,.jump {
-    @apply underline decoration-muted hover:decoration-accent decoration-2 underline-offset-8 hover:text-accent transition-all ease-in-out duration-100;
+    @apply underline decoration-muted hover:decoration-accent decoration-2 underline-offset-8 hover:text-accent transition-all ease-in-out duration-100 focus-visible:outline-accent focus-visible:outline-offset-4 focus-visible:outline-2;
   }
 }
 
