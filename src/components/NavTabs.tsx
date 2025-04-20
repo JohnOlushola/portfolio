@@ -9,7 +9,6 @@ export default function NavTabs() {
   const tabs = [
     { label: "works", url: "/" },
     { label: "notes", url: "/notes" },
-    { label: "resources", url: "/resources" },
   ];
 
   const pathname = usePathname();
