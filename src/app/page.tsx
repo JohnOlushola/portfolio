@@ -43,7 +43,7 @@ const projects: ContentItem[] = [
 
 export default function Home() {
   return (
-    <div className="justify-center flex flex-col items-center my-20 gap-y-20">
+    <div className="justify-center flex flex-col items-center space-y-32">
       {projects.map(({ id, link, asset, name }) => (
         <article id={id} key={id}>
           <a
@@ -57,7 +57,7 @@ export default function Home() {
               loop
               autoPlay
               controls={false}
-              className="w-full lg:w-[70vw] h-full mb-1 rounded-xl overflow-hidden border-2 group-focus:border-accent hover:border-accent group-focus:p-1 hover:p-1 transition-all"
+              className="w-full lg:w-[80vw] h-full mb-1 rounded-xl overflow-hidden border-2 group-focus:border-accent hover:border-accent group-focus:p-1 hover:p-1 transition-all"
               src={asset}
             />
             <div className="flex justify-between">
