@@ -6,6 +6,7 @@ import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 import rehypePrism from "rehype-prism-plus";
+import "prismjs/themes/prism-tomorrow.css";
 
 export async function generateStaticParams() {
   let posts = getBlogPosts();
