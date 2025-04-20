@@ -53,15 +53,15 @@ export function Header() {
             little home on the internet.
           </p>
           <p>
-            In <Link href="/notes">/notes</Link>, you’ll find half-baked
-            thoughts, learning snippets, technical writing, and anything else I
-            feel like dropping here. Check out{" "}
-            <Link href="/resources">/resources</Link> for a curated list of cool
-            stuff—people, blogs, tools, ideas that I’ve bookmarked. It’s mainly
-            for me, but hopefully helpful for you too. In{" "}
-            <Link href="/works">/works</Link> , you’ll find a few selected
-            projects I’ve worked on. Thanks for stopping by, feel free to reach
-            out. Cheers!
+            Thanks for stopping by, feel free to reach out to me on{" "}
+            <a href="www.linkedin.com/in/jtolushola" target="_blank">
+              LinkedIn
+            </a>{" "}
+            or{" "}
+            <a href="mailto:johntemiloluwa.o@gmail.com" target="_blank">
+              email
+            </a>
+            . Cheers!
           </p>
         </div>
       </details>
