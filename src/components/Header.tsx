@@ -4,7 +4,7 @@ import NavTabs from "./NavTabs";
 
 export function Header() {
   return (
-    <div className="mt-40 font-mono text-center justify-center flex flex-col items-center container">
+    <div className="mt-40 font-mono justify-center flex flex-col items-center container">
       <details className="group text-center max-w-prose mx-auto mb-8">
         <summary className="cursor-pointer hover:underline underline-offset-8 decoration-dashed decoration-muted-foreground ease-in-out outline-offset-4 focus-visible:outline-accent">
           Temiloluwa Olushola &mdash;{" "}
