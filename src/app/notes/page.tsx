@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { formatDate, getBlogPosts } from "./utils";
+import PreviewedLink from "@/components/PreviewedLink";
 
 export default function Notes() {
   let notes = getBlogPosts().sort(
@@ -10,18 +11,26 @@ export default function Notes() {
 
   return (
     <ol className="space-y-4 mx-auto w-full lg:w-[80vw] list-decimal">
-      {notes.map(({ slug, metadata }) => (
-        <li key={slug}>
-          <Link href={`/notes/${slug}`} className="flex flex-col space-y-1">
-            <div className="w-full flex flex-col justify-between md:flex-row md:items-baseline md:space-x-10">
-              <p className="tracking-tight">{metadata.title}</p>
-              <p className="tabular-nums text-muted-foreground">
-                {formatDate(metadata.publishedAt, false)}
-              </p>
-            </div>
-          </Link>
-        </li>
-      ))}
+      {notes.map(({ slug, metadata }) => {
+        const LinkComp = metadata.image ? PreviewedLink : Link;
+
+        return (
+          <li key={slug}>
+            <LinkComp
+              asset={metadata.image ?? ""}
+              href={`/notes/${slug}`}
+              className="flex flex-col space-y-1"
+            >
+              <div className="w-full flex flex-col justify-between md:flex-row md:items-baseline md:space-x-10">
+                <p className="tracking-tight !text-foreground">{metadata.title}</p>
+                <p className="tabular-nums text-muted-foreground">
+                  {formatDate(metadata.publishedAt, false)}
+                </p>
+              </div>
+            </LinkComp>
+          </li>
+        );
+      })}
     </ol>
   );
 }
