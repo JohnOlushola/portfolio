@@ -1,10 +1,8 @@
 export default function Footer() {
   return (
     <footer className="mt-auto">
-      <div className="container flex justify-between items-center py-4 text-sm">
-        <p className="">&copy; {new Date().getFullYear()} Olushola Temiloluwa.</p>
-
-        <div className="flex items-center gap-10">
+      <div className="container flex flex-col space-y-4 items-center py-8 text-sm">
+        <div className="flex items-center gap-8">
           <a
             href="https://github.com/JohnOlushola"
             target="_blank"
@@ -22,6 +20,10 @@ export default function Footer() {
             say hi
           </a>
         </div>
+
+        <p className="text-muted-foreground">
+          &copy; {new Date().getFullYear()} Olushola Temiloluwa.
+        </p>
       </div>
     </footer>
   );
