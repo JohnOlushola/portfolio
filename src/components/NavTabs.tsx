@@ -21,7 +21,7 @@ export default function NavTabs() {
           key={label}
           className={cn({
             "decoration-accent text-accent focus:outline-accent":
-              pathname.startsWith(url),
+              pathname === url || pathname.startsWith(`${url}/`),
           })}
         >
           {label}
