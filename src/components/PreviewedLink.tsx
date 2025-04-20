@@ -16,6 +16,7 @@ export default function PreviewedLink({
   ...rest
 }: PreviewedLinkProps) {
   const [hoveredLink, setHoveredLink] = useState(false);
+  const [focusedLink, setFocusedLink] = useState(false);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
   const isVideo = (url: string) => {
@@ -32,6 +33,8 @@ export default function PreviewedLink({
     <span
       onMouseMove={handleMouseMove}
       onMouseLeave={() => setHoveredLink(false)}
+      onFocus={() => setFocusedLink(true)}
+      onBlur={() => setFocusedLink(false)}
     >
       <a
         href={href}
@@ -41,16 +44,19 @@ export default function PreviewedLink({
         className={cn("underline-offset-4 text-muted-foreground", className)}
         onMouseEnter={() => setHoveredLink(true)}
         onMouseLeave={() => setHoveredLink(false)}
+        onFocus={() => setFocusedLink(true)}
+        onBlur={() => setFocusedLink(false)}
       >
         {children}
       </a>
 
-      {hoveredLink && (
+      {(hoveredLink || focusedLink) && (
         <span
           className="hidden md:block absolute w-96 h-auto rounded pointer-events-none"
           style={{
-            top: cursorPosition.y - 260,
-            left: cursorPosition.x - 125,
+            top: focusedLink ? 100 : cursorPosition.y - 260,
+            left: focusedLink ? "50%" : cursorPosition.x - 125,
+            transform: focusedLink ? "translateX(-50%)" : "none",
           }}
         >
           {isVideo(asset) ? (
