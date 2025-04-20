@@ -93,15 +93,15 @@ export default async function Page({ params }: PageProps) {
         }}
       />
 
-      <article className="prose mx-auto mb-10">
-        <h1 className="title font-semibold text-2xl tracking-tighter">
+      <div className="mx-auto text-accent mb-10 max-w-[65ch]">
+        <h1 className="title text-2xl font-semibold tracking-tighter mb-0">
           {post.metadata.title}
         </h1>
-        <div className="flex justify-between items-center mt-2 mb-8 text-sm">
-          <p className="text-sm text-neutral-600 dark:text-neutral-400">
-            {formatDate(post.metadata.publishedAt)}
-          </p>
-        </div>
+        <p className="text-sm text-neutral-600 dark:text-neutral-400">
+          {formatDate(post.metadata.publishedAt)}
+        </p>
+      </div>
+      <article className="prose dark:prose-invert mx-auto">
         <CustomMDX source={post.content} />
       </article>
     </section>
