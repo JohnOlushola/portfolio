@@ -1,5 +1,4 @@
 import PageHead from "@/components/PageHead";
-import WorkItem from "@/components/WorkItem";
 
 export interface ContentItem {
   id: string;
@@ -44,32 +43,29 @@ const projects: ContentItem[] = [
 
 export default function Home() {
   return (
-    <>
-      <PageHead />
-      <div className="justify-center flex flex-col items-center">
-        {projects.map(({ id, link, asset, name }) => (
-          <article id={id} key={id}>
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block group focus:outline-none"
-            >
-              <video
-                muted
-                loop
-                autoPlay
-                controls={false}
-                className="w-full lg:w-[70vw] h-full mb-1 rounded-xl overflow-hidden border-2 group-focus:border-accent hover:border-accent group-focus:p-1 hover:p-1 transition-all"
-                src={asset}
-              />
-              <div className="flex justify-between">
-                <span className="text-left">{name}</span>
-              </div>
-            </a>
-          </article>
-        ))}
-      </div>
-    </>
+    <div className="justify-center flex flex-col items-center my-20 gap-y-20">
+      {projects.map(({ id, link, asset, name }) => (
+        <article id={id} key={id}>
+          <a
+            href={link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="block group focus:outline-none"
+          >
+            <video
+              muted
+              loop
+              autoPlay
+              controls={false}
+              className="w-full lg:w-[70vw] h-full mb-1 rounded-xl overflow-hidden border-2 group-focus:border-accent hover:border-accent group-focus:p-1 hover:p-1 transition-all"
+              src={asset}
+            />
+            <div className="flex justify-between">
+              <span className="text-left">{name}</span>
+            </div>
+          </a>
+        </article>
+      ))}
+    </div>
   );
 }

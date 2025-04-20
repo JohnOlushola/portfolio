@@ -1,5 +1,6 @@
+"use client";
+
 import Link from "next/link";
-import Avatar from "./ui/Avatar";
 import PreviewedLink from "./PreviewedLink";
 import { useState } from "react";
 import NavTabs from "./NavTabs";
