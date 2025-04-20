@@ -1,7 +1,7 @@
 ---
 title: State machines
-date: 2025/02/14
-description: A simplified introduction to state machines
+publishedAt: '2025-02-14'
+summary: A simplified introduction to state machines
 ---
 
 # What is a state machine?
@@ -31,6 +31,7 @@ class ElevatorState(Enum):
 ```
 
 ## Inputs
+
 The elevator would have the following inputs:
 
 - Floor requests (from inside the elevator or from hallway call buttons)
@@ -50,6 +51,7 @@ def request_floor(self, floor):
 ```
 
 ## Transitions
+
 Based on the states and actions, I hope at this point you can mentally visualize the possible transitions. One would be going from idle to moving up after a floor request has been made.
 
 I want to address something here. You might be asking yourself, how come moving up, moving down, door opening or door closing are states and not transitions. Here's why:

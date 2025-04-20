@@ -44,7 +44,7 @@ export default function PreviewedLink({
       </a>
 
       {hoveredLink && (
-        <div
+        <span
           className="hidden md:block absolute w-96 h-auto rounded pointer-events-none"
           style={{
             top: cursorPosition.y - 260,
@@ -67,7 +67,7 @@ export default function PreviewedLink({
               className="w-full h-full object-contain rounded"
             />
           )}
-        </div>
+        </span>
       )}
     </span>
   );
