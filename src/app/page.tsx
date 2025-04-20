@@ -57,7 +57,7 @@ export default function Home() {
               loop
               autoPlay
               controls={false}
-              className="w-full lg:w-[80vw] h-full mb-1 rounded-xl overflow-hidden border-2 group-focus:border-accent hover:border-accent group-focus:p-1 hover:p-1 transition-all"
+              className="w-full lg:w-[75vw] h-full mb-1 rounded-xl overflow-hidden border-2 group-focus:border-accent hover:border-accent group-focus:p-1 hover:p-1 transition-all"
               src={asset}
             />
             <div className="flex justify-between">
