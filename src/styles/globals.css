@@ -80,6 +80,10 @@
       --sh-keyword: #f47067;
       --sh-string: #0fa295;
     }
+
+    html {
+      color-scheme: dark;
+    }
   }
 }
 
@@ -110,13 +114,8 @@ body {
 }
 
 /* MDX */
-.prose {
-  @apply mx-auto;
-}
-
 .prose .anchor {
   @apply absolute invisible no-underline;
-
   margin-left: -1em;
   padding-right: 0.5em;
   width: 80%;
@@ -168,7 +167,7 @@ body {
 }
 
 .prose h1 {
-  @apply text-4xl font-medium tracking-tight mt-6 mb-2;
+  @apply text-3xl font-medium tracking-tight mt-6 mb-2;
 }
 
 .prose h2 {

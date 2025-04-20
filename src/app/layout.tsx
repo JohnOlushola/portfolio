@@ -12,11 +12,11 @@ interface LayoutProps {
 export default function layout({ children }: LayoutProps) {
   return (
     <html>
-      <body className="relative container">
+      <body>
         <PageHead />
         <Analytics />
         <Header />
-        <main className="my-20">{children}</main>
+        <main className="my-20 container">{children}</main>
       </body>
     </html>
   );

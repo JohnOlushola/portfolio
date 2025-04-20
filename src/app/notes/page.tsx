@@ -9,7 +9,7 @@ export default function Notes() {
   );
 
   return (
-    <ol className="space-y-4 mx-auto lg:w-[80vw] list-decimal">
+    <ol className="space-y-4 mx-auto w-full lg:w-[80vw] list-decimal">
       {notes.map(({ slug, metadata }) => (
         <li key={slug}>
           <Link href={`/notes/${slug}`} className="flex flex-col space-y-1">
