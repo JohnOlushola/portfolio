@@ -1,7 +1,11 @@
 import { notFound } from "next/navigation";
-import CustomMDX from "@/components/mdx";
 import { formatDate, getBlogPosts } from "../utils";
 import { baseUrl } from "@/sitemap";
+import rehypeStringify from "rehype-stringify";
+import remarkParse from "remark-parse";
+import remarkRehype from "remark-rehype";
+import { unified } from "unified";
+import rehypePrism from "rehype-prism-plus";
 
 export async function generateStaticParams() {
   let posts = getBlogPosts();
@@ -68,6 +72,14 @@ export default async function Page({ params }: PageProps) {
     notFound();
   }
 
+  const processor = unified()
+    .use(remarkParse)
+    .use(remarkRehype, { allowDangerousHtml: true })
+    .use(rehypePrism)
+    .use(rehypeStringify);
+
+  const file = await processor.process(post.content);
+
   return (
     <section className="container">
       <script
@@ -102,7 +114,7 @@ export default async function Page({ params }: PageProps) {
         </p>
       </div>
       <article className="prose dark:prose-invert mx-auto">
-        <CustomMDX source={post.content} />
+        <div dangerouslySetInnerHTML={{ __html: String(file) }} />
       </article>
     </section>
   );
