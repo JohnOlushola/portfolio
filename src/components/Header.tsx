@@ -1,13 +1,8 @@
-"use client";
-
 import Link from "next/link";
 import PreviewedLink from "./PreviewedLink";
-import { useState } from "react";
 import NavTabs from "./NavTabs";
 
 export function Header() {
-  const [activeTab, setActiveTab] = useState("works");
-
   return (
     <div className="mt-40 font-mono text-center justify-center flex flex-col items-center container">
       <details className="group text-center max-w-prose mx-auto mb-8">
@@ -70,7 +65,7 @@ export function Header() {
           </p>
         </div>
       </details>
-      <NavTabs activeTab={activeTab} onChange={setActiveTab} />
+      <NavTabs />
     </div>
   );
 }
