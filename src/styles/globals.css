@@ -140,7 +140,7 @@ body {
 }
 
 .prose pre {
-  @apply bg-neutral-50 rounded-lg overflow-x-auto border border-neutral-200 py-2 px-3 text-sm;
+  @apply bg-neutral-50 dark:bg-black/90 rounded-lg overflow-x-auto border border-neutral-200 dark:border-secondary p-5 text-sm;
 }
 
 .prose code {
