@@ -73,6 +73,7 @@ export default function PreviewedLink({
               muted
               loop
               autoPlay
+              playsInline
               controls={false}
               className="w-full h-full rounded"
             />
