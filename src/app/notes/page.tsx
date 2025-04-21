@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { formatDate, getBlogPosts } from "./utils";
 import PreviewedLink from "@/components/PreviewedLink";
 
@@ -10,7 +9,7 @@ export default function Notes() {
   );
 
   return (
-    <ol className="space-y-8 md:space-y-2 mx-auto w-full lg:w-[80vw] ml-4 lg:ml-auto list-decimal">
+    <ol className="space-y-8 md:space-y-2 w-full max-w-5xl ml-4 lg:mx-auto list-decimal">
       {notes.map(({ slug, metadata }) => {
         return (
           <li key={slug}>
