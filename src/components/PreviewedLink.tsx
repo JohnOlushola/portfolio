@@ -1,11 +1,14 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { Url } from "next/dist/shared/lib/router/router";
+import Link from "next/link";
 import React, { useState } from "react";
 
 interface PreviewedLinkProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
-  asset: string;
+  asset?: string;
+  internal?: boolean;
 }
 
 export default function PreviewedLink({
@@ -13,20 +16,31 @@ export default function PreviewedLink({
   href,
   children,
   className,
+  internal,
   ...rest
 }: PreviewedLinkProps) {
   const [hoveredLink, setHoveredLink] = useState(false);
   const [focusedLink, setFocusedLink] = useState(false);
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
 
-  const isVideo = (url: string) => {
-    // Check if the path includes known video patterns (e.g., Cloudinary format)
-    if (url.includes("/video/")) return true;
-    return /\.(mp4|webm|ogg|mov)$/i.test(url);
-  };
+  // Check if the path includes known video patterns (e.g., Cloudinary format)
+  const isVideo =
+    asset?.includes("/video/") || /\.(mp4|webm|ogg|mov)$/i.test(asset || "");
 
   const handleMouseMove = (event: React.MouseEvent) => {
     setCursorPosition({ x: event.clientX, y: event.clientY });
+  };
+
+  const props = {
+    target: "_blank",
+    rel: "noopener noreferrer",
+    className: cn("underline-offset-4 text-muted-foreground", className),
+    onMouseEnter: () => setHoveredLink(true),
+    onMouseLeave: () => setHoveredLink(false),
+    onFocus: () => setFocusedLink(true),
+    onBlur: () => setFocusedLink(false),
+    children,
+    ...rest,
   };
 
   return (
@@ -36,21 +50,15 @@ export default function PreviewedLink({
       onFocus={() => setFocusedLink(true)}
       onBlur={() => setFocusedLink(false)}
     >
-      <a
-        href={href}
-        {...rest}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={cn("underline-offset-4 text-muted-foreground", className)}
-        onMouseEnter={() => setHoveredLink(true)}
-        onMouseLeave={() => setHoveredLink(false)}
-        onFocus={() => setFocusedLink(true)}
-        onBlur={() => setFocusedLink(false)}
-      >
-        {children}
-      </a>
+      {internal ? (
+        <Link {...props} href={href as Url} />
+      ) : (
+        <a {...props} href={href} />
+      )}
 
-      {(hoveredLink || focusedLink) && (
+      {/* <Link {...props} href={href as Url} /> */}
+
+      {(hoveredLink || focusedLink) && asset && (
         <span
           className="hidden md:block absolute w-96 h-auto rounded pointer-events-none"
           style={{
@@ -59,7 +67,7 @@ export default function PreviewedLink({
             transform: focusedLink ? "translateX(-50%)" : "none",
           }}
         >
-          {isVideo(asset) ? (
+          {isVideo ? (
             <video
               src={asset}
               muted

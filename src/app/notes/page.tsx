@@ -10,16 +10,16 @@ export default function Notes() {
   );
 
   return (
-    <ol className="space-y-8 md:space-y-2 mx-auto w-full lg:w-[80vw] ml-4 md:ml-auto list-decimal">
+    <ol className="space-y-8 md:space-y-2 mx-auto w-full lg:w-[80vw] ml-4 lg:ml-auto list-decimal">
       {notes.map(({ slug, metadata }) => {
-        const LinkComp = metadata.image ? PreviewedLink : Link;
-
         return (
           <li key={slug}>
-            <LinkComp
-              asset={metadata.image ?? ""}
+            <PreviewedLink
+              internal
+              asset={metadata.image}
               href={`/notes/${slug}`}
               className="flex flex-col space-y-1"
+              target="_self"
             >
               <div className="w-full flex flex-col space-y-2 justify-between md:flex-row md:items-baseline md:space-x-10">
                 <p className="tracking-tight !text-foreground">
@@ -29,7 +29,7 @@ export default function Notes() {
                   {formatDate(metadata.publishedAt, false)}
                 </p>
               </div>
-            </LinkComp>
+            </PreviewedLink>
           </li>
         );
       })}
