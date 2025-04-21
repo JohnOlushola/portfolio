@@ -5,6 +5,28 @@ import { Analytics } from "@vercel/analytics/react";
 import PageHead from "@/components/PageHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Olushola Temiloluwa",
+    description: "design, engineering and; more",
+    applicationName: "Olushola Temiloluwa",
+    openGraph: {
+      title: "Olushola Temiloluwa",
+      description: "design, engineering and; more",
+      type: "website",
+      url: "https://jtolushola.com",
+      siteName: "Olushola Temiloluwa",
+      images: [
+        {
+          url: "/images/Wissahickon-cropped.jpg",
+          alt: "Stream at Wissahickon, PA.",
+        },
+      ],
+    },
+  };
+}
 
 interface LayoutProps {
   children: React.ReactNode;
