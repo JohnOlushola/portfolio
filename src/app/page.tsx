@@ -12,7 +12,7 @@ const projects: ContentItem[] = [
   {
     id: "scenario-builder",
     name: "Scenario Builder",
-    link: "https://solar.transitionzero.org/",
+    link: "https://builder.transitionzero.org/",
     asset:
       "https://res.cloudinary.com/jtolushola/video/upload/f_auto:video,q_auto/v1/portfolio/dtqq3ixnpzfjftdf90tq",
     year: 2025,
