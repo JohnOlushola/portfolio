@@ -1,4 +1,3 @@
-import Link from "next/link";
 import PreviewedLink from "./PreviewedLink";
 import NavTabs from "./NavTabs";
 
@@ -43,7 +42,8 @@ export function Header() {
           <p>
             My interests and passions lie in the intersection of design,
             engineering and AI. As a result, I have a Master’s degree in AI,
-            currently lead design at work and engineer solutions (one pixel at a time haha).
+            currently lead design at work and engineer solutions (one pixel at a
+            time haha).
           </p>
 
           <p>
@@ -51,7 +51,7 @@ export function Header() {
             enthusiast,{" "}
             <PreviewedLink
               href="https://chatgpt.com/share/6803c721-e940-8003-a55c-a4c482dbb6e1"
-              asset="/images/wissahickon.jpg"
+              asset="/images/wissahickon.JPG"
             >
               outdoorsy
             </PreviewedLink>{" "}
