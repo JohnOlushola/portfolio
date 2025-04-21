@@ -4,6 +4,7 @@ import { baseUrl } from "@/sitemap";
 import rehypeStringify from "rehype-stringify";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
+import remarkMdx from "remark-mdx";
 import { unified } from "unified";
 import rehypePrism from "rehype-prism-plus";
 import "prismjs/themes/prism-tomorrow.css";
@@ -77,6 +78,7 @@ export default async function Page({ params }: PageProps) {
     .use(remarkParse)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypePrism)
+    .use(remarkMdx)
     .use(rehypeStringify);
 
   const file = await processor.process(post.content);
@@ -100,7 +102,7 @@ export default async function Page({ params }: PageProps) {
             url: `${baseUrl}/notes/${post.slug}`,
             author: {
               "@type": "Person",
-              name: "My Portfolio",
+              name: "Olushola Temiloluwa",
             },
           }),
         }}
