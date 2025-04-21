@@ -92,26 +92,20 @@
     @apply border-border font-mono;
   }
 
-  body {
-    @apply bg-background text-foreground;
+  *::selection {
+    @apply !bg-black/5 text-accent;
   }
 
-  a,.tab,.jump {
+  body {
+    @apply bg-background text-foreground antialiased;
+  }
+
+  a {
     @apply underline decoration-muted hover:decoration-accent decoration-2 underline-offset-8 hover:text-accent transition-all ease-in-out duration-100 focus-visible:outline-accent focus-visible:outline-offset-4 focus-visible:outline-2;
   }
 }
 
-*::selection {
-  @apply !bg-black/5 text-accent;
-}
 
-body {
-  padding: 0;
-  margin: 0;
-  -webkit-font-smoothing: antialiased;
-  -webkit-tap-highlight-color: transparent;
-  text-size-adjust: none;
-}
 
 /* MDX */
 .prose .anchor {
@@ -159,7 +153,7 @@ body {
 
 .prose img {
   /* Don't apply styles to next/image */
-  @apply m-0;
+  @apply m-0 rounded-md;
 }
 
 .prose p {

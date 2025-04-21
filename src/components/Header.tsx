@@ -12,7 +12,7 @@ export function Header() {
           </span>
         </summary>
 
-        <div className="mt-12 lg:mt-6 lg:leading-relaxed md:text-center text-pretty space-y-10 lg:space-y-6">
+        <div className="mt-12 lg:mt-8 lg:leading-relaxed md:text-center text-pretty space-y-10 lg:space-y-6">
           <p>
             I’m currently a Senior Frontend Engineer at{" "}
             <PreviewedLink
