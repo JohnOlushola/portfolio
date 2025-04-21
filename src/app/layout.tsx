@@ -20,7 +20,18 @@ export async function generateMetadata(): Promise<Metadata> {
       siteName: "Olushola Temiloluwa",
       images: [
         {
-          url: "/images/Wissahickon-cropped.jpg",
+          url: "/images/wissahickon-cropped.jpg",
+          alt: "Stream at Wissahickon, PA.",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "Olushola Temiloluwa",
+      description: "design, engineering and; more",
+      images: [
+        {
+          url: "/images/wissahickon-cropped.jpg",
           alt: "Stream at Wissahickon, PA.",
         },
       ],
