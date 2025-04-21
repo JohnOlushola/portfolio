@@ -10,7 +10,7 @@ export default function Notes() {
   );
 
   return (
-    <ol className="space-y-8 md:space-y-2 mx-auto w-full lg:w-[80vw] ml-8 md:ml-auto list-decimal">
+    <ol className="space-y-8 md:space-y-2 mx-auto w-full lg:w-[80vw] ml-4 md:ml-auto list-decimal">
       {notes.map(({ slug, metadata }) => {
         const LinkComp = metadata.image ? PreviewedLink : Link;
 
