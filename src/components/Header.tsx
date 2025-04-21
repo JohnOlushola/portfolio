@@ -5,7 +5,7 @@ export function Header() {
   return (
     <div className="mt-40 font-mono justify-center flex flex-col items-center container">
       <details className="group text-center max-w-prose mx-auto mb-8">
-        <summary className="cursor-pointer hover:underline underline-offset-8 decoration-dashed decoration-muted-foreground ease-in-out outline-offset-4 focus-visible:outline-accent">
+        <summary className="cursor-pointer hover:underline group-open:underline underline-offset-8 decoration-dashed decoration-muted-foreground ease-in-out outline-offset-4 focus-visible:outline-accent">
           Temiloluwa Olushola &mdash;{" "}
           <span className="text-muted-foreground">
             design, engineering and; more
