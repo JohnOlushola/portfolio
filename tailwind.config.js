@@ -1,7 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  darkMode: ["class"],
-  content: ["./src/pages/**/*.{ts,tsx}", "./src/components/**/*.{ts,tsx}"],
+  darkMode: ["media"],
+  content: [
+    "./src/pages/**/*.{ts,tsx}",
+    "./src/components/**/*.{ts,tsx}",
+    "./src/app/**/*.{ts,tsx}",
+  ],
   theme: {
     container: {
       center: true,
@@ -11,6 +15,21 @@ module.exports = {
       },
     },
     extend: {
+      typography: {
+        DEFAULT: {
+          code: {
+            backgroundColor: "#f3f4f6",
+            padding: "0.2em 0.4em",
+            borderRadius: "0.375rem",
+          },
+          pre: {
+            backgroundColor: "#1e293b",
+            color: "#f8fafc",
+            padding: "1rem",
+            borderRadius: "0.5rem",
+          },
+        },
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -67,5 +86,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-}
+  plugins: [require("tailwindcss-animate"), require("@tailwindcss/typography")],
+};

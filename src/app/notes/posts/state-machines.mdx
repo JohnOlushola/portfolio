@@ -1,0 +1,69 @@
+---
+title: State machines
+publishedAt: "2025-02-14"
+summary: A simplified introduction to state machines
+---
+
+## What is a state machine?
+
+> A state machine is a mathematical abstraction used to design algorithms. A state machine reads a set of inputs and changes to a different state based on those inputs.
+
+Source: [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Glossary/State_machine)
+
+Today I learned about state machines. Here's my little spiel... writing helps me cement what I learn.
+
+To simplify that a little, we can say a state machine has states, inputs and transitions. A state can be open or closed. Input can be an open or close action. Transition would be the activity that happens when going from one state to another.
+
+Let's take an elevator for example.
+
+## States
+
+An elevator would have the following states: `idle`, `door open`, `door opening`, `door closed`, `door closing`, `moving up/down`. We can represent that in code quickly as:
+
+```python
+class ElevatorState(Enum):
+    IDLE = auto()
+    MOVING_UP = auto()
+    MOVING_DOWN = auto()
+    DOOR_OPENING = auto()
+    DOOR_OPEN = auto()
+    DOOR_CLOSING = auto()
+```
+
+## Inputs
+
+The elevator would have the following inputs:
+
+- Floor requests (from inside the elevator or from hallway call buttons)
+- Sensors signaling door fully open or fully closed
+- Arrival sensor (elevator reaches the requested floor)
+- Emergency stop or override signals
+
+```python
+def request_floor(self, floor):
+    self.target_floor = floor
+    if self.target_floor > self.current_floor:
+        self.state = ElevatorState.MOVING_UP
+    elif self.target_floor < self.current_floor:
+        self.state = ElevatorState.MOVING_DOWN
+    else:
+        self.state = ElevatorState.DOOR_OPENING
+```
+
+## Transitions
+
+Based on the states and actions, I hope at this point you can mentally visualize the possible transitions. One would be going from idle to moving up after a floor request has been made.
+
+I want to address something here. You might be asking yourself, how come moving up, moving down, door opening or door closing are states and not transitions. Here's why:
+
+In theoretical state machines, transitions are often modeled as instantaneous events. However, in many real-world systems operations like moving between floors or the door physically opening/closing take time. By modeling them as states, you can capture the fact that the elevator is actively "in the process" of moving or opening its doors, which may involve specific behaviors (e.g., safety checks or sensor feedback) during that period. This approach helps manage timing, handle interruptions, and better reflect the system's behavior in practice.
+
+For example, while "Moving Up" could be seen as a transition from one floor to another, modeling it as a state allows you to update the current floor gradually and react if an emergency occurs mid-motion.
+
+---
+
+While learning something else, I came across this and found it interesting enough to go on a little rabbit hole, but I'm going to stop this note here. This is merely a simple introduction to the concept of state machines, but this note serves as a checkpoint for my learning today.
+
+---
+
+Happy Valentine's ❤️

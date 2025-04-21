@@ -1,0 +1,104 @@
+---
+title: Typing a slug
+publishedAt: "2025-03-10"
+summary: Can you add types to a string
+---
+
+Join me on this little journey. Imagine you're trying to type a string. What? Yes, exactly. That's probably what you'd say. But that's exactly what I'm doing, or at least trying to.
+
+Let's get straight to the point. I'm writing this after a full day: work, getting my hair done, and hitting the gym.
+
+## The Problem
+
+`slug`s are a common, URL-friendly way to identify resources, such as usernames or projects. You can usually predict their format. But what if we make it more interesting?
+
+What if the slug could be a concatenation of multiple slugs, like `what-is-this`, where it represents `project-subproject-issue`? The combination would then represent the issue: `what-is-this`. Let’s extend that further. Imagine `project-subproject` represents a subproject. You get the picture.
+
+There should be no problem handling this, but the question we're focusing on is how to type the string. By that, I mean creating a type that represents the string’s content, even if it could be dynamic. For example, I want `what-is-this` to be:
+
+```json
+{ "project": "what", "subproject": "is", "issue": "this" }
+```
+
+And for what-is, it should be:
+
+```json
+{ "project": "what", "subproject": "is", "issue": "undefined" }
+```
+
+Okay, great. I hope the problem is clear now.
+
+## A Solution
+
+Let’s define a type for each possible variation of the string:
+
+```ts
+type FullIssueSlug = `${string}-${string}-${string}`;
+type FullSubprojectSlug = `${string}:${string}`;
+type FullProjectSlug = `${string}`;
+
+type ValidSlug = FullIssueSlug | FullSubprojectSlug | FullProjectSlug;
+type EmptySlug = undefined | "";
+```
+
+With this approach, we can type what we expect the string to contain ahead of time. This lets us perform operations on the slug with type support, something we couldn’t do previously.
+
+Next, let’s write a function to extract the parts of a slug from a full slug string.
+
+```ts
+function getSlugsFromFullSlug<T extends ValidSlug | EmptySlug>(
+  fullslug: T
+): SlugParts<T> {
+  if (!fullslug) {
+    return {
+      project: undefined,
+      subproject: undefined,
+      issue: undefined,
+    } as SlugParts<T>;
+  }
+
+  const slugs: (string | undefined)[] = fullslug.split("-");
+
+  const [project, subproject, issue] = slugs;
+
+  return {
+    project,
+    subproject: subproject ?? undefined,
+    issue: issue ?? undefined,
+  } as SlugParts<T>;
+}
+```
+
+`SlugParts` is what brings the magic. Take a look at this:
+
+```ts
+type SlugParts<T extends ValidSlug | EmptySlug> = T extends FullIssueSlug
+  ? { project: string; subproject: string; issue: string }
+  : T extends FullSubprojectSlug
+  ? {
+      project: string;
+      subproject: string;
+      issue: undefined;
+    }
+  : T extends FullProjectSlug
+  ? {
+      project: string;
+      subproject: undefined;
+      issue?: undefined;
+    }
+  : {
+      project?: undefined;
+      subproject?: undefined;
+      issue?: undefined;
+    };
+```
+
+`SlugParts` conditionally extracts the issue, subproject, and issue from a slug, depending on the structure of the slug. It supports three types of slugs: `FullIssueSlug`, `FullSubprojectSlug`, and `FullProjectSlug`. The extracted parts are returned as an object with properties for issue, subproject, and issue, with `issue` being optional for `FullSubprojectSlug` and `issue` and `subproject` being optional for `FullProjectSlug`.
+
+---
+
+## Take away
+
+If anything, this another oppourtunity to cement this approach in some sense but more than hopefully provides an idea, solution or pathway to a solution to anyone that comes across this.
+
+Bye for now. Ciao.
