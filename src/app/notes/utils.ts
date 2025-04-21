@@ -26,7 +26,7 @@ function parseFrontmatter(fileContent: string) {
   return { metadata: metadata as Metadata, content };
 }
 
-function getMDXFiles(dir: fs.PathLike) {
+function getMDXFiles(dir: string) {
   return fs.readdirSync(dir).filter((file) => path.extname(file) === ".mdx");
 }
 
@@ -35,7 +35,7 @@ function readMDXFile(filePath: fs.PathOrFileDescriptor) {
   return parseFrontmatter(rawContent);
 }
 
-function getMDXData(dir: fs.PathLike) {
+function getMDXData(dir: string) {
   let mdxFiles = getMDXFiles(dir);
   return mdxFiles.map((file) => {
     let { metadata, content } = readMDXFile(path.join(dir, file));
