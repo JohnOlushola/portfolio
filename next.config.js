@@ -1,14 +1,8 @@
-/** @type {import('next').NextConfig} */
-const withNextra = require('nextra')({
-  theme: 'nextra-theme-blog',
-  themeConfig: './theme.config.jsx',
-  defaultShowCopyCode: true,
-  readingTime: true,
-  latex: true
-})
- 
-module.exports = withNextra({
-  reactStrictMode: true,
-  cleanDistDir: true
-})
- 
+// next.config.js
+const withMDX = require("@next/mdx")({
+  extension: /\.mdx?$/,
+});
+
+module.exports = withMDX({
+  pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
+});
