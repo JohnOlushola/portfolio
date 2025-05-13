@@ -50,7 +50,7 @@ export function Header() {
             Outside of my work-related passions, I’m a gym rat, music lover, car
             enthusiast,{" "}
             <PreviewedLink
-              href="https://chatgpt.com/share/6803c721-e940-8003-a55c-a4c482dbb6e1"
+              href="https://en.wikipedia.org/wiki/Outdoor_recreation"
               asset="/images/wissahickon.JPG"
             >
               outdoorsy
