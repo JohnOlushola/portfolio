@@ -1,5 +1,3 @@
-import PageHead from "@/components/PageHead";
-
 export interface ContentItem {
   id: string;
   name: string;
@@ -12,9 +10,9 @@ const projects: ContentItem[] = [
   {
     id: "scenario-builder",
     name: "Scenario Builder",
-    link: "https://builder.transitionzero.org/",
+    link: "http://transitionzero.org/products/scenario-builder",
     asset:
-      "https://res.cloudinary.com/jtolushola/video/upload/f_auto:video,q_auto/v1/portfolio/dtqq3ixnpzfjftdf90tq",
+      "https://res.cloudinary.com/jtolushola/video/upload/f_auto:video,q_auto/v1/portfolio/Product_page_h6fonz",
     year: 2025,
   },
   {
