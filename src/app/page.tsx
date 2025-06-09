@@ -30,13 +30,6 @@ const projects: ContentItem[] = [
     asset: "/videos/tjwho-main.mp4",
     year: 2023,
   },
-  {
-    id: "airpods-pro",
-    name: "Airpods Pro",
-    link: "https://airpods-pro.jtolushola.com/",
-    asset: "/videos/airpods.mov",
-    year: 2020,
-  },
 ];
 
 export default function Home() {
