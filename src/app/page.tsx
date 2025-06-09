@@ -1,7 +1,7 @@
 export interface ContentItem {
   id: string;
   name: string;
-  link: string;
+  link?: string;
   asset?: string;
   year?: number;
 }
@@ -29,13 +29,6 @@ const projects: ContentItem[] = [
     link: "https://www.tjwho.co/",
     asset: "/videos/tjwho-main.mp4",
     year: 2023,
-  },
-  {
-    id: "airpods-pro",
-    name: "Airpods Pro",
-    link: "https://airpods-pro.jtolushola.com/",
-    asset: "/videos/airpods.mov",
-    year: 2020,
   },
 ];
 
