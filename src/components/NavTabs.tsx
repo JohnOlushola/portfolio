@@ -8,6 +8,7 @@ import React from "react";
 export default function NavTabs() {
   const tabs = [
     { label: "works", url: "/" },
+    { label: "crafts", url: "/crafts" },
     { label: "notes", url: "/notes" },
   ];
 
