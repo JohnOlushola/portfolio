@@ -1,7 +1,7 @@
 export interface ContentItem {
   id: string;
   name: string;
-  link: string;
+  link?: string;
   asset?: string;
   year?: number;
 }
