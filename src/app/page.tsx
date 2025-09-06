@@ -27,7 +27,7 @@ const projects: ContentItem[] = [
     id: "tjwho",
     name: "TJWHO Universe",
     link: "https://www.tjwho.co/",
-    asset: "/videos/tjwho-main.mp4",
+    asset: "/videos/tjwho.mp4",
     year: 2023,
   },
 ];
