@@ -12,7 +12,7 @@ const projects: ContentItem[] = [
     name: "Scenario Builder",
     link: "http://transitionzero.org/products/scenario-builder",
     asset:
-      "https://res.cloudinary.com/jtolushola/video/upload/f_auto:video,q_auto/v1/portfolio/Product_page_h6fonz",
+      "https://res.cloudinary.com/jtolushola/video/upload/v1757309961/portfolio/Site_demo_130825_-_surface_xia01g.mp4",
     year: 2025,
   },
   {
@@ -20,14 +20,14 @@ const projects: ContentItem[] = [
     name: "Solar Asset Mapper",
     link: "https://solar.transitionzero.org/",
     asset:
-      "https://res.cloudinary.com/jtolushola/video/upload/f_auto:video,q_auto/v1/portfolio/high_obnhlw",
+      "https://res.cloudinary.com/jtolushola/video/upload/v1757310937/portfolio/tz-sam-new_ufq5kl.mp4",
     year: 2024,
   },
   {
     id: "tjwho",
     name: "TJWHO Universe",
     link: "https://www.tjwho.co/",
-    asset: "/videos/tjwho.mp4",
+    asset: "https://res.cloudinary.com/jtolushola/video/upload/v1757309611/portfolio/tjwho_o3wtzw.mp4",
     year: 2023,
   },
 ];
