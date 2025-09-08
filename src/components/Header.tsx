@@ -23,15 +23,15 @@ export function Header() {
             </PreviewedLink>
             , and we are building out a no-code platform for{" "}
             <PreviewedLink
-              href="https://builder.transitionzero.org/"
-              asset="https://res.cloudinary.com/jtolushola/video/upload/f_auto:video,q_auto/v1/portfolio/Product_page_h6fonz"
+              href="https://transitionzero.org/products/scenario-builder"
+              asset="https://res.cloudinary.com/jtolushola/video/upload/v1757309961/portfolio/Site_demo_130825_-_surface_xia01g.mp4"
             >
               energy systems modelling
             </PreviewedLink>
             . I also contributed to the development of{" "}
             <PreviewedLink
               href="https://solar.transitionzero.org/"
-              asset="https://res.cloudinary.com/jtolushola/video/upload/f_auto:video,q_auto/v1/portfolio/high_obnhlw"
+              asset="https://res.cloudinary.com/jtolushola/video/upload/v1757310937/portfolio/tz-sam-new_ufq5kl.mp4"
             >
               Solar Asset Mapper
             </PreviewedLink>
