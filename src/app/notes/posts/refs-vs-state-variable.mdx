@@ -4,15 +4,23 @@ publishedAt: "2025-12-04"
 summary: When to use refs vs state and local variables
 ---
 
-I recently started diving into the internals of React, mostly out of curiosity. Writing helps me solidify what I learn, so I’m jotting this down to document my thinking.
+I’ve been diving into the internals of React and writing helps me solidify what I learn.
 
-In React, once you know the basics and best practices, it’s easy to just stick to state and local variables (at least I do). But understanding the library at a deeper level can help inform better decisions. Today, I’m putting together a brief guide on when to use refs, state, and local variables based on what I’ve learned so far.
+Once you know the basics, it’s easy to just stick to state and local variables. Understanding the library at a deeper level can help make better decisions. This is a brief guide on when to use refs, state, and local variables based on what I’ve learned so far.
 
-This is not a deep dive, maybe that will come someday, but it is a starting point. I’m sure there are more nuanced guides out there, but this is my attempt to lay down the basics.
+It’s not a deep dive, but it’s a starting point. More nuanced guides exist, but this lays down the basics.
 
 # State vs Refs vs Variables in React
 
 React gives you a few ways to store values, but they’re not interchangeable. Each one has a clear purpose, and once you get that, your components get way cleaner.
+
+## Quick mental model
+
+| Type | Persistence Across Renders | Triggers UI Update |
+|-------------|---------------------------|------------------|
+| **State**    | Value is remembered between renders | Yes |
+| **Ref**      | Value is remembered between renders | No |
+| **Variable** | Value resets on every render | No |
 
 ---
 
@@ -27,7 +35,7 @@ Typical use cases:
 - Anything visual
 
 State is reactive. When you set it, React redraws your component.  
-Official docs: [useState](https://react.dev/reference/react/useState?utm_source=chatgpt.com)
+Docs: [useState](https://react.dev/reference/react/useState?utm_source=chatgpt.com)
 
 ---
 
@@ -57,19 +65,8 @@ Good for:
 
 If you need the value later, don’t use a plain variable.
 
+Docs: [React Hooks](https://react.dev/reference/react/hooks?utm_source=chatgpt.com)
+
 ---
 
-## Quick mental model
-
-| Type | Persistence Across Renders | Triggers UI Update |
-|-------------|---------------------------|------------------|
-| **State**    | Value is remembered between renders | Yes |
-| **Ref**      | Value is remembered between renders | No |
-| **Variable** | Value resets on every render | No |
-
-
-
-This simple rule keeps your components predictable, lean, and way easier to reason about.  
-Official docs overview: [React Hooks](https://react.dev/reference/react/hooks?utm_source=chatgpt.com)
-
-Cheers.
+Now that I've written this, on to the next one(note)...  
