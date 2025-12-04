@@ -1,5 +1,5 @@
-import React from "react";
 import { ContentItem } from "../page";
+import React from "react";
 
 const crafts: ContentItem[] = [
   {
@@ -25,7 +25,7 @@ const crafts: ContentItem[] = [
   },
 ];
 
-export default function page() {
+export default function CraftsPage() {
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-4 max-w-7xl mx-auto">
       {crafts.map(({ id, link, asset, name, year }) => (
