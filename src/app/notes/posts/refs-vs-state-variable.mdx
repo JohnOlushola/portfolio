@@ -4,13 +4,17 @@ publishedAt: "2025-12-04"
 summary: When to use refs vs state and local variables
 ---
 
-I recently started diving into the internals of React, just out of curiosity. Writing helps me cement what I learn. As a result, I'm writing this note to help me document my thinking.
+I recently started diving into the internals of React, mostly out of curiosity. Writing helps me solidify what I learn, so I’m jotting this down to document my thinking.
 
-In React, especially after learning the basics and best practices, we just seem to stick to the them (at least I do sometimes): using state and local variables. But understanding the library at a lower level, can help inform better decisions. Today, I'm writing a brief guide on when to use refs vs state and local variables based on my understanding so far. Unfortunately, this is not a deep dive but maybe that might come some day. I'm sure there a more nuanced answers/guides, but this is my attempt at a starting point.
+In React, once you know the basics and best practices, it’s easy to just stick to state and local variables (at least I do). But understanding the library at a deeper level can help inform better decisions. Today, I’m putting together a brief guide on when to use refs, state, and local variables based on what I’ve learned so far.
+
+This is not a deep dive, maybe that will come someday, but it is a starting point. I’m sure there are more nuanced guides out there, but this is my attempt to lay down the basics.
 
 # State vs Refs vs Variables in React
 
 React gives you a few ways to store values, but they’re not interchangeable. Each one has a clear purpose, and once you get that, your components get way cleaner.
+
+---
 
 ## State
 Use **state** when changing the value should update the UI.  
@@ -25,6 +29,8 @@ Typical use cases:
 State is reactive. When you set it, React redraws your component.  
 Official docs: [useState](https://react.dev/reference/react/useState?utm_source=chatgpt.com)
 
+---
+
 ## Refs
 **Refs** are your escape hatch for mutable values that survive renders but don’t trigger rerenders.  
 They’re basically component-level variables that React ignores.
@@ -36,7 +42,9 @@ Perfect for:
 - Anything you want to remember without waking React up
 
 Refs persist, but changing them won’t trigger UI updates.  
-Official docs: [useRef](https://react.dev/reference/react/useRef?utm_source=chatgpt.com)
+Docs: [useRef](https://react.dev/reference/react/useRef?utm_source=chatgpt.com)
+
+---
 
 ## Variables
 Regular variables reset on every render.  
@@ -49,10 +57,17 @@ Good for:
 
 If you need the value later, don’t use a plain variable.
 
+---
+
 ## Quick mental model
-- **State:** sticks around + triggers UI updates  
-- **Ref:** sticks around but stays silent  
-- **Variable:** temporary, per-render
+
+| Type | Persistence Across Renders | Triggers UI Update |
+|-------------|---------------------------|------------------|
+| **State**    | Value is remembered between renders | Yes |
+| **Ref**      | Value is remembered between renders | No |
+| **Variable** | Value resets on every render | No |
+
+
 
 This simple rule keeps your components predictable, lean, and way easier to reason about.  
 Official docs overview: [React Hooks](https://react.dev/reference/react/hooks?utm_source=chatgpt.com)

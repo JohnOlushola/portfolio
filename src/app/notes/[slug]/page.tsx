@@ -1,14 +1,16 @@
-import { notFound } from "next/navigation";
+import "prismjs/themes/prism-tomorrow.css";
+
 import { formatDate, getBlogPosts } from "../utils";
+
 import { baseUrl } from "@/sitemap";
+import { notFound } from "next/navigation";
+import rehypePrism from "rehype-prism-plus";
 import rehypeStringify from "rehype-stringify";
+import remarkGfm from "remark-gfm";
+import remarkMdx from "remark-mdx";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
-import remarkMdx from "remark-mdx";
-import remarkGfm from "remark-gfm";
 import { unified } from "unified";
-import rehypePrism from "rehype-prism-plus";
-import "prismjs/themes/prism-tomorrow.css";
 
 export async function generateStaticParams() {
   let posts = getBlogPosts();
