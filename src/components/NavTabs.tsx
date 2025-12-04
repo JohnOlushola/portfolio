@@ -1,9 +1,9 @@
 "use client";
 
-import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
 import React from "react";
+import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 export default function NavTabs() {
   const tabs = [
@@ -22,7 +22,7 @@ export default function NavTabs() {
           key={label}
           className={cn({
             "decoration-accent text-accent focus:outline-accent":
-              pathname === url || pathname.startsWith(`${url}/`),
+              pathname === url || pathname?.startsWith(`${url}/`),
           })}
         >
           {label}

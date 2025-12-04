@@ -1,11 +1,11 @@
 import "../styles/globals.css";
 
-import React from "react";
 import { Analytics } from "@vercel/analytics/react";
-import PageHead from "@/components/PageHead";
-import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import { Metadata } from "next";
+import PageHead from "@/components/PageHead";
+import React from "react";
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -43,7 +43,7 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-export default function layout({ children }: LayoutProps) {
+export default function RootLayout({ children }: LayoutProps) {
   return (
     <html>
       <body>

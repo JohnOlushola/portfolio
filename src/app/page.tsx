@@ -6,7 +6,7 @@ export interface ContentItem {
   year?: number;
 }
 
-const projects: ContentItem[] = [
+const projects: readonly ContentItem[] = [
   {
     id: "scenario-builder",
     name: "Scenario Builder",
@@ -27,10 +27,11 @@ const projects: ContentItem[] = [
     id: "tjwho",
     name: "TJWHO Universe",
     link: "https://www.tjwho.co/",
-    asset: "https://res.cloudinary.com/jtolushola/video/upload/v1757309611/portfolio/tjwho_o3wtzw.mp4",
+    asset:
+      "https://res.cloudinary.com/jtolushola/video/upload/v1757309611/portfolio/tjwho_o3wtzw.mp4",
     year: 2023,
   },
-];
+] as const;
 
 export default function Home() {
   return (
