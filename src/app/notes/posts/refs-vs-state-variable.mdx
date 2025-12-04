@@ -1,0 +1,72 @@
+---
+title: Refs vs state and local variables
+publishedAt: "2025-12-04"
+summary: When to use refs vs state and local variables
+---
+
+I’ve been diving into the internals of React and writing helps me solidify what I learn.
+
+Once you know the basics, it’s easy to just stick to state and local variables. Understanding the library at a deeper level can help make better decisions. This is a brief guide on when to use refs, state, and local variables based on what I’ve learned so far.
+
+It’s not a deep dive, but it’s a starting point. More nuanced guides exist, but this lays down the basics.
+
+# State vs Refs vs Variables in React
+
+React gives you a few ways to store values, but they’re not interchangeable. Each one has a clear purpose, and once you get that, your components get way cleaner.
+
+## Quick mental model
+
+| Type | Persistence Across Renders | Triggers UI Update |
+|-------------|---------------------------|------------------|
+| **State**    | Value is remembered between renders | Yes |
+| **Ref**      | Value is remembered between renders | No |
+| **Variable** | Value resets on every render | No |
+
+---
+
+## State
+Use **state** when changing the value should update the UI.  
+If the user needs to see it, or React needs to re-render because of it, it belongs in state.
+
+Typical use cases:
+- Form inputs
+- Toggles
+- Counters
+- Anything visual
+
+State is reactive. When you set it, React redraws your component.  
+Docs: [useState](https://react.dev/reference/react/useState?utm_source=chatgpt.com)
+
+---
+
+## Refs
+**Refs** are your escape hatch for mutable values that survive renders but don’t trigger rerenders.  
+They’re basically component-level variables that React ignores.
+
+Perfect for:
+- Accessing DOM nodes
+- Timers
+- Caches (WeakMaps, WeakSets, etc.)
+- Anything you want to remember without waking React up
+
+Refs persist, but changing them won’t trigger UI updates.  
+Docs: [useRef](https://react.dev/reference/react/useRef?utm_source=chatgpt.com)
+
+---
+
+## Variables
+Regular variables reset on every render.  
+Use them for calculations inside the render that don’t need to survive anything.
+
+Good for:
+- Derived values
+- Temporary helpers
+- Anything that only lives for that render cycle
+
+If you need the value later, don’t use a plain variable.
+
+Docs: [React Hooks](https://react.dev/reference/react/hooks?utm_source=chatgpt.com)
+
+---
+
+Now that I've written this, on to the next one(note)...  
