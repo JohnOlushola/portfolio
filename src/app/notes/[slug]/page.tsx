@@ -5,6 +5,7 @@ import rehypeStringify from "rehype-stringify";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import remarkMdx from "remark-mdx";
+import remarkGfm from "remark-gfm";
 import { unified } from "unified";
 import rehypePrism from "rehype-prism-plus";
 import "prismjs/themes/prism-tomorrow.css";
@@ -76,6 +77,7 @@ export default async function Page({ params }: PageProps) {
 
   const processor = unified()
     .use(remarkParse)
+    .use(remarkGfm)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypePrism)
     .use(remarkMdx)
