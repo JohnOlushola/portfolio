@@ -1,9 +1,9 @@
 "use client";
 
-import { cn } from "@/lib/utils";
-import { Url } from "next/dist/shared/lib/router/router";
-import Link from "next/link";
 import React, { useState } from "react";
+
+import Link from "next/link";
+import { cn } from "@/lib/utils";
 
 interface PreviewedLinkProps
   extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
@@ -51,12 +51,10 @@ export default function PreviewedLink({
       onBlur={() => setFocusedLink(false)}
     >
       {internal ? (
-        <Link {...props} href={href as Url} />
+        <Link {...props} href={href as string} />
       ) : (
         <a {...props} href={href} />
       )}
-
-      {/* <Link {...props} href={href as Url} /> */}
 
       {(hoveredLink || focusedLink) && asset && (
         <span
