@@ -30,7 +30,7 @@ const projects: ContentItem[] = [
     asset: "https://res.cloudinary.com/jtolushola/video/upload/v1757309611/portfolio/tjwho_o3wtzw.mp4",
     year: 2023,
   },
-];
+] as const;
 
 export default function Home() {
   return (
