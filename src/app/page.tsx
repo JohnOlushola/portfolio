@@ -8,6 +8,14 @@ export interface ContentItem {
 
 const projects: readonly ContentItem[] = [
   {
+    id: "scenario-builder-inputs-grid",
+    name: "Scenario Builder Inputs",
+    link: "http://transitionzero.org/products/scenario-builder",
+    asset:
+      "https://res.cloudinary.com/jtolushola/video/upload/v1770228076/portfolio/inputs-overview_rekxan.mp4",
+    year: 2026,
+  },
+  {
     id: "scenario-builder",
     name: "Scenario Builder",
     link: "http://transitionzero.org/products/scenario-builder",
