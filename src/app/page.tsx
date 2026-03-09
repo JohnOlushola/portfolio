@@ -8,6 +8,14 @@ export interface ContentItem {
 
 const projects: readonly ContentItem[] = [
   {
+    id: "credence-ventures",
+    name: "Credence Ventures",
+    link: "https://www.credence-ventures.com/",
+    asset:
+      "https://res.cloudinary.com/jtolushola/video/upload/v1773067910/portfolio/credence_low_adin9h.mp4",
+    year: 2026,
+  },
+  {
     id: "scenario-builder-inputs-grid",
     name: "Scenario Builder Inputs",
     link: "http://transitionzero.org/products/scenario-builder",
