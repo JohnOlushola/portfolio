@@ -12,7 +12,7 @@ const projects: readonly ContentItem[] = [
     name: "Credence Ventures",
     link: "https://www.credence-ventures.com/",
     asset:
-      "https://res.cloudinary.com/jtolushola/video/upload/v1773067756/portfolio/credence_fkz44m.mp4",
+      "https://res.cloudinary.com/jtolushola/video/upload/v1773067910/portfolio/credence_low_adin9h.mp4",
     year: 2026,
   },
   {
