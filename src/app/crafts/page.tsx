@@ -3,6 +3,14 @@ import React from "react";
 
 const crafts: ContentItem[] = [
   {
+    id: "credence-ventures",
+    name: "Credence Ventures",
+    link: "https://www.credence-ventures.com/",
+    asset:
+      "https://res.cloudinary.com/jtolushola/video/upload/v1773067910/portfolio/credence_low_adin9h.mp4",
+    year: 2026,
+  },
+  {
     id: "ai-assisted-scenario-builder",
     name: "AI-Assisted Scenario Builder [Prototype]",
     asset:
