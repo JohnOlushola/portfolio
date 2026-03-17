@@ -4,9 +4,7 @@ publishedAt: "2026-03-17"
 summary: Understading Chromium's architecture
 ---
 
-# Inside Chromium
-
-I spent some time recently going through Chromium's architecture — how it's structured,
+I spent some time recently going through Chromium's architecture, how it's structured,
 how the different parts relate to each other, and where things like JavaScript execution
 and rendering actually live. These are notes from that.
 
@@ -24,30 +22,33 @@ of the whole system.
 Each webpage runs in its own **renderer process**, isolated from the browser process
 and from other pages. The renderer can't freely access the file system or make
 system calls. Anything it needs from the outside world has to go through the browser
-process. This is the sandbox model, and it's what gives Chromium its security and
-stability guarantees. A renderer crashing doesn't take the whole browser down.
+process. This is the [sandbox model](https://chromium.googlesource.com/chromium/src/+/main/docs/design/sandbox.md),
+and it's what gives Chromium its security and stability guarantees. A renderer crashing
+doesn't take the whole browser down.
 
 Beyond those two, there's a **GPU process** that handles compositing and drawing to
 screen, a **network service** for all I/O, and various utility processes for things
 like audio and storage.
 
-The communication between all of these happens through **Mojo**, Chromium's
-inter-process communication layer. Every cross-process interaction is mediated through
-it. It's essentially the nervous system of the browser.
+The communication between all of these happens through [**Mojo**](https://chromium.googlesource.com/chromium/src/+/main/mojo/README.md),
+Chromium's inter-process communication layer. Every cross-process interaction is
+mediated through it. It's essentially the nervous system of the browser.
 
 ---
 
 ## The Rendering Pipeline
 
-Once a page is in a renderer process, **Blink** (Chromium's rendering engine) takes
-over. It handles the full journey from raw HTML and CSS to something on screen:
+Once a page is in a renderer process, [**Blink**](https://www.chromium.org/blink/)
+(Chromium's rendering engine) takes over. It handles the full journey from raw HTML
+and CSS to something on screen:
 
 - **Parse** — The HTML is parsed into a DOM tree. CSS is parsed into a style model.
 - **Style** — Computed styles are resolved for every element. The cascade happens here.
 - **Layout** — The engine determines where everything goes: sizes, positions, flow.
 - **Paint** — Draw instructions are recorded per element. Not pixels yet, just instructions.
 - **Composite** — Layers are assembled and passed to the GPU process, which uses
-  **Skia** (2D) or **Dawn** (WebGPU) to produce the final pixels.
+  [**Skia**](https://skia.org/) (2D) or [**Dawn**](https://dawn.googlesource.com/dawn)
+  (WebGPU) to produce the final pixels.
 
 The separation between paint and composite is worth noting. For certain animations,
 the browser can skip layout and paint entirely. If you're transforming a layer that's
@@ -58,10 +59,11 @@ already been composited, the GPU handles it without touching the main thread. It
 
 ## V8 and JavaScript Execution
 
-**V8** is Chromium's JavaScript engine, running inside the renderer process. It compiles
-JavaScript to native machine code using a tiered JIT pipeline, starting with a fast
-interpreter and progressively optimising hot code paths. Its garbage collector, Orinoco,
-works incrementally to avoid long main thread pauses.
+[**V8**](https://v8.dev/) is Chromium's JavaScript engine, running inside the renderer
+process. It compiles JavaScript to native machine code using a tiered JIT pipeline,
+starting with a fast interpreter and progressively optimising hot code paths. Its
+garbage collector, [Orinoco](https://v8.dev/blog/trash-talk), works incrementally to
+avoid long main thread pauses.
 
 One important distinction: V8 doesn't know anything about the DOM. DOM manipulation is
 Blink's concern. V8 provides the JavaScript runtime; Blink exposes the Web APIs,
@@ -72,15 +74,16 @@ systems that happen to work closely together, but neither owns the other's domai
 
 ## The Automation Layer — CDP
 
-The Chrome DevTools Protocol is how the outside world talks to a running Chromium
-instance. It's a JSON-based protocol over WebSocket. You send commands, you receive
-events. Navigate, click, evaluate JavaScript, capture screenshots, intercept network
-requests — all of it goes through CDP.
+The [Chrome DevTools Protocol](https://chromedevtools.github.io/devtools-protocol/) is
+how the outside world talks to a running Chromium instance. It's a JSON-based protocol
+over WebSocket. You send commands, you receive events. Navigate, click, evaluate
+JavaScript, capture screenshots, intercept network requests, all of it goes through CDP.
 
-Tools like Puppeteer and Playwright sit on top of it. If you're building test automation
-against Chromium at any serious level, CDP is the layer you'll spend time understanding.
-It's well-documented, but genuinely broad, spanning domains from network interception
-to memory profiling to accessibility trees.
+Tools like [Puppeteer](https://pptr.dev/) and [Playwright](https://playwright.dev/) sit
+on top of it. If you're building test automation against Chromium at any serious level,
+CDP is the layer you'll spend time understanding. It's well-documented, but genuinely
+broad, spanning domains from network interception to memory profiling to accessibility
+trees.
 
 ---
 
@@ -90,7 +93,8 @@ Something that came to mind while going through all of this: the omnibox has cle
 been thought about very carefully over the years. It handles search queries, URLs,
 navigation history, suggestions, and more, all from a single input. It just works.
 I've never had to think about how to use it. That kind of intuitive behaviour doesn't
-happen by accident. It's the result of a lot of deliberate design decisions layered
+happen by accident. It's the result of a lot of
+[deliberate design decisions](https://www.chromium.org/user-experience/omnibox/) layered
 over time.
 
 ---
@@ -109,3 +113,21 @@ complexity gets managed through structure. There are bits and pieces that find t
 way into day-to-day work, even if the scale is completely different.
 
 Alright, that's it from my little spill. Byeeee.
+
+---
+
+## References
+
+- [Chromium Multi-Process Architecture](https://www.chromium.org/developers/design-documents/multi-process-architecture/)
+- [Chromium Sandbox Design](https://chromium.googlesource.com/chromium/src/+/main/docs/design/sandbox.md)
+- [Mojo IPC](https://chromium.googlesource.com/chromium/src/+/main/mojo/README.md)
+- [Blink Rendering Engine](https://www.chromium.org/blink/)
+- [How Blink Works](https://docs.google.com/document/d/1aitSOucL0VHZa9Z2vbRJSyAIsAz24kX8LFByQ5xQnUg)
+- [Skia Graphics Library](https://skia.org/)
+- [Dawn — WebGPU Implementation](https://dawn.googlesource.com/dawn)
+- [V8 JavaScript Engine](https://v8.dev/)
+- [Trash Talk — V8 Garbage Collector](https://v8.dev/blog/trash-talk)
+- [Chrome DevTools Protocol](https://chromedevtools.github.io/devtools-protocol/)
+- [Puppeteer](https://pptr.dev/)
+- [Playwright](https://playwright.dev/)
+- [Omnibox Design](https://www.chromium.org/user-experience/omnibox/)
