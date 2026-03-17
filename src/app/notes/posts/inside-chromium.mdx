@@ -1,0 +1,111 @@
+---
+title: Inside Chromium
+publishedAt: "2026-03-17"
+summary: Understading Chromium's architecture
+---
+
+# Inside Chromium
+
+I spent some time recently going through Chromium's architecture — how it's structured,
+how the different parts relate to each other, and where things like JavaScript execution
+and rendering actually live. These are notes from that.
+
+---
+
+## A Multi-Process Architecture
+
+Chromium isn't a single program. It's a collection of processes, each with a clearly
+defined responsibility.
+
+The **browser process** is the coordinator. It manages the UI shell, your tabs and
+windows, and handles communication with the operating system. It's the trusted core
+of the whole system.
+
+Each webpage runs in its own **renderer process**, isolated from the browser process
+and from other pages. The renderer can't freely access the file system or make
+system calls. Anything it needs from the outside world has to go through the browser
+process. This is the sandbox model, and it's what gives Chromium its security and
+stability guarantees. A renderer crashing doesn't take the whole browser down.
+
+Beyond those two, there's a **GPU process** that handles compositing and drawing to
+screen, a **network service** for all I/O, and various utility processes for things
+like audio and storage.
+
+The communication between all of these happens through **Mojo**, Chromium's
+inter-process communication layer. Every cross-process interaction is mediated through
+it. It's essentially the nervous system of the browser.
+
+---
+
+## The Rendering Pipeline
+
+Once a page is in a renderer process, **Blink** (Chromium's rendering engine) takes
+over. It handles the full journey from raw HTML and CSS to something on screen:
+
+- **Parse** — The HTML is parsed into a DOM tree. CSS is parsed into a style model.
+- **Style** — Computed styles are resolved for every element. The cascade happens here.
+- **Layout** — The engine determines where everything goes: sizes, positions, flow.
+- **Paint** — Draw instructions are recorded per element. Not pixels yet, just instructions.
+- **Composite** — Layers are assembled and passed to the GPU process, which uses
+  **Skia** (2D) or **Dawn** (WebGPU) to produce the final pixels.
+
+The separation between paint and composite is worth noting. For certain animations,
+the browser can skip layout and paint entirely. If you're transforming a layer that's
+already been composited, the GPU handles it without touching the main thread. It's why
+`transform` and `opacity` are more performant than properties that trigger layout.
+
+---
+
+## V8 and JavaScript Execution
+
+**V8** is Chromium's JavaScript engine, running inside the renderer process. It compiles
+JavaScript to native machine code using a tiered JIT pipeline, starting with a fast
+interpreter and progressively optimising hot code paths. Its garbage collector, Orinoco,
+works incrementally to avoid long main thread pauses.
+
+One important distinction: V8 doesn't know anything about the DOM. DOM manipulation is
+Blink's concern. V8 provides the JavaScript runtime; Blink exposes the Web APIs,
+`document`, `fetch`, `setTimeout` and so on, that bridge into it. They're separate
+systems that happen to work closely together, but neither owns the other's domain.
+
+---
+
+## The Automation Layer — CDP
+
+The Chrome DevTools Protocol is how the outside world talks to a running Chromium
+instance. It's a JSON-based protocol over WebSocket. You send commands, you receive
+events. Navigate, click, evaluate JavaScript, capture screenshots, intercept network
+requests — all of it goes through CDP.
+
+Tools like Puppeteer and Playwright sit on top of it. If you're building test automation
+against Chromium at any serious level, CDP is the layer you'll spend time understanding.
+It's well-documented, but genuinely broad, spanning domains from network interception
+to memory profiling to accessibility trees.
+
+---
+
+## A Side Note on the Omnibox
+
+Something that came to mind while going through all of this: the omnibox has clearly
+been thought about very carefully over the years. It handles search queries, URLs,
+navigation history, suggestions, and more, all from a single input. It just works.
+I've never had to think about how to use it. That kind of intuitive behaviour doesn't
+happen by accident. It's the result of a lot of deliberate design decisions layered
+over time.
+
+---
+
+## What I Took From It
+
+What strikes me most about Chromium's architecture is how intentional the separation
+of concerns is. Each component has a clear job and a defined boundary. The renderer
+doesn't trust the outside world. V8 doesn't try to be a browser. The GPU process
+doesn't touch the DOM. Everything communicates through explicit interfaces.
+
+Going through systems like this, even at a conceptual level, genuinely expands how
+I think about system design. Not always in a direct way, but it sharpens the instinct
+for where to draw boundaries, how to think about trust between components, and how
+complexity gets managed through structure. There are bits and pieces that find their
+way into day-to-day work, even if the scale is completely different.
+
+Alright, that's it from my little spill. Byeeee.
