@@ -10,11 +10,11 @@ import React from "react";
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Olushola Temiloluwa",
-    description: "design, engineering and; more",
+    description: "design, engineering & AI",
     applicationName: "Olushola Temiloluwa",
     openGraph: {
       title: "Olushola Temiloluwa",
-      description: "design, engineering and; more",
+      description: "design, engineering & AI",
       type: "website",
       url: "https://jtolushola.com",
       siteName: "Olushola Temiloluwa",
@@ -28,7 +28,7 @@ export async function generateMetadata(): Promise<Metadata> {
     twitter: {
       card: "summary_large_image",
       title: "Olushola Temiloluwa",
-      description: "design, engineering and; more",
+      description: "design, engineering & AI",
       images: [
         {
           url: "/images/wissahickon-cropped.jpg",
