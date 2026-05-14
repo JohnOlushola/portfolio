@@ -8,7 +8,7 @@ export function Header() {
         <summary className="cursor-pointer hover:underline group-open:underline underline-offset-8 decoration-dashed decoration-muted-foreground ease-in-out outline-offset-4 focus-visible:outline-accent">
           Temiloluwa Olushola &mdash;{" "}
           <span className="text-muted-foreground">
-            design, engineering and; more
+            design, engineering &amp; AI
           </span>
         </summary>
 
@@ -41,9 +41,11 @@ export function Header() {
 
           <p>
             My interests and passions lie in the intersection of design,
-            engineering and AI. As a result, I have a Master’s degree in AI,
-            currently lead design at work and engineer solutions (one pixel at a
-            time haha).
+            engineering and AI. As a result, I have a Master’s degree in AI, led
+            design on the first versions of both Scenario Builder and Solar
+            Asset Mapper, and am exploring/tinkering on projects where my
+            skills, knowledge and experience across design, engineering and AI
+            are applied.
           </p>
 
           <p>
