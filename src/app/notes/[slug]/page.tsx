@@ -7,6 +7,7 @@ import { notFound } from "next/navigation";
 import rehypePrism from "rehype-prism-plus";
 import rehypeStringify from "rehype-stringify";
 import remarkGfm from "remark-gfm";
+import remarkMdx from "remark-mdx";
 import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
@@ -81,7 +82,8 @@ export default async function Page({ params }: PageProps) {
     .use(remarkGfm)
     .use(remarkRehype, { allowDangerousHtml: true })
     .use(rehypePrism)
-    .use(rehypeStringify, { allowDangerousHtml: true });
+    .use(remarkMdx)
+    .use(rehypeStringify);
 
   const file = await processor.process(post.content);
 
