@@ -15,8 +15,29 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        mono: [
+          "var(--font-mono)",
+          "ui-monospace",
+          "SFMono-Regular",
+          "Menlo",
+          "Monaco",
+          "Consolas",
+          "monospace",
+        ],
+      },
       typography: {
+        sm: {
+          css: {
+            h2: { marginTop: "3.2em", marginBottom: "1em" },
+            h3: { marginTop: "2.4em", marginBottom: "0.7em" },
+          },
+        },
         DEFAULT: {
+          css: {
+            h2: { marginTop: "3em", marginBottom: "0.9em" },
+            h3: { marginTop: "2.25em", marginBottom: "0.6em" },
+          },
           code: {
             backgroundColor: "#f3f4f6",
             padding: "0.2em 0.4em",
