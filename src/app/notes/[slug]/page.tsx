@@ -110,7 +110,7 @@ export default async function Page({ params }: PageProps) {
         }}
       />
 
-      <div className="mx-auto text-accent mb-10 md:max-w-[65ch]">
+      <div className="mx-auto text-accent mb-10 md:max-w-[40rem]">
         <h1 className="title text-2xl font-semibold tracking-tighter mb-0">
           {post.metadata.title}
         </h1>
@@ -118,7 +118,7 @@ export default async function Page({ params }: PageProps) {
           {formatDate(post.metadata.publishedAt)}
         </p>
       </div>
-      <article className="prose prose-sm md:prose-base dark:prose-invert mx-auto">
+      <article className="prose prose-sm dark:prose-invert mx-auto leading-relaxed md:!max-w-[40rem]">
         <div dangerouslySetInnerHTML={{ __html: String(file) }} />
       </article>
     </section>

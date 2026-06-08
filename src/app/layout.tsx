@@ -3,9 +3,17 @@ import "../styles/globals.css";
 import { Analytics } from "@vercel/analytics/react";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import { IBM_Plex_Mono } from "next/font/google";
 import { Metadata } from "next";
 import PageHead from "@/components/PageHead";
 import React from "react";
+
+const mono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export async function generateMetadata(): Promise<Metadata> {
   return {
@@ -45,7 +53,7 @@ interface LayoutProps {
 
 export default function RootLayout({ children }: LayoutProps) {
   return (
-    <html>
+    <html className={mono.variable}>
       <body>
         <PageHead />
         <Analytics />
