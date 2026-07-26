@@ -35,19 +35,15 @@ const crafts: ContentItem[] = [
 
 export default function CraftsPage() {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-10 px-4 max-w-7xl mx-auto">
+    <div className="justify-center flex flex-col items-center space-y-32">
       {crafts.map(({ id, link, asset, name, year }) => (
-        <article
-          id={id}
-          key={id}
-          className="flex flex-col justify-between h-full min-h-[400px]"
-        >
+        <article id={id} key={id}>
           {link ? (
             <a
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="block group focus:outline-none flex-1"
+              className="block group focus:outline-none"
             >
               <video
                 muted
@@ -55,16 +51,12 @@ export default function CraftsPage() {
                 autoPlay
                 controls={false}
                 playsInline
-                className="w-full h-full mb-1 rounded-xl overflow-hidden border-2 group-focus:border-accent hover:border-accent group-focus:p-1 hover:p-1 transition-all"
+                className="w-full lg:w-[75vw] h-full mb-1 rounded-xl overflow-hidden border-2 group-focus:border-accent hover:border-accent group-focus:p-1 hover:p-1 transition-all"
                 src={asset}
               />
-              <div className="flex justify-between items-end mt-4 text-lg w-full">
-                <span className="font-mono border-b-2 border-white/60 pb-1">
-                  {name}
-                </span>
-                <span className="font-mono border-b-2 border-white/60 pb-1">
-                  {year}
-                </span>
+              <div className="flex justify-between">
+                <span>{name}</span>
+                <span>{year}</span>
               </div>
             </a>
           ) : (
@@ -75,16 +67,12 @@ export default function CraftsPage() {
                 autoPlay
                 controls={false}
                 playsInline
-                className="w-full h-full mb-1 rounded-xl overflow-hidden border-2 group-focus:border-accent hover:border-accent group-focus:p-1 hover:p-1 transition-all"
+                className="w-full lg:w-[75vw] h-full mb-1 rounded-xl overflow-hidden border-2 hover:border-accent hover:p-1 transition-all"
                 src={asset}
               />
-              <div className="flex justify-between items-end mt-4 text-lg w-full">
-                <span className="font-mono border-b-2 border-white/60 pb-1">
-                  {name}
-                </span>
-                <span className="font-mono border-b-2 border-white/60 pb-1">
-                  {year}
-                </span>
+              <div className="flex justify-between">
+                <span>{name}</span>
+                <span>{year}</span>
               </div>
             </>
           )}
