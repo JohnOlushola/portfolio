@@ -7,9 +7,9 @@ image: /images/training-log.webp
 
 I wanted to track my lifts and actually progress them week to week.
 
-The old me goes looking for an app that meets the need. The more recent me thinks, code is cheap now, I will just build my own. Personalised. My schema, my chart, progressive overload, the full shabang. The current me thinks, nahhh I don't another app. Where I can log and retrieve easily?
+The old me goes looking for an app that meets the need. The more recent me thinks, code is cheap now, I will just build my own. Personalised. My schema, my chart, progressive overload, the full shebang. The current me thinks, nahhh, I don't need another app. Where can I log and retrieve easily?
 
-I decided to log into a note on my phone between sets, I can "connect" an intelligence to read that note, works out what I lifted last week, and tells me what to beat. No app. No new surface to learn. The note was already there.
+I decided to log it in a note on my phone between sets. Then I can "connect" an intelligence to read that note, work out what I lifted last week, and tell me what to beat. No app. No new surface to learn. The note was already there.
 
 <figure style="width:min(92vw,1024px);margin-left:50%;transform:translateX(-50%);margin-top:2.5em;margin-bottom:2.5em">
   <img src="/images/training-log.webp" alt="A note titled Training Log, holding a plain table of exercises and the weights and reps logged against each one" style="width:100%;display:block;border-radius:12px" />
@@ -18,35 +18,37 @@ I decided to log into a note on my phone between sets, I can "connect" an intell
 
 How did ~we~ I get there?
 
-I'm grouping my thoughts into. constraint. saturation, and simplicity. 
+I'm grouping my thoughts into three: constraint, saturation, and simplicity.
 
-Not having the means used to drive the answer. You could not build everything, so you picked an off-the-shelf solution or gave up, depending on how much you needed a solution. 
+Not having the means used to drive the answer. You could not build everything, so you picked an off-the-shelf solution or gave up, depending on how badly you needed one.
 
-On saturation, for something like a workout tracker of some sort, there are a plethora of app. Free and paid. Did I really want another app to another log into, another place to check, another thing to abandon?
+On saturation, for something like a workout tracker there are a plethora of apps. Free and paid. Did I really want another app to log into, another place to check, another thing to abandon?
 
-Simplicity. I prioritise simplicity. Think I've written about this before? [Here](/notes/on-keeping-things-simple). For me, the simplest version of this wins.
+Simplicity. I prioritise simplicity. Think I've written about this before. [Here](/notes/on-keeping-things-simple). For me, the simplest version of this wins.
 
-Right, with the cost of writing code approaching zero, the question "should I build this?" is no longer a first-class citizen of refining an idea. That friction used to do work for us. It filtered ideas, killed the weak ones early, and forced you to be sure before you committed. Nothing filters now. You can have the app by lunch, which means you will build the app by lunch, and you will never find out whether you needed it.
+Right, with the cost of writing code approaching zero, the question "should I build this?" is no longer a first-class citizen in refining an idea. That friction used to do work for us. It filtered ideas, killed the weak ones early, and forced you to be sure before you committed. Nothing filters now. You can have the app by lunch, which means you will build the app by lunch, and you will never find out whether you needed it.
 
 So knowing what not to build has become at least as important as knowing what to build. Maybe more. That is the point where [taste and craft](/notes/craft-still-wins) start to matter again, because when the constraint is gone, judgement is the only thing left doing the filtering.
 
 ## What's the interface?
 
-By interface I don't mean GUI or UI. A UI would simply be a one kind of interface, the one with screens and buttons and a possibly a design system behind it. An interface here is the surface where intent meets a system. An API is one. A piece of hardware is one. A sentence, a note, a camera, a phone call. 
+By interface I don't mean GUI or UI. A UI is simply one kind of interface, the one with screens and buttons and possibly a design system behind it. An interface here is the surface where intent meets a system. An API is one. A piece of hardware is one. A sentence, a note, a camera, a phone call.
 
-As the web matured, we've optimised for fixed, predictable, scalable surfaces. That makes sense trade when coding was expensive, because you could be building one thing to solve a problem n amount of people, where n can grow exponentially and continously in the B2C case and it had to hold still long enough to be understood. But as with everything there is a trade-off with that decision. What we paid was personalisation, personality, and everything in between. Everyone gets the same screen, and the screen is designed for the average of everyone, which is nobody. Hence, we end up with onboarding instead of intuitive.
+As the web matured, we optimised for fixed, predictable, scalable surfaces. That was a sensible trade when coding was expensive, because you could be building one thing to solve a problem for n people, where n can grow exponentially and continuously in the B2C case, and it had to hold still long enough to be understood. But as with everything, there is a trade-off with that decision. What we paid was personalisation, personality, and everything in between. Everyone gets the same screen, and the screen is designed for the average of everyone, which is nobody. Hence we end up with onboarding instead of intuition.
 
-The constraint that justified the trade is no longer fixed. I say fixed because in some cases it's absolutely necessary to have one scalable reusable interface as at least a baseline. For example, aerospace, control systems etc. 
+The constraint that justified the trade is no longer fixed. I say fixed because in some cases it is absolutely necessary to have one scalable, reusable interface as at least a baseline. Aerospace, control systems, and so on.
 
-In that case, maybe some solutions do not need to exist anymore. Queue [SaaSpocalypse](link to something). Maybe some solutions stop being hosted and belong to the user. Your rules, your data, running where you are, rather than a seat you rent in someone else's system.
+In that case, maybe some solutions do not need to exist anymore. Cue the SaaSpocalypse. Maybe some solutions stop being hosted and belong to the user. Your rules, your data, running where you are, rather than a seat you rent in someone else's system.
+
+<!-- TODO: link "SaaSpocalypse" to a source before publishing -->
 
 And maybe the solution is your calendar. A phone call. A text message. A picture.
 
 ## What do we build?
 
-Chris Gregori puts the heavier version well: [code is cheap now, software isn't](https://www.chrisgregori.dev/opinion/code-is-cheap-now-software-isnt). Generating the symbols, syntax,... is trivial, keeping it alive? That's different. Maintenance, edge cases, ownership, compliance, the unglamorous work of getting anyone to care. The moment other people depend on it, you are back in software. Talked about it a little in [Craft still wins](/notes/craft-still-wins): the tools moved the cheap part, not the hard part.
+Chris Gregori puts the heavier version well: [code is cheap now, software isn't](https://www.chrisgregori.dev/opinion/code-is-cheap-now-software-isnt). Generating the symbols and the syntax is trivial. Keeping it alive? That's different. Maintenance, edge cases, ownership, compliance, the unglamorous work of getting anyone to care. The moment other people depend on it, you are back in software. Talked about it a little in [Craft still wins](/notes/craft-still-wins): the tools moved the cheap part, not the hard part.
 
-So the opinion here is not fewer interfaces for their own sake. I don't have solution, framework but the thought here the world in between everyone vibe coding a solution, enterprise saas, slapping "AI" into everything and personalisation.
+So the opinion here is not fewer interfaces for their own sake. I don't have a solution or a framework. The thought is about the world in between: everyone vibe coding a solution, enterprise SaaS, slapping "AI" into everything, and personalisation.
 
 ---
 
