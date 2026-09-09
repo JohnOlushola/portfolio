@@ -155,9 +155,10 @@
   @apply font-medium;
 }
 
-.prose img {
+.prose img,
+.prose video {
   /* Don't apply styles to next/image */
-  @apply m-0 rounded-md;
+  @apply m-0 rounded-xl;
 }
 
 .prose p {
