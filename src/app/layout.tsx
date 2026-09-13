@@ -20,6 +20,13 @@ export async function generateMetadata(): Promise<Metadata> {
     title: "Olushola Temiloluwa",
     description: "design, engineering & AI",
     applicationName: "Olushola Temiloluwa",
+    alternates: {
+      types: {
+        "application/rss+xml": [
+          { url: "/rss.xml", title: "Olushola Temiloluwa" },
+        ],
+      },
+    },
     openGraph: {
       title: "Olushola Temiloluwa",
       description: "design, engineering & AI",

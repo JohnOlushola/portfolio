@@ -6,6 +6,7 @@ export default function Footer() {
       <div className="container flex flex-col space-y-4 items-center py-8 text-sm">
         <div className="flex items-center gap-8">
           <Link href="/resources">resources</Link>
+          <a href="/rss.xml">rss</a>
           <a
             href="https://github.com/JohnOlushola"
             target="_blank"
