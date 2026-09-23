@@ -1,0 +1,41 @@
+---
+title: Stream — IDE-style understanding for natural language
+publishedAt: "2026-02-27"
+summary: Why input boxes and natural language deserve the same kind of live understanding that IDEs give code, and a small step in that direction.
+---
+
+You're in a note or a chat, typing a sentence about a meeting next Tuesday with Sarah and a doc you need to attach. The box is just a box. It doesn't suggest Sarah from your contacts, or the file you were in yesterday, or that "next Tuesday" could become a calendar link. You finish, you send — and only then does anything happen, if at all. When you're reading, it's the same story. On a Mac you can press on a word and get a dictionary definition. Handy, but it's the same lookup everywhere: in a note, an email, a doc. It never says "this is someone you know" or "this is a file on your machine" or "this is that inside joke from last week."
+
+Code gets a different deal. Your editor highlights syntax, suggests completions, and talks to a language server that knows the shape of your program as you edit. Plain text and the places we actually write and read every day don't. That gap — on both the writing side and the reading side — is what I've been thinking about.
+
+# The idea
+
+So: what if we brought the richness of IDEs and programming languages to natural language and input boxes? Not "send the whole thing to an API when you're done" — incremental, live understanding. The same way your editor talks to a language server and gets back diagnostics and structure as you edit, we could have something that understands natural language as it streams.
+
+There's a protocol for that in the code world: the [Language Server Protocol](https://microsoft.github.io/language-server-protocol/) (LSP). One server, many editors. The editor sends small updates; the server sends back meaning. I wanted the same mental model for natural language — and I'm not the first to think in that direction.
+
+# Inspiration
+
+[Rauno's "Inline Conversion"](https://rauno.me/craft/inline-conversion) craft piece (November 2024) was the spark. The idea of converting and transforming content inline, fluidly, as you interact — rather than in a separate step or a modal — stuck with me. That direction of interaction is what I'm chasing. Stream is my first step toward it.
+
+# What I built
+
+**Stream** is a prototype that takes a stream of text and turns it into a stream of meaning. You type; it understands as you go. Entities, structure, live. I built it with regex, a plugin system, and room for LLM integration — so you get fast, local feedback first, and can slot in deeper understanding where it matters.
+
+One example: type *"Meeting with john@example.com on Jan 15 about the 10km race"* and watch the system pick out the email, the date, and the quantity (10km) as you type. They show up in real time, get confirmed when you pause, and disappear cleanly if you delete the text. No "submit" required.
+
+{/* VIDEO: Short demo of typing in Stream — entities appearing and confirming in real time */}
+**[Placeholder: Demo recording — add video or link here]**
+
+{/* Optional second media: before/after or inline conversion feel */}
+**[Placeholder: Second clip or image — e.g. inline conversion comparison]**
+
+# Where it could go
+
+Right now the prototype is focused on input — you type, it understands. But the same kind of understanding could go further. The web has syntax highlighting for code; Stream is semantic highlighting for everything else. Smart input fields that know what's in them. AI chat that understands as it streams. Accessibility. Data extraction. This is the missing primitive as more and more text is generated and consumed in real time — in ChatGPT, Claude, Copilot — and nothing today semantically understands that stream as it arrives.
+
+Zooming out, I think about the read side at the system level too. On a Mac, when you press down on a word and get the dictionary meaning, that's a tiny window into what could be possible if lookups were contextual instead of generic. Names could link to people you know. Document titles could jump you straight into the actual files. Inside jokes could surface shared moments. Stream is one step toward that kind of OS-level, app-level understanding — not just "what does this word mean?", but "what does this mean to me, here, right now?"
+
+# Try it
+
+That's the long-term picture. For now, the implementation lives in [StreamSense](https://github.com/jtolushola/streamsense) on GitHub — TypeScript, plugin-based, zero dependencies. It's an early step; I'm sharing the idea and the prototype, not a finished product. If this direction resonates, you can run it yourself or plug it into your own inputs and see where it goes.
