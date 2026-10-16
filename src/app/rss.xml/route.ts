@@ -4,7 +4,7 @@ import { getBlogPosts } from "../notes/utils";
 export const dynamic = "force-static";
 
 const siteTitle = "Olushola Temiloluwa";
-const siteDescription = "design, engineering & AI";
+const siteDescription = "an engineer that loves design";
 
 function escapeXml(value: string) {
   return value

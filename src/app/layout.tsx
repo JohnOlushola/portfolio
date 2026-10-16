@@ -18,7 +18,7 @@ const mono = IBM_Plex_Mono({
 export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Olushola Temiloluwa",
-    description: "design, engineering & AI",
+    description: "an engineer that loves design",
     applicationName: "Olushola Temiloluwa",
     alternates: {
       types: {
@@ -29,7 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     openGraph: {
       title: "Olushola Temiloluwa",
-      description: "design, engineering & AI",
+      description: "an engineer that loves design",
       type: "website",
       url: "https://jtolushola.com",
       siteName: "Olushola Temiloluwa",
@@ -43,7 +43,7 @@ export async function generateMetadata(): Promise<Metadata> {
     twitter: {
       card: "summary_large_image",
       title: "Olushola Temiloluwa",
-      description: "design, engineering & AI",
+      description: "an engineer that loves design",
       images: [
         {
           url: "/images/wissahickon-cropped.jpg",
